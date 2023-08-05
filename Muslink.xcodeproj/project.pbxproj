@@ -12,6 +12,7 @@
 		211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */; };
 		211AACD72A7D5EA200D7469C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD62A7D5EA200D7469C /* Assets.xcassets */; };
 		211AACDA2A7D5EA200D7469C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */; };
+		211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD262A7E12CD00D7469C /* DefaultTextField.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		211AACD62A7D5EA200D7469C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211AACD92A7D5EA200D7469C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211AACDB2A7D5EA200D7469C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211AAD262A7E12CD00D7469C /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 		211AACE32A7D5F1100D7469C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
+				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
