@@ -158,7 +158,7 @@ extension Color {
         case .infoFocus:
             color = UIColor(red: 226/255, green: 231/255, blue: 255/255, alpha: 1)
         case .infoBorder:
-            color = UIColor(red: 170/255, green: 182/255, blue: 244/255a, alpha: 1)
+            color = UIColor(red: 170/255, green: 182/255, blue: 244/255, alpha: 1)
         }
 
         return color ?? UIColor()
