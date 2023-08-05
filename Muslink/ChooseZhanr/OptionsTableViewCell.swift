@@ -42,7 +42,7 @@ final class OptionsTableViewCell: UITableViewCell {
     //MARK: - Setup
     
     private func setupView(){
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Color.primaryBgColor.color
         collectionView.dataSource = self
         collectionView.delegate = self
         contentView.addSubview(collectionView)
@@ -74,7 +74,7 @@ final class OptionsTableViewCell: UITableViewCell {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsHorizontalScrollIndicator = false
         collection.clipsToBounds = false
-        collection.backgroundColor = .white
+        collection.backgroundColor = Color.primaryBgColor.color
         collection.register(ButtonsCollectionViewCell.self, forCellWithReuseIdentifier: ButtonsCollectionViewCell.identifier)
         
         return collection

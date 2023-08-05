@@ -40,7 +40,7 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
     
     private func setupView(){
         contentView.layer.cornerRadius = 10
-        contentView.backgroundColor = .systemGray.withAlphaComponent(0.1)
+        contentView.backgroundColor = Color.neutral16.color
         
         contentView.addSubview(titleLabel)
     }
@@ -77,7 +77,7 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .black
+        label.textColor = Color.neutral100.color
         label.textAlignment = .center
         label.backgroundColor = .clear
         label.layer.masksToBounds = true
