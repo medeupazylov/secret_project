@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACCD2A7D5EA000D7469C /* AppDelegate.swift */; };
 		211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */; };
-		211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */; };
+		211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACD12A7D5EA000D7469C /* UsernameViewController.swift */; };
 		211AACD72A7D5EA200D7469C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD62A7D5EA200D7469C /* Assets.xcassets */; };
 		211AACDA2A7D5EA200D7469C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */; };
 		211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD262A7E12CD00D7469C /* DefaultTextField.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
+		BF1C52EC2A7E5DD5008B642D /* UsernameVC + TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EB2A7E5DD4008B642D /* UsernameVC + TextFieldDelegate.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
@@ -23,12 +24,13 @@
 		211AACCA2A7D5EA000D7469C /* Muslink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muslink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211AACCD2A7D5EA000D7469C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		211AACD12A7D5EA000D7469C /* UsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		211AACD62A7D5EA200D7469C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211AACD92A7D5EA200D7469C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211AACDB2A7D5EA200D7469C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		211AAD262A7E12CD00D7469C /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
+		BF1C52EB2A7E5DD4008B642D /* UsernameVC + TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsernameVC + TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 				211AACE32A7D5F1100D7469C /* Components */,
 				211AACE12A7D5ED300D7469C /* Application */,
 				211AACE22A7D5EE900D7469C /* Resources */,
-				211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */,
+				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
+				BF1C52EB2A7E5DD4008B642D /* UsernameVC + TextFieldDelegate.swift */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -181,11 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */,
+				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
+				BF1C52EC2A7E5DD5008B642D /* UsernameVC + TextFieldDelegate.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
