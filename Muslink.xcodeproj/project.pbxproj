@@ -21,6 +21,9 @@
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
+		D523C5DC2A7E525A004ADB75 /* ChoseCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5DB2A7E525A004ADB75 /* ChoseCityView.swift */; };
+		D523C5DE2A7E65EC004ADB75 /* CitiesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5DD2A7E65EC004ADB75 /* CitiesTable.swift */; };
+		D523C5E02A7E7244004ADB75 /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5DF2A7E7244004ADB75 /* CitiesCell.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 		DEFCE87D2A7E2BDD00FA6051 /* SocialNetworkViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87C2A7E2BDD00FA6051 /* SocialNetworkViewContoller.swift */; };
 		DEFCE8822A7E502400FA6051 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEFCE8802A7E502400FA6051 /* Localizable.strings */; };
@@ -44,6 +47,9 @@
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D523C5DB2A7E525A004ADB75 /* ChoseCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityView.swift; sourceTree = "<group>"; };
+		D523C5DD2A7E65EC004ADB75 /* CitiesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTable.swift; sourceTree = "<group>"; };
+		D523C5DF2A7E7244004ADB75 /* CitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DEFCE87C2A7E2BDD00FA6051 /* SocialNetworkViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewContoller.swift; sourceTree = "<group>"; };
 		DEFCE8812A7E502400FA6051 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 			children = (
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
+				D523C5DB2A7E525A004ADB75 /* ChoseCityView.swift */,
+				D523C5DD2A7E65EC004ADB75 /* CitiesTable.swift */,
+				D523C5DF2A7E7244004ADB75 /* CitiesCell.swift */,
 				DEFCE8852A7E53C200FA6051 /* SocialNetworksView.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
 			);
@@ -218,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D523C5DE2A7E65EC004ADB75 /* CitiesTable.swift in Sources */,
 				211AAD302A7E387E00D7469C /* OptionsTableViewCell.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
@@ -226,6 +236,8 @@
 				211AAD322A7E82B400D7469C /* ChooseMoodViewController.swift in Sources */,
 				DEFCE8862A7E53C200FA6051 /* SocialNetworksView.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
+				D523C5DC2A7E525A004ADB75 /* ChoseCityView.swift in Sources */,
+				D523C5E02A7E7244004ADB75 /* CitiesCell.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				211AAD2B2A7E2CBA00D7469C /* ChooseZhanrViewController.swift in Sources */,
