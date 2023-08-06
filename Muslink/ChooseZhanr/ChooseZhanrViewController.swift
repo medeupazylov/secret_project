@@ -37,8 +37,7 @@ final class ChooseZnanrViewController: UIViewController {
     
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress()
-        progressView.updateProgress()
+        progressView.updateProgress(withScreenOrder: 3)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -109,7 +108,7 @@ final class ChooseZnanrViewController: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
     }
@@ -118,6 +117,12 @@ final class ChooseZnanrViewController: UIViewController {
     private func nextButtonPressed() {
         navigationController?.pushViewController(ChooseMoodViewController(), animated: false)
     }
+    
+    @objc
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
+    }
+
 }
 
 extension ChooseZnanrViewController: UITableViewDataSource, UITableViewDelegate {
