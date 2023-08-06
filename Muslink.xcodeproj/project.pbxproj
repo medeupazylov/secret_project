@@ -29,6 +29,8 @@
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
+		BFB642F62A7FDD2F00DE5A07 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */; };
+		BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,7 @@
 		211AACC12A7D5EA000D7469C = {
 			isa = PBXGroup;
 			children = (
+				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
 				211AACCC2A7D5EA000D7469C /* Muslink */,
 				211AACCB2A7D5EA000D7469C /* Products */,
 			);
@@ -166,6 +171,15 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */,
+				BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */,
+			);
+			path = MusicianInfoVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,11 +252,13 @@
 			files = (
 				211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
+				BFB642F62A7FDD2F00DE5A07 /* StatisticsView.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
+				BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewController.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseMoodViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
