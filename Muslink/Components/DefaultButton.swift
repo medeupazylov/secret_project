@@ -68,13 +68,13 @@ final class DefaultButton: UIControl {
         self.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
     }
     
-    // MARK: - Touch handling
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isSelected = true
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isSelected = false
-    }
+//    // MARK: - Touch handling
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        isSelected = true
+//    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        isSelected = false
+//    }
     
     // MARK: - UI Elements
     private let titleLabel: UILabel = {

@@ -1,5 +1,5 @@
 //
-//  ChooseZhanrViewController.swift
+//  ChooseMoodViewController.swift
 //  Muslink
 //
 //  Created by Аброрбек on 05.08.2023.
@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class ChooseZnanrViewController: UIViewController {
+final class ChooseMoodViewController: UIViewController {
+    
+    private var context: [String] = ["агресcивное", "весеннее", "грустное", "зимнее", "красивое", "крутое", "лето", "мечтательное", "мистическое", "мрачное", "новый год", "осеннее", "радостное", "отдыхаю", "сентиментальное", "спокойное", "энергичное", "эпичное"]
     
     //MARK: - UI elements
     
@@ -15,7 +17,7 @@ final class ChooseZnanrViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Выберите музыкальный стиль"
+        label.text = "Выберите настроение музыки"
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = Color.neutral100.color
         label.backgroundColor = Color.primaryBgColor.color
@@ -24,26 +26,33 @@ final class ChooseZnanrViewController: UIViewController {
         return label
     }()
     
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: OptionsTableViewCell.identifier)
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        
-        tableView.backgroundColor = Color.primaryBgColor.color
-        return tableView
-    }()
-    
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
+        progressView.updateProgress()
         progressView.updateProgress()
         progressView.updateProgress()
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
     
-    private lazy var continueButton: DefaultButton = {
+    private lazy var collectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 12
+
+
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.isScrollEnabled = false
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.showsHorizontalScrollIndicator = false
+        collection.clipsToBounds = false
+        collection.backgroundColor = Color.primaryBgColor.color
+        collection.register(ButtonsCollectionViewCell.self, forCellWithReuseIdentifier: ButtonsCollectionViewCell.identifier)
+        
+        return collection
+    }()
+    
+    private let continueButton: DefaultButton = {
         let button = DefaultButton(buttonType: .primary)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title: "Продолжить")
@@ -52,7 +61,6 @@ final class ChooseZnanrViewController: UIViewController {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
         button.layer.shadowRadius = 4
-        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         
         return button
     } ()
@@ -62,8 +70,8 @@ final class ChooseZnanrViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        tableView.dataSource = self
-        tableView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         setupNavigationBar()
     }
     
@@ -71,7 +79,7 @@ final class ChooseZnanrViewController: UIViewController {
         view.backgroundColor = Color.primaryBgColor.color
         view.addSubview(titleLabel)
         view.addSubview(progressView)
-        view.addSubview(tableView)
+        view.addSubview(collectionView)
         view.addSubview(continueButton)
         
         NSLayoutConstraint.activate([
@@ -90,10 +98,10 @@ final class ChooseZnanrViewController: UIViewController {
         
         // Constraints for tableView
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionView.heightAnchor.constraint(equalToConstant: 300)
         ])
         
         NSLayoutConstraint.activate([
@@ -109,42 +117,45 @@ final class ChooseZnanrViewController: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
     }
     
     @objc
-    private func nextButtonPressed() {
-        navigationController?.pushViewController(ChooseMoodViewController(), animated: false)
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
     }
 }
 
-extension ChooseZnanrViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+extension ChooseMoodViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return context.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OptionsTableViewCell.identifier, for: indexPath) as? OptionsTableViewCell else {
-            return UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonsCollectionViewCell.identifier, for: indexPath)  as? ButtonsCollectionViewCell else {
+            return UICollectionViewCell()
         }
-        
-        switch indexPath.row {
-        case 0:
-            cell.configureCell(context: tableData["Classical/Instrumental"]!, title: "Classical/Instrumental")
-        case 1:
-            cell.configureCell(context: tableData["Electronic"]!, title: "Electronic")
-        case 2:
-            cell.configureCell(context: tableData["Folk/Acoustic"]!, title: "Folk/Acoustic")
-        default:
-            cell.configureCell(context: tableData["Classical/Instrumental"]!, title: "Classical/Instrumental")
-        }
+//        guard let context = context else { return UICollectionViewCell() }
+        cell.title = context[indexPath.row]
 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(
+            width: (context[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 65) + 25,
+                height: 40)
+        
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+            guard let selectedCell = collectionView.cellForItem(at: indexPath as IndexPath) as? ButtonsCollectionViewCell else { return }
+            selectedCell.select()
+        }
+    }
+    
 }

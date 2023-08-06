@@ -33,7 +33,7 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        unselect()
+        contentView.backgroundColor = Color.neutral16.color
     }
         
     //MARK: - Setup
@@ -56,14 +56,12 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Internal methods
     
-    func didSelected(){
-        contentView.backgroundColor = .systemGreen.withAlphaComponent(0.85)
-        titleLabel.textColor = .white
-    }
-    
-    func unselect(){
-        contentView.backgroundColor = .systemGray.withAlphaComponent(0.1)
-        titleLabel.textColor = .black
+    func select() {
+        if contentView.backgroundColor == Color.primaryMain.color {
+            contentView.backgroundColor = Color.neutral16.color
+        } else {
+            contentView.backgroundColor = Color.primaryMain.color
+        }
     }
     
     func getType() -> String {
@@ -76,7 +74,7 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.textColor = Color.neutral100.color
         label.textAlignment = .center
         label.backgroundColor = .clear

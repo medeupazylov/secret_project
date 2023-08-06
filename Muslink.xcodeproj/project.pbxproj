@@ -13,10 +13,12 @@
 		211AACD72A7D5EA200D7469C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD62A7D5EA200D7469C /* Assets.xcassets */; };
 		211AACDA2A7D5EA200D7469C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */; };
 		211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD262A7E12CD00D7469C /* DefaultTextField.swift */; };
-		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		211AAD2B2A7E2CBA00D7469C /* ChooseZhanrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD2A2A7E2CBA00D7469C /* ChooseZhanrViewController.swift */; };
 		211AAD2E2A7E35DF00D7469C /* ButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD2D2A7E35DF00D7469C /* ButtonsCollectionViewCell.swift */; };
 		211AAD302A7E387E00D7469C /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD2F2A7E387E00D7469C /* OptionsTableViewCell.swift */; };
+		211AAD322A7E82B400D7469C /* ChooseMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD312A7E82B400D7469C /* ChooseMoodViewController.swift */; };
+		211AAD342A7F631D00D7469C /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */; };
+		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
@@ -31,10 +33,12 @@
 		211AACD92A7D5EA200D7469C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211AACDB2A7D5EA200D7469C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		211AAD262A7E12CD00D7469C /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
-		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		211AAD2A2A7E2CBA00D7469C /* ChooseZhanrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseZhanrViewController.swift; sourceTree = "<group>"; };
 		211AAD2D2A7E35DF00D7469C /* ButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
 		211AAD2F2A7E387E00D7469C /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		211AAD312A7E82B400D7469C /* ChooseMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMoodViewController.swift; sourceTree = "<group>"; };
+		211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
+		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 				211AACE12A7D5ED300D7469C /* Application */,
 				211AACE22A7D5EE900D7469C /* Resources */,
 				211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */,
+				211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				211AAD2A2A7E2CBA00D7469C /* ChooseZhanrViewController.swift */,
 				211AAD2D2A7E35DF00D7469C /* ButtonsCollectionViewCell.swift */,
 				211AAD2F2A7E387E00D7469C /* OptionsTableViewCell.swift */,
+				211AAD312A7E82B400D7469C /* ChooseMoodViewController.swift */,
 			);
 			path = ChooseZhanr;
 			sourceTree = "<group>";
@@ -202,12 +208,14 @@
 				211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
+				211AAD322A7E82B400D7469C /* ChooseMoodViewController.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				211AAD2B2A7E2CBA00D7469C /* ChooseZhanrViewController.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
+				211AAD342A7F631D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				211AAD2E2A7E35DF00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
