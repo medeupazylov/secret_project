@@ -11,7 +11,7 @@ final class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.neutral32.color
     }
     
     
