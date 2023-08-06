@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACCD2A7D5EA000D7469C /* AppDelegate.swift */; };
 		211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */; };
-		211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */; };
+		211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AACD12A7D5EA000D7469C /* UsernameViewController.swift */; };
 		211AACD72A7D5EA200D7469C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD62A7D5EA200D7469C /* Assets.xcassets */; };
 		211AACDA2A7D5EA200D7469C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */; };
 		211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD262A7E12CD00D7469C /* DefaultTextField.swift */; };
@@ -19,6 +19,8 @@
 		211AAD322A7E82B400D7469C /* ChooseMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD312A7E82B400D7469C /* ChooseMoodViewController.swift */; };
 		211AAD342A7F631D00D7469C /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
+		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
+		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
 		D523C5DC2A7E525A004ADB75 /* ChoseCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5DB2A7E525A004ADB75 /* ChoseCityView.swift */; };
@@ -34,7 +36,7 @@
 		211AACCA2A7D5EA000D7469C /* Muslink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muslink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211AACCD2A7D5EA000D7469C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		211AACD12A7D5EA000D7469C /* UsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		211AACD62A7D5EA200D7469C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211AACD92A7D5EA200D7469C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211AACDB2A7D5EA200D7469C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		211AAD312A7E82B400D7469C /* ChooseMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMoodViewController.swift; sourceTree = "<group>"; };
 		211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
+		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D523C5DB2A7E525A004ADB75 /* ChoseCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				211AACD12A7D5EA000D7469C /* RegistrationViewController.swift */,
 				211AAD332A7F631D00D7469C /* ChoosePhotoViewController.swift */,
 				DEFCE87C2A7E2BDD00FA6051 /* SocialNetworkViewContoller.swift */,
+				BF1C52ED2A7F6114008B642D /* UsernameVC */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -134,6 +139,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		BF1C52ED2A7F6114008B642D /* UsernameVC */ = {
+			isa = PBXGroup;
+			children = (
+				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
+				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
+				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
+			);
+			path = UsernameVC;
 		211AAD2C2A7E32C300D7469C /* ChooseZhanr */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				D523C5DE2A7E65EC004ADB75 /* CitiesTable.swift in Sources */,
 				211AAD302A7E387E00D7469C /* OptionsTableViewCell.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* RegistrationViewController.swift in Sources */,
@@ -239,6 +253,8 @@
 				D523C5DC2A7E525A004ADB75 /* ChoseCityView.swift in Sources */,
 				D523C5E02A7E7244004ADB75 /* CitiesCell.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
+				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
+				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				211AAD2B2A7E2CBA00D7469C /* ChooseZhanrViewController.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
