@@ -33,6 +33,8 @@ enum Image {
     case volumeX
     case yandexMusic
     case youtube
+    case vkontakte
+    case telegram
 }
 
 extension Image {
@@ -92,6 +94,10 @@ extension Image {
             image = UIImage(named: "yandex_music")
         case .youtube:
             image = UIImage(named: "youtube")
+        case .vkontakte:
+            image = UIImage(named: "vkontakte")
+        case .telegram:
+            image = UIImage(named: "telegram")
         }
 
         return image ?? UIImage()
