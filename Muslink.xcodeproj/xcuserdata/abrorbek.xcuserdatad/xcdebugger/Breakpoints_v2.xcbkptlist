@@ -62,8 +62,8 @@
             filePath = "Muslink/ChoosePhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "imageViewTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Muslink/ChoosePhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "openPhotosApp()"
             landmarkType = "7">
             <Locations>
