@@ -29,8 +29,8 @@ class DefaultProgressBar: UIProgressView {
         heightAnchor.constraint(equalToConstant: 2.0).isActive = true
     }
     
-    func updateProgress() {
-        progress += 0.25
+    func updateProgress(withScreenOrder: Int) {
+        progress += 0.20 * Float(withScreenOrder)
     }
 
     

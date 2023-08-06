@@ -16,7 +16,7 @@ final class ChoseCityView: UIViewController {
     private lazy var titleLabel = createLabel(text: "Откуда вы", fontSize: 18, color: Color.neutral100.color)
     private lazy var cityLabel = createLabel(text: "Город", fontSize: 14, color: Color.neutral32.color)
     private lazy var choseLabel = createLabel(text: "Выберите город", fontSize: 16, color: Color.neutral80.color)
-    private let button = DefaultButton(buttonType: .primary)
+    private let continueButton = DefaultButton(buttonType: .primary)
     
     private let chevronIcon: UIImageView = {
         let imageView = UIImageView()
@@ -24,6 +24,13 @@ final class ChoseCityView: UIViewController {
         imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         return imageView
+    }()
+    
+    private let progressView: DefaultProgressBar = {
+        let progressView = DefaultProgressBar()
+        progressView.updateProgress(withScreenOrder: 1)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        return progressView
     }()
    
     private lazy var cityButton: UIControl = {
@@ -54,7 +61,7 @@ final class ChoseCityView: UIViewController {
         view.backgroundColor = Color.primaryBgColor.color
         setupUI()
         setupNavigationBar()
-        button.isEnabled = false
+        continueButton.isEnabled = false
     }
     
     func setupNavigationBar() {
@@ -63,9 +70,20 @@ final class ChoseCityView: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
+        continueButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
+    }
+    
+    @objc
+    private func nextButtonPressed() {
+        navigationController?.pushViewController(SocialNetworkViewContoller(), animated: false)
     }
     
     private func createLabel(text: String, fontSize: CGFloat, color: UIColor) -> UILabel {
@@ -84,28 +102,37 @@ final class ChoseCityView: UIViewController {
     private func setupUI() {
         cityButton.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
 
+        view.addSubview(progressView)
         view.addSubview(titleLabel)
         view.addSubview(cityLabel)
         view.addSubview(cityButton)
-        view.addSubview(button)
+        view.addSubview(continueButton)
         
-        button.setTitle(title: "Продолжить")
-        button.translatesAutoresizingMaskIntoConstraints = false
+        continueButton.setTitle(title: "Продолжить")
+        continueButton.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityButton.translatesAutoresizingMaskIntoConstraints = false
+        progressView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: progressView.safeAreaLayoutGuide.bottomAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
             cityLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             cityLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             cityButton.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 8),
             cityButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             cityButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            continueButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            continueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            continueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
     
@@ -119,6 +146,7 @@ final class ChoseCityView: UIViewController {
 extension ChoseCityView: ChosenCityDelegate {
     func chosenCity(index: IndexPath?, city: String?) {
         updateChoseLabel(city: city!)
+        continueButton.isEnabled = true
         chosenCityIndex = index
     }
 }

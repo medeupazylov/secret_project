@@ -93,11 +93,15 @@ final class UsernameViewController: UIViewController {
         let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
+        continueButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
-    @IBAction func goForward() {
-        
+    @objc
+    private func nextButtonPressed() {
+        navigationController?.pushViewController(ChoseCityView(), animated: false)
     }
+    
+//    cityButton.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
     
     func setupConstraints() {
         
