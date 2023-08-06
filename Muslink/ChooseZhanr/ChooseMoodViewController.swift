@@ -28,7 +28,7 @@ final class ChooseMoodViewController: UIViewController {
     
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress(withScreenOrder: 3)
+        progressView.updateProgress(withScreenOrder: 4)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -54,6 +54,7 @@ final class ChooseMoodViewController: UIViewController {
         let button = DefaultButton(buttonType: .primary)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title: "Продолжить")
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.5
@@ -118,6 +119,11 @@ final class ChooseMoodViewController: UIViewController {
         let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
+    }
+    
+    @objc
+    private func nextButtonPressed() {
+        navigationController?.pushViewController(ChoosePhotoViewController(), animated: false)
     }
     
     @objc

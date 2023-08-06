@@ -15,7 +15,7 @@ final class ChoosePhotoViewController: UIViewController {
     // UI Elements
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress(withScreenOrder: 3)
+        progressView.updateProgress(withScreenOrder: 5)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -205,10 +205,10 @@ final class ChoosePhotoViewController: UIViewController {
     func addTapGestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         imageView.addGestureRecognizer(tapGesture)
-        imageView1.addGestureRecognizer(tapGesture)
-        imageView2.addGestureRecognizer(tapGesture)
-        imageView3.addGestureRecognizer(tapGesture)
-        imageView4.addGestureRecognizer(tapGesture)
+//        imageView1.addGestureRecognizer(tapGesture)
+//        imageView2.addGestureRecognizer(tapGesture)
+//        imageView3.addGestureRecognizer(tapGesture)
+//        imageView4.addGestureRecognizer(tapGesture)
     }
     
     @objc func imageViewTapped() {
