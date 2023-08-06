@@ -16,8 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let controller = ChoosePhotoViewController()
-        window?.rootViewController = UINavigationController(rootViewController: controller)
+//        let controller = RegistrationViewController()
+        let controller = SocialNetworkViewContoller()
+        let navigationController = UINavigationController(rootViewController: controller)
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
