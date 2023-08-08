@@ -78,7 +78,6 @@
 		211AACC12A7D5EA000D7469C = {
 			isa = PBXGroup;
 			children = (
-				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
 				211AACCC2A7D5EA000D7469C /* Muslink */,
 				211AACCB2A7D5EA000D7469C /* Products */,
 			);
@@ -103,6 +102,7 @@
 				211AACE12A7D5ED300D7469C /* Application */,
 				211AACE22A7D5EE900D7469C /* Resources */,
 				BF1C52ED2A7F6114008B642D /* UsernameVC */,
+				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
