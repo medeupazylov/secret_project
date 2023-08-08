@@ -18,12 +18,12 @@
 		211AAD3F2A7F995D00D7469C /* ChooseZhanrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD382A7F995D00D7469C /* ChooseZhanrViewController.swift */; };
 		211AAD402A7F995D00D7469C /* ChooseMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD392A7F995D00D7469C /* ChooseMoodViewController.swift */; };
 		211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */; };
-		211AAD422A7F995D00D7469C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3B2A7F995D00D7469C /* RegistrationViewController.swift */; };
 		211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */; };
 		211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD442A7F998100D7469C /* CitiesTable.swift */; };
-		211AAD492A7F998100D7469C /* ChoseCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD452A7F998100D7469C /* ChoseCityView.swift */; };
+		211AAD492A7F998100D7469C /* ChoseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD452A7F998100D7469C /* ChoseCityViewController.swift */; };
 		211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD462A7F998100D7469C /* SocialNetworksView.swift */; };
 		211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD472A7F998100D7469C /* CitiesCell.swift */; };
+		211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD4C2A7FC31900D7469C /* AddImageView.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
@@ -48,12 +48,12 @@
 		211AAD382A7F995D00D7469C /* ChooseZhanrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseZhanrViewController.swift; sourceTree = "<group>"; };
 		211AAD392A7F995D00D7469C /* ChooseMoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMoodViewController.swift; sourceTree = "<group>"; };
 		211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewContoller.swift; sourceTree = "<group>"; };
-		211AAD3B2A7F995D00D7469C /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
 		211AAD442A7F998100D7469C /* CitiesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTable.swift; sourceTree = "<group>"; };
-		211AAD452A7F998100D7469C /* ChoseCityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseCityView.swift; sourceTree = "<group>"; };
+		211AAD452A7F998100D7469C /* ChoseCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoseCityViewController.swift; sourceTree = "<group>"; };
 		211AAD462A7F998100D7469C /* SocialNetworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
 		211AAD472A7F998100D7469C /* CitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
+		211AAD4C2A7FC31900D7469C /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -97,7 +97,6 @@
 			children = (
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
 				211AAD352A7F995D00D7469C /* ChooseZhanr */,
-				211AAD3B2A7F995D00D7469C /* RegistrationViewController.swift */,
 				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
 				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
 				211AACE32A7D5F1100D7469C /* Components */,
@@ -130,13 +129,14 @@
 		211AACE32A7D5F1100D7469C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				211AAD452A7F998100D7469C /* ChoseCityView.swift */,
+				211AAD452A7F998100D7469C /* ChoseCityViewController.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
 				211AAD442A7F998100D7469C /* CitiesTable.swift */,
 				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
+				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,14 +260,14 @@
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewController.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
+				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseMoodViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
-				211AAD492A7F998100D7469C /* ChoseCityView.swift in Sources */,
+				211AAD492A7F998100D7469C /* ChoseCityViewController.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */,
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
-				211AAD422A7F995D00D7469C /* RegistrationViewController.swift in Sources */,
 				211AAD3E2A7F995D00D7469C /* OptionsTableViewCell.swift in Sources */,
 				211AAD3F2A7F995D00D7469C /* ChooseZhanrViewController.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,

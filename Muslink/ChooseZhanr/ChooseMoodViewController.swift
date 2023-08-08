@@ -28,9 +28,7 @@ final class ChooseMoodViewController: UIViewController {
     
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress()
-        progressView.updateProgress()
-        progressView.updateProgress()
+        progressView.updateProgress(withScreenOrder: 3)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -137,7 +135,6 @@ extension ChooseMoodViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonsCollectionViewCell.identifier, for: indexPath)  as? ButtonsCollectionViewCell else {
             return UICollectionViewCell()
         }
-//        guard let context = context else { return UICollectionViewCell() }
         cell.title = context[indexPath.row]
 
         return cell

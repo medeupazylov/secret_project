@@ -10,12 +10,12 @@ import Photos
 
 final class ChoosePhotoViewController: UIViewController {
     
+    private var numberofPhotos = 0
+    
     // UI Elements
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress()
-        progressView.updateProgress()
-        progressView.updateProgress()
+        progressView.updateProgress(withScreenOrder: 3)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -33,14 +33,45 @@ final class ChoosePhotoViewController: UIViewController {
         return label
     }()
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "profile") 
-        imageView.isUserInteractionEnabled = true
-        imageView.backgroundColor = .white
+    private let imageView: CustomImageView = {
+        let imageView = CustomImageView(frame: .zero)
+            
         return imageView
+    }()
+    
+    private let imageView1: CustomImageView = {
+        let imageView = CustomImageView(frame: .zero)
+            
+        return imageView
+    }()
+    
+    private let imageView2: CustomImageView = {
+        let imageView = CustomImageView(frame: .zero)
+            
+        return imageView
+    }()
+    
+    private let imageView3: CustomImageView = {
+        let imageView = CustomImageView(frame: .zero)
+            
+        return imageView
+    }()
+    
+    private let imageView4: CustomImageView = {
+        let imageView = CustomImageView(frame: .zero)
+            
+        return imageView
+    }()
+    
+    private let imagesStackView: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        view.axis = .horizontal
+        view.distribution = .equalSpacing
+        view.alignment = .leading
+        
+        return view
     }()
     
     private lazy var continueButton: DefaultButton = {
@@ -55,6 +86,19 @@ final class ChoosePhotoViewController: UIViewController {
         button.layer.shadowRadius = 4
         
         return button
+    }()
+    
+    private let secondaryLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.text = "Не более 5 штук"
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textColor = Color.neutral72.color
+        label.textAlignment = .left
+        
+        label.backgroundColor = Color.primaryBgColor.color
+        return label
     }()
     
     // MARK: - View Lifecycle
@@ -72,8 +116,15 @@ final class ChoosePhotoViewController: UIViewController {
         view.backgroundColor = Color.primaryBgColor.color
         view.addSubview(progressView)
         view.addSubview(titleLabel)
+        view.addSubview(secondaryLabel)
         view.addSubview(imageView)
         view.addSubview(continueButton)
+        
+        imagesStackView.addArrangedSubview(imageView1)
+        imagesStackView.addArrangedSubview(imageView2)
+        imagesStackView.addArrangedSubview(imageView3)
+        imagesStackView.addArrangedSubview(imageView4)
+        view.addSubview(imagesStackView)
         setupLayout()
     }
     
@@ -93,12 +144,33 @@ final class ChoosePhotoViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            secondaryLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            secondaryLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            secondaryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            secondaryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+        ])
+        
+        NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 156),
-            imageView.heightAnchor.constraint(equalToConstant: 156),
+            imageView.widthAnchor.constraint(equalToConstant: 194),
+            imageView.heightAnchor.constraint(equalToConstant: 194),
         ])
-
+        
+        NSLayoutConstraint.activate([
+            imagesStackView.heightAnchor.constraint(equalToConstant: 74),
+            imagesStackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 50),
+            imagesStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            imagesStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageView1.widthAnchor.constraint(equalToConstant: 74),
+            imageView2.widthAnchor.constraint(equalToConstant: 74),
+            imageView3.widthAnchor.constraint(equalToConstant: 74),
+            imageView4.widthAnchor.constraint(equalToConstant: 74),
+        ])
+        
         NSLayoutConstraint.activate([
             continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
@@ -108,7 +180,7 @@ final class ChoosePhotoViewController: UIViewController {
     
     func setupNavigationBar() {
         let title = UILabel()
-        title.text = "Профиль музыканта"
+        title.text = "Добавить фото"
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
@@ -133,6 +205,10 @@ final class ChoosePhotoViewController: UIViewController {
     func addTapGestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         imageView.addGestureRecognizer(tapGesture)
+        imageView1.addGestureRecognizer(tapGesture)
+        imageView2.addGestureRecognizer(tapGesture)
+        imageView3.addGestureRecognizer(tapGesture)
+        imageView4.addGestureRecognizer(tapGesture)
     }
     
     @objc func imageViewTapped() {

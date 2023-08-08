@@ -8,7 +8,7 @@
 import UIKit
 
 class SocialNetworkViewContoller: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color.primaryBgColor.color
@@ -21,8 +21,14 @@ class SocialNetworkViewContoller: UIViewController {
         
     }
     
-    @objc func action() {
-        print("pressed")
+    @objc
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
+    }
+    
+    @objc
+    private func nextButtonPressed() {
+        navigationController?.pushViewController(ChooseZnanrViewController(), animated: false)
     }
     
     func setupNavigationBar() {
@@ -31,56 +37,65 @@ class SocialNetworkViewContoller: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
+        continueButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     func setupViews() {
+        view.addSubview(progressView)
         view.addSubview(titleLabel)
         view.addSubview(subTitleLabel)
         view.addSubview(mainScrollView)
         view.addSubview(continueButton)
         mainScrollView.addSubview(mainVStack)
-        continueButton.addAction {
-            print("hello world")
-        }
+        
     }
     
     func setupLayout() {
-            NSLayoutConstraint.activate([
-                titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                titleLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 50),
-                
-                subTitleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-                
-                continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-                continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
-                
-                mainScrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
-                mainScrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
-                mainScrollView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 36),
-                mainScrollView.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: 10),
-                
-                mainVStack.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-                mainVStack.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: -35),
+        NSLayoutConstraint.activate([
+            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            
+            
+            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            titleLabel.topAnchor.constraint(equalTo: progressView.safeAreaLayoutGuide.bottomAnchor, constant: 30),
 
-                yandexView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                yandexView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-
-                spotifyView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                spotifyView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-
-                instagramView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                instagramView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-
-
-                youtubeView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
-                youtubeView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
-            ])
-        }
+            subTitleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            
+            continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
+            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
+            
+            mainScrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            mainScrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            mainScrollView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 36),
+            mainScrollView.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: 10),
+            
+            mainVStack.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            mainVStack.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: -35),
+            
+            yandexView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            yandexView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
+            
+            spotifyView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            spotifyView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
+            
+            instagramView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            instagramView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
+            
+            
+            youtubeView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
+            youtubeView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
+        ])
+    }
     
     func setupMainStack() {
         mainVStack.addArrangedSubview(yandexView)
@@ -88,9 +103,15 @@ class SocialNetworkViewContoller: UIViewController {
         mainVStack.addArrangedSubview(spotifyView)
         mainVStack.addArrangedSubview(youtubeView)
         mainVStack.addArrangedSubview(instagramView)
-//        mainVStack.addArrangedSubview(telegramView)
     }
-        
+    
+    private let progressView: DefaultProgressBar = {
+        let progressView = DefaultProgressBar()
+        progressView.updateProgress(withScreenOrder: 2)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        return progressView
+    }()
+    
     private let continueButton: DefaultButton = {
         let button = DefaultButton(buttonType: .primary)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -188,7 +209,7 @@ class SocialNetworkViewContoller: UIViewController {
         socialNetworksView.translatesAutoresizingMaskIntoConstraints = false
         return socialNetworksView
     } ()
-
+    
 }
 
 extension SocialNetworkViewContoller: UITextFieldDelegate {
