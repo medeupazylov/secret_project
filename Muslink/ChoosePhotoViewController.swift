@@ -15,7 +15,7 @@ final class ChoosePhotoViewController: UIViewController {
     // UI Elements
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress(withScreenOrder: 5)
+        progressView.updateProgress(withScreenOrder: 4)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
