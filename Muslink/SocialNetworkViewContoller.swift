@@ -28,7 +28,7 @@ class SocialNetworkViewContoller: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(ChooseZnanrViewController(), animated: false)
+        navigationController?.pushViewController(ChooseZhanrViewController(), animated: false)
     }
     
     func setupNavigationBar() {
