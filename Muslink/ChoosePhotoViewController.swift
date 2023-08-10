@@ -7,10 +7,12 @@
 
 import UIKit
 import Photos
+import PhotosUI
 
 final class ChoosePhotoViewController: UIViewController {
     
     private var numberofPhotos = 0
+    private var photoIndex = 0
     
     // UI Elements
     private let progressView: DefaultProgressBar = {
@@ -41,24 +43,28 @@ final class ChoosePhotoViewController: UIViewController {
     
     private let imageView1: CustomImageView = {
         let imageView = CustomImageView(frame: .zero)
+        imageView.alpha = 0
             
         return imageView
     }()
     
     private let imageView2: CustomImageView = {
         let imageView = CustomImageView(frame: .zero)
+        imageView.alpha = 0
             
         return imageView
     }()
     
     private let imageView3: CustomImageView = {
         let imageView = CustomImageView(frame: .zero)
+        imageView.alpha = 0
             
         return imageView
     }()
     
     private let imageView4: CustomImageView = {
         let imageView = CustomImageView(frame: .zero)
+        imageView.alpha = 0
             
         return imageView
     }()
@@ -92,10 +98,11 @@ final class ChoosePhotoViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Не более 5 штук"
+        label.text = "Фото будут размещены в галерее профиля и поможет выгодно показать ваш образ"
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = Color.neutral72.color
         label.textAlignment = .left
+        label.numberOfLines = 2
         
         label.backgroundColor = Color.primaryBgColor.color
         return label
@@ -106,7 +113,7 @@ final class ChoosePhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        addTapGestureRecognizer()
+        addTapGestureRecognizers()
         setupNavigationBar()
     }
     
@@ -131,7 +138,7 @@ final class ChoosePhotoViewController: UIViewController {
     func setupLayout() {
         NSLayoutConstraint.activate([
             progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -202,18 +209,41 @@ final class ChoosePhotoViewController: UIViewController {
     
     // MARK: - Tap Gesture Recognizer
     
-    func addTapGestureRecognizer() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-        imageView.addGestureRecognizer(tapGesture)
-//        imageView1.addGestureRecognizer(tapGesture)
-//        imageView2.addGestureRecognizer(tapGesture)
-//        imageView3.addGestureRecognizer(tapGesture)
-//        imageView4.addGestureRecognizer(tapGesture)
+    func addTapGestureRecognizers() {
+        let tapGesture0 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView.addGestureRecognizer(tapGesture0)
+        
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView1.addGestureRecognizer(tapGesture1)
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView2.addGestureRecognizer(tapGesture2)
+        
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView3.addGestureRecognizer(tapGesture3)
+        
+        let tapGesture4 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView4.addGestureRecognizer(tapGesture4)
     }
-    
-    @objc func imageViewTapped() {
+
+    @objc func imageViewTapped(_ sender: UITapGestureRecognizer) {
+        if let tappedImageView = sender.view as? UIImageView {
+            switch tappedImageView {
+            case imageView1:
+                photoIndex = 1
+            case imageView2:
+                photoIndex = 2
+            case imageView3:
+                photoIndex = 3
+            case imageView4:
+                photoIndex = 4
+            default:
+                photoIndex = 0
+            }
+        }
         openPhotosApp()
     }
+
     
     func openPhotosApp() {
         let status = PHPhotoLibrary.authorizationStatus()
@@ -229,7 +259,6 @@ final class ChoosePhotoViewController: UIViewController {
                 }
             }
         case .denied, .restricted:
-            // Handle denied or restricted access
             print("Access to Photos is denied or restricted.")
         default:
             print("Unknown authorization status.")
@@ -237,11 +266,60 @@ final class ChoosePhotoViewController: UIViewController {
     }
     
     func openPhotos() {
-        DispatchQueue.main.async {
-            if let url = URL(string: "photos-redirect://") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 1
+        config.filter = .images
+        let vc = PHPickerViewController(configuration: config)
+        vc.delegate = self
+        present (vc, animated: true)
+    }
+    // MARK: - Private Helpers
+    
+    private func updateImageView(with image: UIImage, at index: Int) {
+        let imageViews = [imageView, imageView1, imageView2, imageView3, imageView4]
+        
+        guard index < imageViews.count else {
+            return
+        }
+        
+        imageViews[index].image = image
+        if index < 4 {
+            imageViews[index + 1].alpha = 1
+        }
+    }
+    
+    private func loadImage(from result: PHPickerResult, completion: @escaping (UIImage?) -> Void) {
+        result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
+            if let image = object as? UIImage, error == nil {
+                completion(image)
+            } else {
+                completion(nil)
             }
         }
+    }
+}
+
+// MARK: - PHPickerViewControllerDelegate
+
+extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+//        for (_, result) in results.enumerated() {
+//
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.loadImage(from: results[0]) { image in
+                if let image = image {
+                    DispatchQueue.main.async {
+                        self.updateImageView(with: image, at: self.photoIndex)
+                    }
+                }
+            }
+        }
+//        }
     }
 }
 
