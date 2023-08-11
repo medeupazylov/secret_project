@@ -24,14 +24,12 @@ class DefaultProgressBar: UIProgressView {
         trackTintColor = Color.neutral16.color
         progressTintColor = Color.primaryMain.color
         layer.masksToBounds = true
-        layer.cornerRadius = 4
+        layer.cornerRadius = 1
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 2.0).isActive = true
+        heightAnchor.constraint(equalToConstant: 2.5).isActive = true
     }
     
     func updateProgress(withScreenOrder: Int) {
-        progress += 0.20 * Float(withScreenOrder)
+        progress += 0.25 * Float(withScreenOrder)
     }
-
-    
 }

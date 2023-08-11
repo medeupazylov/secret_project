@@ -35,6 +35,8 @@ enum Image {
     case youtube
     case vkontakte
     case telegram
+    case profile
+    case plus
 }
 
 extension Image {
@@ -98,7 +100,12 @@ extension Image {
             image = UIImage(named: "vkontakte")
         case .telegram:
             image = UIImage(named: "telegram")
+        case .profile:
+            image = UIImage(named: "profile")
+        case .plus:
+            image = UIImage(named: "plus")
         }
+            
 
         return image ?? UIImage()
     }

@@ -7,9 +7,34 @@
 
 import UIKit
 
-final class ChooseMoodViewController: UIViewController {
+final class ChooseGenresViewController: UIViewController {
+    
+    //MARK: - Properties
+    
+    private let viewModel: ArtistRegistrationViewModel
     
     private var context: [String] = ["агресcивное", "весеннее", "грустное", "зимнее", "красивое", "крутое", "лето", "мечтательное", "мистическое", "мрачное", "новый год", "осеннее", "радостное", "отдыхаю", "сентиментальное", "спокойное", "энергичное", "эпичное"]
+    
+    private var selectedGenres: [String] = []
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayout()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        setupNavigationBar()
+    }
     
     //MARK: - UI elements
     
@@ -17,11 +42,12 @@ final class ChooseMoodViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Выберите настроение музыки"
+        label.text = "Выберите жанры, которые лучшe всего описывают вашу музыку"
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = Color.neutral100.color
         label.backgroundColor = Color.primaryBgColor.color
         label.textAlignment = .left
+        label.numberOfLines = 2
         
         return label
     }()
@@ -34,11 +60,7 @@ final class ChooseMoodViewController: UIViewController {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 12
-
-
+        let layout = CustomViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.isScrollEnabled = false
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -46,32 +68,22 @@ final class ChooseMoodViewController: UIViewController {
         collection.clipsToBounds = false
         collection.backgroundColor = Color.primaryBgColor.color
         collection.register(ButtonsCollectionViewCell.self, forCellWithReuseIdentifier: ButtonsCollectionViewCell.identifier)
-        
         return collection
     }()
     
-    private let continueButton: DefaultButton = {
+    private lazy var continueButton: DefaultButton = {
         let button = DefaultButton(buttonType: .primary)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title: "Продолжить")
-        
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
         button.layer.shadowRadius = 4
-        
         return button
-    } ()
+    }()
     
-    private let tableData: [String: [String]] = ["Classical/Instrumental" : ["classical music", "film music", "instrumental", "mneo / modern classical", "solo piano"], "Electronic" : ["acid house", "afro house / amo piano", "ambient", "bass nusic", "beats/lo-fi", "disco", "chill out"], "Folk/Acoustic" : ["country americana", "singer songwriter", "indie folk", "solo piano", "mneo / modern classical"] ]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLayout()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        setupNavigationBar()
-    }
+    //MARK: - Setup
     
     private func setupLayout() {
         view.backgroundColor = Color.primaryBgColor.color
@@ -99,7 +111,7 @@ final class ChooseMoodViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.heightAnchor.constraint(equalToConstant: 300)
+            collectionView.heightAnchor.constraint(equalToConstant: 500)
         ])
         
         NSLayoutConstraint.activate([
@@ -120,13 +132,23 @@ final class ChooseMoodViewController: UIViewController {
         navigationItem.leftBarButtonItem = item
     }
     
+    //MARK: - Objective-c methods
+    
+    @objc
+    private func nextButtonPressed() {
+        viewModel.userDidEnterGenres(genres: selectedGenres)
+        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel), animated: false)
+    }
+    
     @objc
     private func moveBack() {
         navigationController?.popViewController(animated: false)
     }
 }
 
-extension ChooseMoodViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+
+extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return context.count
     }
@@ -141,18 +163,29 @@ extension ChooseMoodViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(
-            width: (context[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 65) + 25,
-                height: 40)
+            width: (context[indexPath.item].size(
+                withAttributes:
+                    [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width) + 25,
+                height: 40
+            )
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
             guard let selectedCell = collectionView.cellForItem(at: indexPath as IndexPath) as? ButtonsCollectionViewCell else { return }
-            selectedCell.select()
+            let isSelected = selectedCell.select()
+            let text = selectedCell.getType()
+            if isSelected {
+                selectedGenres.append(text)
+            } else {
+                if let index = selectedGenres.firstIndex(where: {
+                    $0 == text
+                }) {
+                    selectedGenres.remove(at: index)
+                }
+            }
         }
     }
-    
 }

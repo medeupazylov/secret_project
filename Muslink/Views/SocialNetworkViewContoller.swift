@@ -28,7 +28,8 @@ class SocialNetworkViewContoller: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(ChooseZnanrViewController(), animated: false)
+        let viewModel = ArtistRegistrationViewModel()
+        navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel), animated: false)
     }
     
     func setupNavigationBar() {
