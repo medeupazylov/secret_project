@@ -98,7 +98,7 @@ final class UsernameViewController: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(ChoseCityView(), animated: false)
+        navigationController?.pushViewController(ChooseCityView(), animated: false)
     }
     
 //    cityButton.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
