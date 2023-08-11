@@ -56,11 +56,13 @@ final class ButtonsCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Internal methods
     
-    func select() {
+    func select() -> Bool {
         if contentView.backgroundColor == Color.primaryMain.color {
             contentView.backgroundColor = Color.neutral16.color
+            return false
         } else {
             contentView.backgroundColor = Color.primaryMain.color
+            return true
         }
     }
     

@@ -14,7 +14,7 @@
 		211AACDA2A7D5EA200D7469C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */; };
 		211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD262A7E12CD00D7469C /* DefaultTextField.swift */; };
 		211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */; };
-		211AAD402A7F995D00D7469C /* ChooseZhanrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD392A7F995D00D7469C /* ChooseZhanrViewController.swift */; };
+		211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */; };
 		211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */; };
 		211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */; };
 		211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD442A7F998100D7469C /* CitiesTable.swift */; };
@@ -23,6 +23,8 @@
 		211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD472A7F998100D7469C /* CitiesCell.swift */; };
 		211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD4C2A7FC31900D7469C /* AddImageView.swift */; };
 		211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */; };
+		211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8B2A8632EB00D7469C /* Artist.swift */; };
+		211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
@@ -41,7 +43,7 @@
 		211AACDB2A7D5EA200D7469C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		211AAD262A7E12CD00D7469C /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
-		211AAD392A7F995D00D7469C /* ChooseZhanrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseZhanrViewController.swift; sourceTree = "<group>"; };
+		211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGenresViewController.swift; sourceTree = "<group>"; };
 		211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewContoller.swift; sourceTree = "<group>"; };
 		211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
 		211AAD442A7F998100D7469C /* CitiesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTable.swift; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 		211AAD472A7F998100D7469C /* CitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
 		211AAD4C2A7FC31900D7469C /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		211AAD8B2A8632EB00D7469C /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRegistrationViewModel.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -88,14 +92,13 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
-				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
-				211AAD352A7F995D00D7469C /* ChooseZhanr */,
-				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
-				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
+				211AAD8A2A8632DE00D7469C /* Models */,
+				211AAD8D2A8632F700D7469C /* Views */,
+				211AAD8E2A86349400D7469C /* ViewModels */,
 				211AACE32A7D5F1100D7469C /* Components */,
 				211AACE12A7D5ED300D7469C /* Application */,
+				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
 				211AACE22A7D5EE900D7469C /* Resources */,
-				BF1C52ED2A7F6114008B642D /* UsernameVC */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -122,32 +125,51 @@
 		211AACE32A7D5F1100D7469C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				211AAD452A7F998100D7469C /* ChoseCityViewController.swift */,
-				211AAD472A7F998100D7469C /* CitiesCell.swift */,
-				211AAD442A7F998100D7469C /* CitiesTable.swift */,
-				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
+				BF1C52ED2A7F6114008B642D /* UsernameVC */,
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
-				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
+				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		211AAD352A7F995D00D7469C /* ChooseZhanr */ = {
+		211AAD8A2A8632DE00D7469C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
-				211AAD392A7F995D00D7469C /* ChooseZhanrViewController.swift */,
+				211AAD8B2A8632EB00D7469C /* Artist.swift */,
 			);
-			path = ChooseZhanr;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		211AAD8D2A8632F700D7469C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
+				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
+				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
+				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
+				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
+				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
+				211AAD452A7F998100D7469C /* ChoseCityViewController.swift */,
+				211AAD442A7F998100D7469C /* CitiesTable.swift */,
+				211AAD472A7F998100D7469C /* CitiesCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		211AAD8E2A86349400D7469C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		BF1C52ED2A7F6114008B642D /* UsernameVC */ = {
 			isa = PBXGroup;
 			children = (
-				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
 				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
 				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 			);
@@ -235,14 +257,16 @@
 			files = (
 				211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
+				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
+				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
-				211AAD402A7F995D00D7469C /* ChooseZhanrViewController.swift in Sources */,
+				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChoseCityViewController.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
