@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class ChoseCityView: UIViewController {
+final class ChooseCityView: UIViewController {
     
     var chosenCityIndex: IndexPath?
     let page = CitiesTable()
@@ -138,12 +138,13 @@ final class ChoseCityView: UIViewController {
     
     @objc private func radioButtonTapped() {
         page.delegate = self
-        page.updateChosenCity(index: chosenCityIndex ?? nil)
+        page.updateChosenCity(index: chosenCityIndex ?? nil, city: choseLabel.text)
+        page.searchController.searchBar.text = nil
         self.present(page, animated: true)
     }
 }
 
-extension ChoseCityView: ChosenCityDelegate {
+extension ChooseCityView: ChosenCityDelegate {
     func chosenCity(index: IndexPath?, city: String?) {
         updateChoseLabel(city: city!)
         continueButton.isEnabled = true

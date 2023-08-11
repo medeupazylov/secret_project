@@ -16,6 +16,8 @@ final class CitiesTable: UIViewController {
     
     var delegate: ChosenCityDelegate?
     
+    var chosenCity: String = ""
+    
     var filteredData: [String]!
     
     lazy var tableView = UITableView()
@@ -30,6 +32,7 @@ final class CitiesTable: UIViewController {
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.backgroundColor = Color.elevatedBgColor.color
         searchController.searchBar.placeholder = "Поиск"
         searchController.searchResultsUpdater = self
         searchController.searchBar.showsCancelButton = false
@@ -59,8 +62,15 @@ final class CitiesTable: UIViewController {
         setupUI()
     }
     
-    func updateChosenCity(index: IndexPath?) {
-        if let index = index {
+    func updateChosenCity(index: IndexPath?, city: String?) {
+        if var index = index {
+            if (city != data[index.row]) {
+                for i in index.row..<data.count {
+                    if( city == data[i] ) {
+                        index = IndexPath(row: i, section: 0)
+                    }
+                }
+            }
             if let selectedCell = tableView.cellForRow(at: index) as? CitiesCell {
                 selectedCell.showSelectIcon()
             }
@@ -75,6 +85,7 @@ final class CitiesTable: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = Color.elevatedBgColor.color
         tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView?.backgroundColor = Color.elevatedBgColor.color
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -87,6 +98,10 @@ final class CitiesTable: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func checkChoose(city: String) -> Bool {
+        return chosenCity == city
     }
     
 }
@@ -109,6 +124,9 @@ extension CitiesTable: UITableViewDataSource {
             fatalError("Chert")
         }
         cell.configure(with: filteredData[indexPath.row])
+        if(filteredData[indexPath.row] == chosenCity) {
+            cell.showSelectIcon()
+        }
         return cell
     }
     
@@ -128,12 +146,13 @@ extension CitiesTable: UITableViewDelegate {
         }
         
         selectedCityIndexPath = indexPath
+        chosenCity = filteredData[indexPath.row]
         
         if let selectedCell = tableView.cellForRow(at: indexPath) as? CitiesCell {
             selectedCell.showSelectIcon()
         }
         
-        delegate?.chosenCity(index: selectedCityIndexPath, city: data[selectedCityIndexPath?.row ?? 0])
+        delegate?.chosenCity(index: selectedCityIndexPath, city: chosenCity)
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
