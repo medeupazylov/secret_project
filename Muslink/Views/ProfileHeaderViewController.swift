@@ -48,11 +48,7 @@ final class ProfileHeaderViewController: UIViewController {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 12
-        
-        
+        let layout = CustomViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.isScrollEnabled = false
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +56,6 @@ final class ProfileHeaderViewController: UIViewController {
         collection.clipsToBounds = false
         collection.backgroundColor = Color.primaryBgColor.color
         collection.register(ButtonsCollectionViewCell.self, forCellWithReuseIdentifier: ButtonsCollectionViewCell.identifier)
-        
         return collection
     }()
     
@@ -148,7 +143,7 @@ extension ProfileHeaderViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(
-            width: (context[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width ?? 65) + 25,
+            width: (context[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ) + 25,
             height: 40)
         
     }

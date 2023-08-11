@@ -135,9 +135,6 @@
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
 				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
-				211AAD452A7F998100D7469C /* ChooseCityViewController.swift */,
-				D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */,
-				D521A0222A862C4700CC3A59 /* StatisticsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -154,14 +151,16 @@
 			isa = PBXGroup;
 			children = (
 				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
+				211AAD452A7F998100D7469C /* ChooseCityViewController.swift */,
 				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
 				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
 				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
-				211AAD452A7F998100D7469C /* ChoseCityViewController.swift */,
 				211AAD442A7F998100D7469C /* CitiesTable.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
+				D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */,
+				D521A0222A862C4700CC3A59 /* StatisticsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,7 +282,6 @@
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,
-				
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
