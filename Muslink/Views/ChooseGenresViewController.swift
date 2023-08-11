@@ -7,9 +7,34 @@
 
 import UIKit
 
-final class ChooseZhanrViewController: UIViewController {
+final class ChooseGenresViewController: UIViewController {
+    
+    //MARK: - Properties
+    
+    private let viewModel: ArtistRegistrationViewModel
     
     private var context: [String] = ["агресcивное", "весеннее", "грустное", "зимнее", "красивое", "крутое", "лето", "мечтательное", "мистическое", "мрачное", "новый год", "осеннее", "радостное", "отдыхаю", "сентиментальное", "спокойное", "энергичное", "эпичное"]
+    
+    private var selectedGenres: [String] = []
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayout()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        setupNavigationBar()
+    }
     
     //MARK: - UI elements
     
@@ -35,12 +60,7 @@ final class ChooseZhanrViewController: UIViewController {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        
         let layout = CustomViewFlowLayout()
-//        layout.minimumInteritemSpacing = 0
-//        layout.minimumLineSpacing = 0
-
-
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.isScrollEnabled = false
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +68,6 @@ final class ChooseZhanrViewController: UIViewController {
         collection.clipsToBounds = false
         collection.backgroundColor = Color.primaryBgColor.color
         collection.register(ButtonsCollectionViewCell.self, forCellWithReuseIdentifier: ButtonsCollectionViewCell.identifier)
-        
         return collection
     }()
     
@@ -57,24 +76,14 @@ final class ChooseZhanrViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title: "Продолжить")
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
-        
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.5
         button.layer.shadowOffset = CGSize(width: 2, height: 2)
         button.layer.shadowRadius = 4
-        
         return button
-    } ()
+    }()
     
-    private let tableData: [String: [String]] = ["Classical/Instrumental" : ["classical music", "film music", "instrumental", "mneo / modern classical", "solo piano"], "Electronic" : ["acid house", "afro house / amo piano", "ambient", "bass nusic", "beats/lo-fi", "disco", "chill out"], "Folk/Acoustic" : ["country americana", "singer songwriter", "indie folk", "solo piano", "mneo / modern classical"] ]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLayout()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        setupNavigationBar()
-    }
+    //MARK: - Setup
     
     private func setupLayout() {
         view.backgroundColor = Color.primaryBgColor.color
@@ -123,9 +132,12 @@ final class ChooseZhanrViewController: UIViewController {
         navigationItem.leftBarButtonItem = item
     }
     
+    //MARK: - Objective-c methods
+    
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(ChoosePhotoViewController(), animated: false)
+        viewModel.userDidEnterGenres(genres: selectedGenres)
+        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel), animated: false)
     }
     
     @objc
@@ -134,7 +146,9 @@ final class ChooseZhanrViewController: UIViewController {
     }
 }
 
-extension ChooseZhanrViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+
+extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return context.count
     }
@@ -161,8 +175,17 @@ extension ChooseZhanrViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
             guard let selectedCell = collectionView.cellForItem(at: indexPath as IndexPath) as? ButtonsCollectionViewCell else { return }
-            selectedCell.select()
+            let isSelected = selectedCell.select()
+            let text = selectedCell.getType()
+            if isSelected {
+                selectedGenres.append(text)
+            } else {
+                if let index = selectedGenres.firstIndex(where: {
+                    $0 == text
+                }) {
+                    selectedGenres.remove(at: index)
+                }
+            }
         }
     }
-    
 }

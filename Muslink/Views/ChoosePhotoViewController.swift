@@ -11,8 +11,29 @@ import PhotosUI
 
 final class ChoosePhotoViewController: UIViewController {
     
-    private var numberofPhotos = 0
+    //MARK: - Properties
+
+    private let viewModel: ArtistRegistrationViewModel
     private var photoIndex = 0
+    private var photos: [String] = []
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        addTapGestureRecognizers()
+        setupNavigationBar()
+    }
     
     // UI Elements
     private let progressView: DefaultProgressBar = {
@@ -108,15 +129,6 @@ final class ChoosePhotoViewController: UIViewController {
         return label
     }()
     
-    // MARK: - View Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-        addTapGestureRecognizers()
-        setupNavigationBar()
-    }
-    
     // MARK: - UI Setup
     
     func setupUI() {
@@ -199,7 +211,8 @@ final class ChoosePhotoViewController: UIViewController {
     // MARK: - Button Action
     
     @objc func buttonTapped() {
-        // Add your button action logic here
+        print(photos)
+        viewModel.userDidEnterPhoto(photo: photos)
     }
     
     @objc
@@ -302,11 +315,14 @@ final class ChoosePhotoViewController: UIViewController {
 // MARK: - PHPickerViewControllerDelegate
 
 extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
+    
+//    didfinish
+    
+    
+    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         
-//        for (_, result) in results.enumerated() {
-//
         DispatchQueue.global().async { [weak self] in
             guard let self = self else {
                 return
@@ -316,10 +332,13 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                     DispatchQueue.main.async {
                         self.updateImageView(with: image, at: self.photoIndex)
                     }
+                    let imageData = image.jpegData(compressionQuality: 0.8)
+                    if let base64String = imageData?.base64EncodedString() {
+                        self.photos.append(base64String)
+                    }
                 }
             }
         }
-//        }
     }
 }
 
