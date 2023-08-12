@@ -8,6 +8,28 @@
 import UIKit
 
 final class UsernameViewController: UIViewController {
+    
+    //MARK: - Properties
+    
+    private let viewModel: ArtistRegistrationViewModel
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been")
+    }
+                   
+    override func viewDidLoad() {
+       super.viewDidLoad()
+       view.backgroundColor = Color.primaryBgColor.color
+       setupNavigationBar()
+       setup()
+    }
 
     //MARK: - UIKit Objects
 
@@ -62,15 +84,6 @@ final class UsernameViewController: UIViewController {
         return button
     } ()
     
-    //MARK: - Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = Color.primaryBgColor.color
-        setupNavigationBar()
-        setup()
-    }
-    
     //MARK: - Setup Functions
     
     func setup() {
@@ -98,10 +111,10 @@ final class UsernameViewController: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(ChooseCityView(), animated: false)
+        viewModel.userDidEnterName(name: nameTextField.text)
+        viewModel.userDidEnterNickname(nickname: nickTextField.text)
+        navigationController?.pushViewController(ChooseCityView(viewModel: viewModel), animated: false)
     }
-    
-//    cityButton.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
     
     func setupConstraints() {
         
@@ -146,7 +159,6 @@ final class UsernameViewController: UIViewController {
 extension UsernameViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print("EDITING")
         checkTextLength()
     }
     

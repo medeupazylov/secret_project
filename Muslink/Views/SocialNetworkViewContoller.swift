@@ -7,7 +7,23 @@
 
 import UIKit
 
-class SocialNetworkViewContoller: UIViewController {
+final class SocialNetworkViewContoller: UIViewController {
+    
+    //MARK: - Properties
+    
+    private let viewModel: ArtistRegistrationViewModel
+    private var networks: [SocialNetwork] = []
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +44,7 @@ class SocialNetworkViewContoller: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        let viewModel = ArtistRegistrationViewModel()
+        viewModel.userDidEnterSocialNetworks(socialNetworks: networks)
         navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel), animated: false)
     }
     
@@ -219,6 +235,9 @@ extension SocialNetworkViewContoller: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        guard textField.hasText else {
+            return
+        }
         updateSocialNetworkViews(textField)
     }
     
@@ -237,9 +256,64 @@ extension SocialNetworkViewContoller: UITextFieldDelegate {
         case vkontakteView.textField:
             vkontakteView.updateView()
         default:
-            print("nothing")
+            return
         }
     }
+    
+    private func getSocialLink(_ textField: UITextField) {
+        switch textField {
+        case yandexView.textField:
+            yandexView.updateView()
+            if let index = networks.firstIndex(where: {
+                $0.mediaType == "Yandex"
+            }) {
+                networks.remove(at: index)
+            }
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "Yandex", link: link))
+            
+        case spotifyView.textField:
+            spotifyView.updateView()
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "Spotify", link: link))
+            
+        case youtubeView.textField:
+            youtubeView.updateView()
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "YouTube", link: link))
+            
+        case instagramView.textField:
+            instagramView.updateView()
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "Instagram", link: link))
+            
+        case telegramView.textField:
+            telegramView.updateView()
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "Telegram", link: link))
+            
+        case vkontakteView.textField:
+            vkontakteView.updateView()
+            guard let link = textField.text, !link.isEmpty else {
+                return
+            }
+            networks.append(SocialNetwork(mediaType: "VKontakte", link: link))
+            
+        default:
+            return
+        }
+    }
+
 }
 
 

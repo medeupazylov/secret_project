@@ -25,6 +25,7 @@
 		211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */; };
 		211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8B2A8632EB00D7469C /* Artist.swift */; };
 		211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */; };
+		211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD952A87720300D7469C /* DefaultNetworkingService.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
@@ -56,6 +57,7 @@
 		211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		211AAD8B2A8632EB00D7469C /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRegistrationViewModel.swift; sourceTree = "<group>"; };
+		211AAD952A87720300D7469C /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				211AAD942A8771E100D7469C /* Services */,
 				211AAD8A2A8632DE00D7469C /* Models */,
 				211AAD8D2A8632F700D7469C /* Views */,
 				211AAD8E2A86349400D7469C /* ViewModels */,
@@ -171,6 +174,14 @@
 				211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		211AAD942A8771E100D7469C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				211AAD952A87720300D7469C /* DefaultNetworkingService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BF1C52ED2A7F6114008B642D /* UsernameVC */ = {
@@ -275,6 +286,7 @@
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
+				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */,
@@ -421,22 +433,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7MJTTLBM2G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Muslink/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Muslink;
+				INFOPLIST_KEY_NSCameraUsageDescription = DPAKDOA;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "akl`dlka";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abrorbek.ABC;
+				PRODUCT_BUNDLE_IDENTIFIER = muslink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,22 +466,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7MJTTLBM2G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Muslink/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Muslink;
+				INFOPLIST_KEY_NSCameraUsageDescription = DPAKDOA;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "akl`dlka";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = abrorbek.ABC;
+				PRODUCT_BUNDLE_IDENTIFIER = muslink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

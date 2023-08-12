@@ -15,7 +15,7 @@ final class ChooseGenresViewController: UIViewController {
     
     private var context: [String] = ["агресcивное", "весеннее", "грустное", "зимнее", "красивое", "крутое", "лето", "мечтательное", "мистическое", "мрачное", "новый год", "осеннее", "радостное", "отдыхаю", "сентиментальное", "спокойное", "энергичное", "эпичное"]
     
-    private var selectedGenres: [String] = []
+    private var selectedGenres: [Genre] = []
     
     //MARK: - Lifecycle
     
@@ -178,10 +178,10 @@ extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionView
             let isSelected = selectedCell.select()
             let text = selectedCell.getType()
             if isSelected {
-                selectedGenres.append(text)
+                selectedGenres.append(Genre(name: text))
             } else {
                 if let index = selectedGenres.firstIndex(where: {
-                    $0 == text
+                    $0.name == text
                 }) {
                     selectedGenres.remove(at: index)
                 }
