@@ -16,8 +16,6 @@ final class DefaultButton: UIControl {
     
     // MARK: - Properties
     
-    private var action: (() -> Void)?
-    
     private var buttonType: ButtonType
     
     override var isEnabled: Bool {
@@ -29,6 +27,12 @@ final class DefaultButton: UIControl {
     override var isSelected: Bool {
         didSet {
             backgroundColor = isSelected ? Color.accentPressed.color : Color.accentMain.color
+        }
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? Color.accentPressed.color : Color.accentMain.color
         }
     }
     
@@ -45,9 +49,6 @@ final class DefaultButton: UIControl {
     }
     
     // MARK: - Internal Methods
-    func addAction(action: (@escaping () -> Void) ) {
-        self.action = action
-    }
     
     func setTitle(title: String) {
         titleLabel.text = title
@@ -77,15 +78,6 @@ final class DefaultButton: UIControl {
         self.layer.shadowOffset = CGSize(width: 0, height: -20)
         self.layer.shadowRadius = 15
 
-    }
-    
-     //MARK: - Touch handling
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        action?()
-        isSelected = true
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isSelected = false
     }
     
     // MARK: - UI Elements

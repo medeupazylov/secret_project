@@ -39,6 +39,8 @@ enum Image {
     case trash
     case pencil
     case settings
+    case profile
+    case plus
 }
 
 extension Image {
@@ -111,6 +113,13 @@ extension Image {
         case .settings:
             image = UIImage(named: "settings")
         }
+        case .profile:
+            image = UIImage(named: "profile")
+        case .plus:
+            image = UIImage(named: "plus")
+        }
+            
+
         return image ?? UIImage()
     }
 }
