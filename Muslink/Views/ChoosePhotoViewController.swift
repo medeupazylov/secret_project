@@ -15,7 +15,7 @@ final class ChoosePhotoViewController: UIViewController {
 
     private let viewModel: ArtistRegistrationViewModel
     private var photoIndex = 0
-    private var photos: [String] = []
+    private var photos: [Photo] = []
     
     //MARK: - Lifecycle
     
@@ -210,9 +210,9 @@ final class ChoosePhotoViewController: UIViewController {
     
     // MARK: - Button Action
     
-    @objc func buttonTapped() {
-        print(photos)
-        viewModel.userDidEnterPhoto(photo: photos)
+    @objc func buttonTapped() async {
+        viewModel.userDidEnterPhotos(photos: photos)
+        await viewModel.createProfile()
     }
     
     @objc
@@ -315,11 +315,6 @@ final class ChoosePhotoViewController: UIViewController {
 // MARK: - PHPickerViewControllerDelegate
 
 extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
-    
-//    didfinish
-    
-    
-    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         
@@ -334,7 +329,7 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                     }
                     let imageData = image.jpegData(compressionQuality: 0.8)
                     if let base64String = imageData?.base64EncodedString() {
-                        self.photos.append(base64String)
+                        self.photos.append(Photo(id: 0, link: base64String))
                     }
                 }
             }

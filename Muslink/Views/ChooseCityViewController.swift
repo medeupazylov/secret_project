@@ -10,6 +10,29 @@ import UIKit
 
 final class ChooseCityView: UIViewController {
     
+    //MARK: - Properties
+    
+    private let viewModel: ArtistRegistrationViewModel
+    
+    //MARK: - Lifecycle
+    
+    init(viewModel: ArtistRegistrationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = Color.primaryBgColor.color
+        setupUI()
+        setupNavigationBar()
+        continueButton.isEnabled = false
+    }
+    
     var chosenCityIndex: IndexPath?
     let page = CitiesTable()
     
@@ -54,15 +77,6 @@ final class ChooseCityView: UIViewController {
         
         return button
     }()
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = Color.primaryBgColor.color
-        setupUI()
-        setupNavigationBar()
-        continueButton.isEnabled = false
-    }
     
     func setupNavigationBar() {
         let title = UILabel()
@@ -83,7 +97,11 @@ final class ChooseCityView: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        navigationController?.pushViewController(SocialNetworkViewContoller(), animated: false)
+        guard let cityName = cityLabel.text else {
+            return
+        }
+        viewModel.userDidEnterCity(city: City(name: cityName))
+        navigationController?.pushViewController(SocialNetworkViewContoller(viewModel: viewModel), animated: false)
     }
     
     private func createLabel(text: String, fontSize: CGFloat, color: UIColor) -> UILabel {

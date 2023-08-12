@@ -10,13 +10,41 @@ import Foundation
 final class ArtistRegistrationViewModel {
     var name: String?
     var nickname: String?
-    var city: String?
-    var socialNetworks: [String]?
-    var contacts: [String]?
-    var genres: [String]?
-    var moods: [String]?
-    var biography: [String]?
-    var photo: [String]?
+    var city: City?
+    var socialNetworks: [SocialNetwork]?
+    var genres: [Genre]?
+    var photos: [Photo]?
+    let networkingService = DefaultNetworkingService()
+    
+    func createProfile() async {
+        guard
+              let name = name,
+              let nickname = nickname,
+              let city = city,
+              let socialNetworks = socialNetworks,
+              let genres = genres,
+              let photos = photos
+        else {
+            print("Some required properties are missing.")
+            return
+        }
+        
+        // Now you have all the required properties, you can proceed with creating the profile
+        let profile = Artist(
+                            name: name,
+                            nickname: nickname,
+                            city: city,
+                            socialNetworks: socialNetworks,
+                            genres: genres,
+                            photos: photos)
+        print(profile)
+        
+        do {
+            try await networkingService.createProfile(profile: profile)
+        } catch {
+            print("Error creating profile: \(error)")
+        }
+    }
     
     func userDidEnterName(name: String) {
         self.name = name
@@ -26,31 +54,19 @@ final class ArtistRegistrationViewModel {
         self.nickname = nickname
     }
     
-    func userDidEnterCity(city: String) {
+    func userDidEnterCity(city: City) {
         self.city = city
     }
     
-    func userDidEnterSocialNetworks(socialNetworks: [String]) {
+    func userDidEnterSocialNetworks(socialNetworks: [SocialNetwork]) {
         self.socialNetworks = socialNetworks
     }
     
-    func userDidEnterContacts(contacts: [String]) {
-        self.contacts = contacts
-    }
-    
-    func userDidEnterGenres(genres: [String]) {
+    func userDidEnterGenres(genres: [Genre]) {
         self.genres = genres
     }
     
-    func userDidEnterMoods(moods: [String]) {
-        self.moods = moods
-    }
-    
-    func userDidEnterBiography(biography: [String]) {
-        self.biography = biography
-    }
-    
-    func userDidEnterPhoto(photo: [String]) {
-        self.photo = photo
+    func userDidEnterPhotos(photos: [Photo]) {
+        self.photos = photos
     }
 }
