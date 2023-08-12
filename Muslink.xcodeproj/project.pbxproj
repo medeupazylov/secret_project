@@ -34,6 +34,8 @@
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
+		DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */; };
+		DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTracksViewController.swift; sourceTree = "<group>"; };
+		DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				211AACE12A7D5ED300D7469C /* Application */,
 				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
 				211AACE22A7D5EE900D7469C /* Resources */,
+				DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */,
+
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
+				DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
 				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
 			);
@@ -294,6 +301,9 @@
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,
+				DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */,
+				DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */,
+
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
