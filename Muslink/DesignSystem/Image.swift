@@ -37,6 +37,14 @@ enum Image {
     case telegram
     case profile
     case plus
+    case instagramNegative
+    case spotifyNegative
+    case vkontakteNegative
+    case yandexMusicNegative
+    case youtubeNegative
+    case location
+    case music
+    case verified
 }
 
 extension Image {
@@ -104,8 +112,23 @@ extension Image {
             image = UIImage(named: "profile")
         case .plus:
             image = UIImage(named: "plus")
+        case .instagramNegative:
+            image = UIImage(named: "instagram_negative")
+        case .spotifyNegative:
+            image = UIImage(named: "spotify_negative")
+        case .vkontakteNegative:
+            image = UIImage(named: "vk_negative")
+        case .yandexMusicNegative:
+            image = UIImage(named: "yandex_music_negative")
+        case .youtubeNegative:
+            image = UIImage(named: "youtube_negative")
+        case .location:
+            image = UIImage(named: "location")
+        case .music:
+            image = UIImage(named: "music")
+        case .verified:
+            image = UIImage(named: "verified")
         }
-            
 
         return image ?? UIImage()
     }

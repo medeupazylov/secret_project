@@ -10,22 +10,18 @@ import UIKit
 
 class MusicianInfoViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = Color.primaryBgColor.color
-        view.addSubview(mainStack)
-//        mainStack.backgroundColor = Color.neutral16.color
-        setupNavigationBar()
-        setupConstraints()
-    }
-    
     private lazy var titleLabel = DefaultLabel(text: "Об исполнителе", textColor: Color.neutral100.color, fontSize: 15, fontWeight: .bold)
     
-    private lazy var musicianImage = UIImageView(image: UIImage(named: "musician"))
+    private lazy var musicianPhotoView = MusicianPhotoView()
     
-    private lazy var mainStack = VerticalStackView(arrangedSubviews: [titleLabel, musicianImage, statisticsView, descriptionLabel], spacing: 24)
+    private lazy var mainStack = VerticalStackView(arrangedSubviews: [titleLabel, musicianPhotoView, socialNetworkStack, descriptionLabel], spacing: 24)
     
-    private lazy var statisticsView = StatisticsView()
+    private lazy var socialNetworkStack = SocialNetworksStackView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
     
     func setupNavigationBar() {
         let title = UILabel()
@@ -38,6 +34,7 @@ class MusicianInfoViewController: UIViewController {
         navigationItem.leftBarButtonItem = item
     }
     
+    
     private var descriptionLabel: UILabel {
         let label = UILabel()
         label.text = "Молодой исполнитель атмосферной, ангельской готроники, одновременно и яркой, и мрачной и жуткой музыки. Тромбон, пронзительная скрипка, виолончель, гитарные саундскейпы и глубокий бас, чарующие многоголосые вокальные наслоения, прихотливые ударные петли — сочетание живых инструментов и безукоризненной электроники создают уникальное звучание и настроение. Одна из самых странных и любопытных европейских околоджазовых групп."
@@ -45,7 +42,18 @@ class MusicianInfoViewController: UIViewController {
         label.textColor = Color.neutral72.color
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
+        
         return label
+    }
+    
+    func setup(){
+        view.backgroundColor = Color.primaryBgColor.color
+        view.addSubview(mainStack)
+//        mainStack.backgroundColor = Color.neutral16.color
+        mainStack.distribution = .fillProportionally
+        mainStack.alignment = .fill
+        setupNavigationBar()
+        setupConstraints()
     }
     
     func setupConstraints() {
@@ -53,12 +61,11 @@ class MusicianInfoViewController: UIViewController {
             mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             mainStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             mainStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            mainStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+//            mainStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
         ])
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: mainStack.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: mainStack.leadingAnchor)
-        ])
-        
+//        NSLayoutConstraint.activate([
+//            musicianPhotoView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            musicianPhotoView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+//        ])
     }
 }
