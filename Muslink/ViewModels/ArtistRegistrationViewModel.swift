@@ -29,7 +29,6 @@ final class ArtistRegistrationViewModel {
             return
         }
         
-        // Now you have all the required properties, you can proceed with creating the profile
         let profile = Artist(
                             name: name,
                             nickname: nickname,
