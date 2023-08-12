@@ -112,7 +112,6 @@ extension Image {
             image = UIImage(named: "pencil")
         case .settings:
             image = UIImage(named: "settings")
-        }
         case .profile:
             image = UIImage(named: "profile")
         case .plus:
