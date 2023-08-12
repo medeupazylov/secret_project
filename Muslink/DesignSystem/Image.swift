@@ -22,6 +22,7 @@ enum Image {
     case pauseCircle
     case pause
     case play
+    case playFill
     case playground
     case repeating
     case search
@@ -35,6 +36,9 @@ enum Image {
     case youtube
     case vkontakte
     case telegram
+    case trash
+    case pencil
+    case settings
 }
 
 extension Image {
@@ -72,6 +76,8 @@ extension Image {
             image = UIImage(named: "pause")
         case .play:
             image = UIImage(named: "play")
+        case .playFill:
+            image = UIImage(named: "play_fill")
         case .playground:
             image = UIImage(named: "playground")
         case .repeating:
@@ -98,8 +104,13 @@ extension Image {
             image = UIImage(named: "vkontakte")
         case .telegram:
             image = UIImage(named: "telegram")
+        case . trash:
+            image = UIImage(named: "trash")
+        case . pencil:
+            image = UIImage(named: "pencil")
+        case .settings:
+            image = UIImage(named: "settings")
         }
-
         return image ?? UIImage()
     }
 }

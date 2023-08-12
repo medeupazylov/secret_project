@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "chevron-right.pdf",
+      "filename" : "452c9768c67c2c9d257833d017164e3b.png",
       "idiom" : "universal"
     }
   ],
@@ -10,7 +10,6 @@
     "version" : 1
   },
   "properties" : {
-    "preserves-vector-representation" : true,
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }
