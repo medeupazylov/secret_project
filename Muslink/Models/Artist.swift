@@ -7,29 +7,9 @@
 
 import Foundation
 
-struct City: Codable {
-    let id: Int
-    let name: String
-    
-    init(id: Int = 0, name: String){
-        self.id = id
-        self.name = name
-    }
-}
-
 struct SocialNetwork: Codable {
     let mediaType: String
     let link: String
-}
-
-struct Genre: Codable {
-    let id: Int
-    let name: String
-    
-    init(id: Int = 0, name: String){
-        self.id = id
-        self.name = name
-    }
 }
 
 struct Photo: Codable {

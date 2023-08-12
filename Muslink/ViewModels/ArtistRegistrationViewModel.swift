@@ -37,11 +37,12 @@ final class ArtistRegistrationViewModel {
                             genres: genres,
                             photos: photos)
         print(profile)
-        
-        do {
-            try await networkingService.createProfile(profile: profile)
-        } catch {
-            print("Error creating profile: \(error)")
+        Task {
+            do {
+                try await networkingService.createProfile(profile: profile)
+            } catch {
+                print("Error creating profile: \(error)")
+            }
         }
     }
     

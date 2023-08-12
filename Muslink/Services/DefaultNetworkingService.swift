@@ -11,6 +11,7 @@ protocol NetworkingService: AnyObject {
     func createProfile(profile: Artist) async throws
     func updateProfile(profile: Artist) async throws
     func getProfile(id: Int) async throws -> Artist
+    func getCities() async throws -> [City]
 }
 
 final class DefaultNetworkingService: NetworkingService {
@@ -37,7 +38,7 @@ final class DefaultNetworkingService: NetworkingService {
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
-          throw NetworkingError.invalidServerResponse
+            throw NetworkingError.invalidServerResponse
         }
         
         let token = try JSONDecoder().decode(
@@ -60,7 +61,7 @@ final class DefaultNetworkingService: NetworkingService {
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
-          throw NetworkingError.invalidServerResponse
+            throw NetworkingError.invalidServerResponse
         }
         
         let token = try JSONDecoder().decode(
@@ -82,15 +83,61 @@ final class DefaultNetworkingService: NetworkingService {
         
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
-          throw NetworkingError.invalidServerResponse
+            throw NetworkingError.invalidServerResponse
         }
         
         let profile = try JSONDecoder().decode(
             Artist.self,
             from: data
         )
-          
+        
         return profile
+    }
+    
+    func getCities() async throws -> [City] {
+        guard let url = URL(string: "\(self.baseURL)/data/cities") else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+        
+        let cities = try JSONDecoder().decode(
+            [City].self,
+            from: data
+        )
+        
+        return cities
+    }
+    
+    func getGenres() async throws -> [Genre] {
+        guard let url = URL(string: "\(self.baseURL)/data/genres") else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+        
+        let genres = try JSONDecoder().decode(
+            [Genre].self,
+            from: data
+        )
+          
+        return genres
     }
 }
 
