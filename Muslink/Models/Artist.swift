@@ -29,6 +29,19 @@ struct Artist: Codable {
     let socialNetworks: [SocialNetwork]
     let genres: [Genre]
     let photos: [Photo]
+    let tracks: [Track]?
+    let biography: String?
+    
+    init(name: String, nickname: String, city: City, socialNetworks: [SocialNetwork], genres: [Genre], photos: [Photo], tracks: [Track]? = nil, biography: String? = nil) {
+        self.name = name
+        self.nickname = nickname
+        self.city = city
+        self.socialNetworks = socialNetworks
+        self.genres = genres
+        self.photos = photos
+        self.tracks = tracks
+        self.biography = biography
+    }
 }
 
 

@@ -31,9 +31,14 @@ final class UsernameViewController: UIViewController {
        setup()
         
         let network = DefaultNetworkingService()
-        
-        let test = await network.getCities()
-        print(test)
+        Task {
+            do {
+                let test = try await network.getCities()
+                print(test)
+            } catch {
+                printContent(error)
+            }
+        }
     }
 
     //MARK: - UIKit Objects

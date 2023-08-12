@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let viewModel = ArtistRegistrationViewModel()
-        let controller = UsernameViewController(viewModel: viewModel)
+        let controller = ChoosePhotoViewController(viewModel: viewModel)
 
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class ArtistRegistrationViewModel {
     var name: String?
     var nickname: String?
@@ -16,7 +17,7 @@ final class ArtistRegistrationViewModel {
     var photos: [Photo]?
     let networkingService = DefaultNetworkingService()
     
-    func createProfile() async {
+    func createProfile(completaion: @escaping (Result<Void, Error>) -> Void) {
         guard
               let name = name,
               let nickname = nickname,
@@ -40,8 +41,10 @@ final class ArtistRegistrationViewModel {
         Task {
             do {
                 try await networkingService.createProfile(profile: profile)
+                completaion(.success(()))
             } catch {
                 print("Error creating profile: \(error)")
+                completaion(.failure(error))
             }
         }
     }

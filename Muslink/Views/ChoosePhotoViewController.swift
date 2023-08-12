@@ -210,9 +210,11 @@ final class ChoosePhotoViewController: UIViewController {
     
     // MARK: - Button Action
     
-    @objc func buttonTapped() async {
+    @objc func buttonTapped() {
         viewModel.userDidEnterPhotos(photos: photos)
-        await viewModel.createProfile()
+        viewModel.createProfile { result in
+            print(result)
+        }
     }
     
     @objc
@@ -326,10 +328,6 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                 if let image = image {
                     DispatchQueue.main.async {
                         self.updateImageView(with: image, at: self.photoIndex)
-                    }
-                    let imageData = image.jpegData(compressionQuality: 0.8)
-                    if let base64String = imageData?.base64EncodedString() {
-                        self.photos.append(Photo(id: 0, link: base64String))
                     }
                 }
             }

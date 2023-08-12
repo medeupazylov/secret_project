@@ -8,10 +8,11 @@
 import UIKit
 
 protocol NetworkingService: AnyObject {
+    func getCities() async throws -> [City]
+    func getGenres() async throws -> [Genre]
     func createProfile(profile: Artist) async throws
     func updateProfile(profile: Artist) async throws
     func getProfile(id: Int) async throws -> Artist
-    func getCities() async throws -> [City]
 }
 
 final class DefaultNetworkingService: NetworkingService {
@@ -23,75 +24,6 @@ final class DefaultNetworkingService: NetworkingService {
         case invalidURL
         case invalidServerResponse
         case failureToEncodeDTO
-    }
-    
-    func createProfile(profile: Artist) async throws {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
-            throw NetworkingError.invalidURL
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.httpBody = try JSONEncoder().encode(profile)
-        
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw NetworkingError.invalidServerResponse
-        }
-        
-        let token = try JSONDecoder().decode(
-            String.self,
-            from: data
-        )
-        self.token = token
-    }
-    
-    func updateProfile(profile: Artist) async throws {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
-            throw NetworkingError.invalidURL
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "PUT"
-        urlRequest.httpBody = try JSONEncoder().encode(profile)
-        
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw NetworkingError.invalidServerResponse
-        }
-        
-        let token = try JSONDecoder().decode(
-            String.self,
-            from: data
-        )
-        self.token = token
-    }
-    
-    func getProfile(id: Int) async throws -> Artist {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile/\(id)") else {
-            throw NetworkingError.invalidURL
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw NetworkingError.invalidServerResponse
-        }
-        
-        let profile = try JSONDecoder().decode(
-            Artist.self,
-            from: data
-        )
-        
-        return profile
     }
     
     func getCities() async throws -> [City] {
@@ -138,6 +70,69 @@ final class DefaultNetworkingService: NetworkingService {
         )
           
         return genres
+    }
+    
+    func createProfile(profile: Artist) async throws {
+        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = try JSONEncoder().encode(profile)
+        
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+    }
+    
+    func updateProfile(profile: Artist) async throws {
+        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.httpBody = try JSONEncoder().encode(profile)
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+        
+        let token = try JSONDecoder().decode(
+            String.self,
+            from: data
+        )
+        self.token = token
+    }
+    
+    func getProfile(id: Int) async throws -> Artist {
+        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile/\(id)") else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+        
+        let profile = try JSONDecoder().decode(
+            Artist.self,
+            from: data
+        )
+        
+        return profile
     }
 }
 
