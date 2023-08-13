@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 //        let viewModel = ArtistRegistrationViewModel()
 //        let controller = UsernameViewC ontroller(viewModel: viewModel)
-        let controller = PopularTracksViewController()
+        let controller = MusicianInfoViewController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }

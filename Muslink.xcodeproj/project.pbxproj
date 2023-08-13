@@ -40,9 +40,9 @@
 		BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
+		BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
-		BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 		DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */; };
 		DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */; };
@@ -65,7 +65,7 @@
 		211AAD452A7F998100D7469C /* ChooseCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
 		211AAD462A7F998100D7469C /* SocialNetworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
 		211AAD472A7F998100D7469C /* CitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
-		211AAD4C2A7FC31900D7469C /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		211AAD4C2A7FC31900D7469C /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddImageView.swift; path = ../Views/AddImageView.swift; sourceTree = "<group>"; };
 		211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		211AAD8B2A8632EB00D7469C /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -84,9 +84,9 @@
 		BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
-		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTracksViewController.swift; sourceTree = "<group>"; };
 		DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
 				211AACE22A7D5EE900D7469C /* Resources */,
 				DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */,
-				BF1C52ED2A7F6114008B642D /* UsernameVC */,
 				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
 			);
 			path = Muslink;
@@ -159,7 +158,6 @@
 		211AACE32A7D5F1100D7469C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BF1C52ED2A7F6114008B642D /* UsernameVC */,
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
@@ -193,7 +191,6 @@
 				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
 				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
-				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
 				211AAD442A7F998100D7469C /* CitiesTable.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
@@ -219,15 +216,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		BF1C52ED2A7F6114008B642D /* UsernameVC */ = {
-			isa = PBXGroup;
-			children = (
-				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
-				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
-			);
-			path = UsernameVC;
-			sourceTree = "<group>";
-		};
 		BF52FE382A7E0A9F0028B093 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +228,6 @@
 		BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */ = {
 			isa = PBXGroup;
 			children = (
-				BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift */,
 				BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */,
 				BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */,
 				BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */,
@@ -334,7 +321,7 @@
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				BF4B76A82A875A10007D5DD7 /* PhotoCarouselCell.swift in Sources */,
-				BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift in Sources */,
+				BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
