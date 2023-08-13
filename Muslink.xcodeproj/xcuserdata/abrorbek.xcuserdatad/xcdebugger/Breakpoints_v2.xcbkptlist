@@ -7,47 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0DB84C59-2DBB-4558-B3E8-F3C69E6A26FE"
+            uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Muslink/Info-Track/DescriptionViewController.swift"
+            filePath = "Muslink/Views/ChooseCityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "keyboardWillShow(notification:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0DB84C59-2DBB-4558-B3E8-F3C69E6A26FE - b828083e35a6ad2a"
+                  uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148 - 211adae103baf516"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Muslink.DescriptionViewController.keyboardWillShow(notification: __C.NSNotification) -&gt; ()"
+                  symbolName = "Muslink.ChooseCityView.viewDidLoad() -&gt; ()"
                   moduleName = "Muslink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Info-Track/DescriptionViewController.swift"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChooseCityViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "1160">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "376">
                </Location>
                <Location
-                  uuid = "0DB84C59-2DBB-4558-B3E8-F3C69E6A26FE - b828083e35a6ad2a"
-                  shouldBeEnabled = "Yes"
+                  uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148 - 211adae103baf516"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Muslink.DescriptionViewController.keyboardWillShow(notification: __C.NSNotification) -&gt; ()"
+                  symbolName = "Muslink.ChooseCityView.viewDidLoad() -&gt; ()"
                   moduleName = "Muslink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Info-Track/DescriptionViewController.swift"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChooseCityViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "190"
-                  endingLineNumber = "190"
-                  offsetFromSymbolStart = "1044">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "364">
                </Location>
             </Locations>
          </BreakpointContent>

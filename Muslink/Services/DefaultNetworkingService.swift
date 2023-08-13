@@ -17,7 +17,7 @@ protocol NetworkingService: AnyObject {
 
 final class DefaultNetworkingService: NetworkingService {
     
-    private let baseURL: String = "http://localhost:8080"
+    private let baseURL: String = "http://130.193.48.155:8080/muslink"
     private var token: String? = nil
     
     enum NetworkingError: Error {
@@ -73,7 +73,7 @@ final class DefaultNetworkingService: NetworkingService {
     }
     
     func createProfile(profile: Artist) async throws {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
+        guard let url = URL(string: "\(self.baseURL)/artist/profile") else {
             throw NetworkingError.invalidURL
         }
         
@@ -90,7 +90,7 @@ final class DefaultNetworkingService: NetworkingService {
     }
     
     func updateProfile(profile: Artist) async throws {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile") else {
+        guard let url = URL(string: "\(self.baseURL)/artist/profile") else {
             throw NetworkingError.invalidURL
         }
         
@@ -113,7 +113,7 @@ final class DefaultNetworkingService: NetworkingService {
     }
     
     func getProfile(id: Int) async throws -> Artist {
-        guard let url = URL(string: "\(self.baseURL)/muslink/artist/profile/\(id)") else {
+        guard let url = URL(string: "\(self.baseURL)/artist/profile/\(id)") else {
             throw NetworkingError.invalidURL
         }
         
