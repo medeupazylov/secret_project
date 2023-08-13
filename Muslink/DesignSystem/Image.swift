@@ -22,6 +22,7 @@ enum Image {
     case pauseCircle
     case pause
     case play
+    case playFill
     case playground
     case repeating
     case search
@@ -35,8 +36,19 @@ enum Image {
     case youtube
     case vkontakte
     case telegram
+    case trash
+    case pencil
+    case settings
     case profile
     case plus
+    case instagramNegative
+    case spotifyNegative
+    case vkontakteNegative
+    case yandexMusicNegative
+    case youtubeNegative
+    case location
+    case music
+    case verified
 }
 
 extension Image {
@@ -74,6 +86,8 @@ extension Image {
             image = UIImage(named: "pause")
         case .play:
             image = UIImage(named: "play")
+        case .playFill:
+            image = UIImage(named: "play_fill")
         case .playground:
             image = UIImage(named: "playground")
         case .repeating:
@@ -100,12 +114,33 @@ extension Image {
             image = UIImage(named: "vkontakte")
         case .telegram:
             image = UIImage(named: "telegram")
+        case . trash:
+            image = UIImage(named: "trash")
+        case . pencil:
+            image = UIImage(named: "pencil")
+        case .settings:
+            image = UIImage(named: "settings")
         case .profile:
             image = UIImage(named: "profile")
         case .plus:
             image = UIImage(named: "plus")
+        case .instagramNegative:
+            image = UIImage(named: "instagram_negative")
+        case .spotifyNegative:
+            image = UIImage(named: "spotify_negative")
+        case .vkontakteNegative:
+            image = UIImage(named: "vk_negative")
+        case .yandexMusicNegative:
+            image = UIImage(named: "yandex_music_negative")
+        case .youtubeNegative:
+            image = UIImage(named: "youtube_negative")
+        case .location:
+            image = UIImage(named: "location")
+        case .music:
+            image = UIImage(named: "music")
+        case .verified:
+            image = UIImage(named: "verified")
         }
-            
 
         return image ?? UIImage()
     }

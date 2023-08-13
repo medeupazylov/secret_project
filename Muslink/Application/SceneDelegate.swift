@@ -16,11 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
-        
-        let viewModel = ArtistRegistrationViewModel()
-        let controller = ChoosePhotoViewController(viewModel: viewModel)
-
+//        let viewModel = ArtistRegistrationViewModel()
+//        let controller = UsernameViewC ontroller(viewModel: viewModel)
+        let controller = PopularTracksViewController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }
