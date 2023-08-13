@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MusicianNameStack: UIStackView {
+final class MusicianNameStack: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,12 +61,12 @@ class MusicianNameStack: UIStackView {
     }
     
     private func setConstraints() {
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 52),
-            self.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            musicianNameStack.heightAnchor.constraint(equalToConstant: 24)
-        ])
+//        NSLayoutConstraint.activate([
+//            heightAnchor.constraint(equalToConstant: 52),
+//            self.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            self.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+//            musicianNameStack.heightAnchor.constraint(equalToConstant: 24)
+//        ])
     }
     
     

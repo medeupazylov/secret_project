@@ -24,19 +24,19 @@
 		211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD462A7F998100D7469C /* SocialNetworksView.swift */; };
 		211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD472A7F998100D7469C /* CitiesCell.swift */; };
 		211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD4C2A7FC31900D7469C /* AddImageView.swift */; };
+		21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */; };
+		21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
 		BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */; };
-		BF4B76A02A84D715007D5DD7 /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B769F2A84D715007D5DD7 /* SocialNetworksStackView.swift */; };
-		BF4B76A22A86A66F007D5DD7 /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76A12A86A66F007D5DD7 /* HorizontalStackView.swift */; };
 		BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */; };
 		BF4B76A82A875A10007D5DD7 /* PhotoCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */; };
 		BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
 		BFB642F62A7FDD2F00DE5A07 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */; };
-		BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */; };
+		BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,19 +60,19 @@
 		211AAD462A7F998100D7469C /* SocialNetworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
 		211AAD472A7F998100D7469C /* CitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
 		211AAD4C2A7FC31900D7469C /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 		BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkButton.swift; sourceTree = "<group>"; };
-		BF4B769F2A84D715007D5DD7 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
-		BF4B76A12A86A66F007D5DD7 /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianNameStack.swift; sourceTree = "<group>"; };
 		BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarouselCell.swift; sourceTree = "<group>"; };
 		BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
+		BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewControllerr.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +150,8 @@
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
 				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
-				BF4B76A12A86A66F007D5DD7 /* HorizontalStackView.swift */,
 				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
+				21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -187,13 +187,13 @@
 		BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */ = {
 			isa = PBXGroup;
 			children = (
-				BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewController.swift */,
+				BFB642F72A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift */,
 				BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */,
 				BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */,
 				BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */,
-				BF4B769F2A84D715007D5DD7 /* SocialNetworksStackView.swift */,
 				BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */,
 				BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */,
+				21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */,
 			);
 			path = MusicianInfoVC;
 			sourceTree = "<group>";
@@ -269,20 +269,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */,
+				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				BFB642F62A7FDD2F00DE5A07 /* StatisticsView.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
-				BF4B76A02A84D715007D5DD7 /* SocialNetworksStackView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				BF4B76A82A875A10007D5DD7 /* PhotoCarouselCell.swift in Sources */,
-				BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewController.swift in Sources */,
+				BFB642F82A7FDD4C00DE5A07 /* MusicianInfoViewControllerr.swift in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseMoodViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
+				21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */,
 				BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChoseCityViewController.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
@@ -293,7 +294,6 @@
 				211AAD3F2A7F995D00D7469C /* ChooseZhanrViewController.swift in Sources */,
 				BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
-				BF4B76A22A86A66F007D5DD7 /* HorizontalStackView.swift in Sources */,
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,

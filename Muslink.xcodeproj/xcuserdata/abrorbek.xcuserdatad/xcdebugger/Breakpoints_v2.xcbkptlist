@@ -116,5 +116,69 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A62C66E-7346-483D-AAA8-CE1DE57F80B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/MusicianInfoVC/hello.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "contentStackView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/MusicianInfoVC/hello.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "descriptionLabel"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB - 6a969500d15be9ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muslink.MusicianInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Muslink.MusicianInfoViewController"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/MusicianInfoVC/hello.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB - 91367076eed2182"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muslink.MusicianInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Muslink.MusicianInfoViewController&gt;"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/MusicianInfoVC/hello.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "528">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
