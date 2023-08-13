@@ -16,18 +16,33 @@ final class ProfileHeaderViewController: UIViewController {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(named: "pic")
-//        img.contentMode = .scaleAspectFit
-        
+        img.clipsToBounds = true
+        img.contentMode = .scaleAspectFill
         return img
     }()
     
-    private let gradientLayer: CAGradientLayer = {
+    lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
-//        gradient.frame = imageView.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.5, 0.1, 0.1, 0.6]
+        gradient.type = .axial
+        gradient.colors = [
+            UIColor.clear.cgColor,
+            Color.primaryBgColor.color.cgColor
+        ]
+        gradient.locations = [0, 1]
         return gradient
     }()
+    
+    lazy var gradientLayer2: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = [
+            Color.primaryBgColor.color.cgColor,
+            UIColor.clear.cgColor,
+            UIColor.clear.cgColor,
+        ]
+        gradient.locations = [0,0.1, 1]
+        return gradient
+    } ()
     
     private let fullName: UILabel = {
         let label = UILabel()
@@ -35,21 +50,36 @@ final class ProfileHeaderViewController: UIViewController {
         label.textColor = Color.neutral100.color
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
+    
+    private let cityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Москва"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = Color.neutral100.color
+        return label
+    } ()
+    
+    private let locationLogo: UIImageView = {
+        let image = UIImageView(image: Image.mapPin.image)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = Color.neutral100.color
+        return image
+    } ()
     
     private let playButton: UIButton = {
        let button = UIButton()
         button.setImage(UIImage(named: "play_button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     
     private lazy var collectionView: UICollectionView = {
         let layout = CustomViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.isUserInteractionEnabled = false
         collection.isScrollEnabled = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsHorizontalScrollIndicator = false
@@ -61,41 +91,32 @@ final class ProfileHeaderViewController: UIViewController {
     
     private let statisticsView = StatisticsView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         setupUI()
-        addGradientToAvatar()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        updateGradientFrame()
-    }
-    
-    private func addGradientToAvatar() {
-        avatar.layer.addSublayer(gradientLayer)
-        updateGradientFrame()
-    }
-    
-    private func updateGradientFrame() {
         gradientLayer.frame = avatar.bounds
+        avatar.layer.addSublayer(gradientLayer)
+        
+        gradientLayer2.frame = view.bounds
+        view.layer.addSublayer(gradientLayer2)
     }
-    
     
     private func setupUI() {
-        view.backgroundColor = Color.bgColor20.color
+        view.backgroundColor = Color.primaryBgColor.color
         view.addSubview(avatar)
         view.addSubview(fullName)
+        view.addSubview(locationLogo)
+        view.addSubview(cityLabel)
         view.addSubview(playButton)
         view.addSubview(statisticsView)
         view.addSubview(collectionView)
         
-        avatar.layer.addSublayer(gradientLayer)
-        gradientLayer.frame = avatar.bounds
         statisticsView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -107,6 +128,14 @@ final class ProfileHeaderViewController: UIViewController {
             fullName.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: -52),
             fullName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
+            locationLogo.leadingAnchor.constraint(equalTo: fullName.leadingAnchor),
+            locationLogo.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 12),
+            locationLogo.heightAnchor.constraint(equalToConstant: 16),
+            locationLogo.widthAnchor.constraint(equalToConstant: 16),
+            
+            cityLabel.leadingAnchor.constraint(equalTo: locationLogo.trailingAnchor, constant: 8.0),
+            cityLabel.centerYAnchor.constraint(equalTo: locationLogo.centerYAnchor),
+            
             playButton.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: -76),
             playButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
@@ -117,11 +146,11 @@ final class ProfileHeaderViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: statisticsView.bottomAnchor, constant: 32),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
-            
+            collectionView.heightAnchor.constraint(equalToConstant: 100),
+            collectionView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
         ])
         
-        addGradientToAvatar()
+        
     }
 }
 

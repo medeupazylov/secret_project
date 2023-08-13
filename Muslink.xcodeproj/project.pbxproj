@@ -43,6 +43,8 @@
 		BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
+		DEEE59472A87B0DD0027DA68 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE59462A87B0DD0027DA68 /* ProfileViewController.swift */; };
+		DEEE59692A88D64B0027DA68 /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE59682A88D64B0027DA68 /* SocialNetworksStackView.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 		DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */; };
 		DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */; };
@@ -87,6 +89,8 @@
 		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
+		DEEE59462A87B0DD0027DA68 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DEEE59682A88D64B0027DA68 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTracksViewController.swift; sourceTree = "<group>"; };
 		DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				DEEE59462A87B0DD0027DA68 /* ProfileViewController.swift */,
 				211AAD942A8771E100D7469C /* Services */,
 				211AAD8A2A8632DE00D7469C /* Models */,
 				211AAD8D2A8632F700D7469C /* Views */,
@@ -234,6 +239,7 @@
 				BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */,
 				BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */,
 				21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */,
+				DEEE59682A88D64B0027DA68 /* SocialNetworksStackView.swift */,
 			);
 			path = MusicianInfoVC;
 			sourceTree = "<group>";
@@ -327,11 +333,13 @@
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
+				DEEE59692A88D64B0027DA68 /* SocialNetworksStackView.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
 				21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */,
 				BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */,
+				DEEE59472A87B0DD0027DA68 /* ProfileViewController.swift in Sources */,
 				211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */,
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,

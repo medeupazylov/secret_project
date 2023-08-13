@@ -14,7 +14,6 @@ class PopularTracksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color.primaryBgColor.color
-        setupNavigationBar()
         setupViews()
         setupLayout()
         setupActions()
@@ -75,6 +74,7 @@ class PopularTracksViewController: UIViewController {
             mainStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             mainStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
             mainStack.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24.0),
+            mainStack.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
     
