@@ -16,19 +16,34 @@ final class ProfileHeaderViewController: UIViewController {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(named: "pic")
+//        img.image = UIImage(named: "feedback_forever")
+        img.clipsToBounds = true
         img.contentMode = .scaleAspectFill
-//        img.contentMode = .scaleAspectFit
-        
         return img
     }()
     
-    private let gradientLayer: CAGradientLayer = {
+    lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
-//        gradient.frame = imageView.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.5, 0.1, 0.1, 0.6]
+        gradient.type = .axial
+        gradient.colors = [
+            UIColor.clear.cgColor,
+            Color.primaryBgColor.color.cgColor
+        ]
+        gradient.locations = [0, 1]
         return gradient
     }()
+    
+    lazy var gradientLayer2: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = [
+            Color.bgColor20.color.cgColor,
+            UIColor.clear.cgColor,
+            UIColor.clear.cgColor,
+        ]
+        gradient.locations = [0,0.1, 1]
+        return gradient
+    } ()
     
     private let fullName: UILabel = {
         let label = UILabel()
@@ -36,7 +51,6 @@ final class ProfileHeaderViewController: UIViewController {
         label.textColor = Color.neutral100.color
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -44,7 +58,6 @@ final class ProfileHeaderViewController: UIViewController {
        let button = UIButton()
         button.setImage(UIImage(named: "play_button"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
     
@@ -63,41 +76,29 @@ final class ProfileHeaderViewController: UIViewController {
     
     private let statisticsView = StatisticsView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         setupUI()
-        addGradientToAvatar()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        updateGradientFrame()
-    }
-    
-    private func addGradientToAvatar() {
+        var newFrame = CGRect(x: 0, y: 0, width: avatar.frame.width, height: avatar.frame.height)
+        print(newFrame)
+        gradientLayer.frame = newFrame
         avatar.layer.addSublayer(gradientLayer)
-        updateGradientFrame()
     }
-    
-    private func updateGradientFrame() {
-        gradientLayer.frame = avatar.bounds
-    }
-    
     
     private func setupUI() {
-        view.backgroundColor = Color.bgColor20.color
+        view.backgroundColor = Color.primaryBgColor.color
         view.addSubview(avatar)
         view.addSubview(fullName)
         view.addSubview(playButton)
         view.addSubview(statisticsView)
         view.addSubview(collectionView)
         
-        avatar.layer.addSublayer(gradientLayer)
-        gradientLayer.frame = avatar.bounds
         statisticsView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -123,7 +124,7 @@ final class ProfileHeaderViewController: UIViewController {
             collectionView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
         ])
         
-        addGradientToAvatar()
+        
     }
 }
 

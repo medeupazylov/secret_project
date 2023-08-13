@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate([
             mainScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainScroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mainScroll.topAnchor.constraint(equalTo: view.topAnchor),
             mainScroll.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             stack.leftAnchor.constraint(equalTo: mainScroll.leftAnchor),
@@ -69,6 +69,7 @@ class ProfileViewController: UIViewController {
     private let mainScroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
+//        scroll.bounces = false
         return scroll
     } ()
     
