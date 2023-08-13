@@ -16,6 +16,7 @@ final class ProfileHeaderViewController: UIViewController {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(named: "pic")
+        img.contentMode = .scaleAspectFill
 //        img.contentMode = .scaleAspectFit
         
         return img
@@ -50,6 +51,7 @@ final class ProfileHeaderViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = CustomViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.isUserInteractionEnabled = false
         collection.isScrollEnabled = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsHorizontalScrollIndicator = false
@@ -117,8 +119,8 @@ final class ProfileHeaderViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: statisticsView.bottomAnchor, constant: 32),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
-            
+            collectionView.heightAnchor.constraint(equalToConstant: 120),
+            collectionView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
         ])
         
         addGradientToAvatar()
