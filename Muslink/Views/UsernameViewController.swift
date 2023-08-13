@@ -29,6 +29,16 @@ final class UsernameViewController: UIViewController {
        view.backgroundColor = Color.primaryBgColor.color
        setupNavigationBar()
        setup()
+        
+        let network = DefaultNetworkingService()
+        Task {
+            do {
+                let test = try await network.getCities()
+                print(test)
+            } catch {
+                printContent(error)
+            }
+        }
     }
 
     //MARK: - UIKit Objects

@@ -7,29 +7,9 @@
 
 import Foundation
 
-struct City: Codable {
-    let id: Int
-    let name: String
-    
-    init(id: Int = 0, name: String){
-        self.id = id
-        self.name = name
-    }
-}
-
 struct SocialNetwork: Codable {
     let mediaType: String
     let link: String
-}
-
-struct Genre: Codable {
-    let id: Int
-    let name: String
-    
-    init(id: Int = 0, name: String){
-        self.id = id
-        self.name = name
-    }
 }
 
 struct Photo: Codable {
@@ -49,6 +29,19 @@ struct Artist: Codable {
     let socialNetworks: [SocialNetwork]
     let genres: [Genre]
     let photos: [Photo]
+    let tracks: [Track]?
+    let biography: String?
+    
+    init(name: String, nickname: String, city: City, socialNetworks: [SocialNetwork], genres: [Genre], photos: [Photo], tracks: [Track]? = nil, biography: String? = nil) {
+        self.name = name
+        self.nickname = nickname
+        self.city = city
+        self.socialNetworks = socialNetworks
+        self.genres = genres
+        self.photos = photos
+        self.tracks = tracks
+        self.biography = biography
+    }
 }
 
 
