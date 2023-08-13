@@ -17,7 +17,7 @@
 		211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */; };
 		211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */; };
 		211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */; };
-		211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD442A7F998100D7469C /* CitiesTable.swift */; };
+		211AAD482A7F998100D7469C /* CitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD442A7F998100D7469C /* CitiesTableView.swift */; };
 		211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD452A7F998100D7469C /* ChooseCityViewController.swift */; };
 		211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD462A7F998100D7469C /* SocialNetworksView.swift */; };
 		211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD472A7F998100D7469C /* CitiesCell.swift */; };
@@ -61,7 +61,7 @@
 		211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGenresViewController.swift; sourceTree = "<group>"; };
 		211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewContoller.swift; sourceTree = "<group>"; };
 		211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePhotoViewController.swift; sourceTree = "<group>"; };
-		211AAD442A7F998100D7469C /* CitiesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTable.swift; sourceTree = "<group>"; };
+		211AAD442A7F998100D7469C /* CitiesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableView.swift; sourceTree = "<group>"; };
 		211AAD452A7F998100D7469C /* ChooseCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
 		211AAD462A7F998100D7469C /* SocialNetworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
 		211AAD472A7F998100D7469C /* CitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
 				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
-				211AAD442A7F998100D7469C /* CitiesTable.swift */,
+				211AAD442A7F998100D7469C /* CitiesTableView.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
 				D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */,
 				D521A0222A862C4700CC3A59 /* StatisticsView.swift */,
@@ -332,7 +332,7 @@
 				BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */,
-				211AAD482A7F998100D7469C /* CitiesTable.swift in Sources */,
+				211AAD482A7F998100D7469C /* CitiesTableView.swift in Sources */,
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,

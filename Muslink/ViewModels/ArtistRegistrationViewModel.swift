@@ -9,13 +9,19 @@ import Foundation
 
 @MainActor
 final class ArtistRegistrationViewModel {
+    
+    //MARK: - Properties
     var name: String?
     var nickname: String?
     var city: City?
     var socialNetworks: [SocialNetwork]?
     var genres: [Genre]?
     var photos: [Photo]?
-    let networkingService = DefaultNetworkingService()
+    
+    private let networkingService: NetworkingService
+    init(networkingService: NetworkingService) {
+        self.networkingService = networkingService
+    }
     
     func createProfile(completaion: @escaping (Result<Void, Error>) -> Void) {
         guard
@@ -37,7 +43,6 @@ final class ArtistRegistrationViewModel {
                             socialNetworks: socialNetworks,
                             genres: genres,
                             photos: photos)
-        print(profile)
         Task {
             do {
                 try await networkingService.createProfile(profile: profile)
@@ -45,6 +50,30 @@ final class ArtistRegistrationViewModel {
             } catch {
                 print("Error creating profile: \(error)")
                 completaion(.failure(error))
+            }
+        }
+    }
+    
+    func getCities(completaion: @escaping (Result<[City], Error>) -> Void) {
+        Task {
+            do {
+                let cities = try await networkingService.getCities()
+                completaion(.success(cities))
+            } catch {
+                print(error)
+                completaion(.failure(error))
+            }
+        }
+    }
+    
+    func getGenres(completion: @escaping (Result<[Genre], Error>) -> Void) {
+        Task {
+            do {
+                let genres = try await networkingService.getGenres()
+                completion(.success(genres))
+            } catch {
+                print(error)
+                completion(.failure(error))
             }
         }
     }

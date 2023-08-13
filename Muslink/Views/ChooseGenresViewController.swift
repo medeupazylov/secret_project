@@ -7,13 +7,14 @@
 
 import UIKit
 
+@MainActor
 final class ChooseGenresViewController: UIViewController {
     
     //MARK: - Properties
     
     private let viewModel: ArtistRegistrationViewModel
     
-    private var context: [String] = ["агресcивное", "весеннее", "грустное", "зимнее", "красивое", "крутое", "лето", "мечтательное", "мистическое", "мрачное", "новый год", "осеннее", "радостное", "отдыхаю", "сентиментальное", "спокойное", "энергичное", "эпичное"]
+    private var genres: [Genre] = []
     
     private var selectedGenres: [Genre] = []
     
@@ -34,6 +35,19 @@ final class ChooseGenresViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         setupNavigationBar()
+        viewModel.getGenres { [weak self] result in
+            guard let self = self else {
+                return
+            }
+
+            switch result {
+            case .success(let genres):
+                self.genres = genres
+                self.collectionView.reloadData()
+            case .failure(_):
+                print("NetworkingError")
+            }
+        }
     }
     
     //MARK: - UI elements
@@ -133,7 +147,7 @@ final class ChooseGenresViewController: UIViewController {
     }
     
     //MARK: - Objective-c methods
-    
+    let network = DefaultNetworkingService()
     @objc
     private func nextButtonPressed() {
         viewModel.userDidEnterGenres(genres: selectedGenres)
@@ -150,21 +164,21 @@ final class ChooseGenresViewController: UIViewController {
 
 extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return context.count
+        return genres.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonsCollectionViewCell.identifier, for: indexPath)  as? ButtonsCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.title = context[indexPath.row]
+        cell.title = genres[indexPath.row].name
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(
-            width: (context[indexPath.item].size(
+            width: (genres[indexPath.item].name.size(
                 withAttributes:
                     [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width) + 25,
                 height: 40

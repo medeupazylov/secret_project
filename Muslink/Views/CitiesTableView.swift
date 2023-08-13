@@ -14,19 +14,20 @@ protocol ChosenCityDelegate {
 
 final class CitiesTable: UIViewController {
     
+    //MARK: - Properties
+    
+    var data: [City] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var filteredData: [City] = []
+    
     var delegate: ChosenCityDelegate?
     
     var chosenCity: String = ""
     
-    var filteredData: [String]!
-    
     lazy var tableView = UITableView()
-    
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
-                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
-                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
-                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
-                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
     
     var selectedCityIndexPath: IndexPath?
     
@@ -64,9 +65,9 @@ final class CitiesTable: UIViewController {
     
     func updateChosenCity(index: IndexPath?, city: String?) {
         if var index = index {
-            if (city != data[index.row]) {
+            if (city != data[index.row].name) {
                 for i in index.row..<data.count {
-                    if( city == data[i] ) {
+                    if( city == data[i].name ) {
                         index = IndexPath(row: i, section: 0)
                     }
                 }
@@ -109,9 +110,9 @@ final class CitiesTable: UIViewController {
 extension CitiesTable: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
-            filteredData = searchText.isEmpty ? data : data.filter({(dataString: String) -> Bool in
-                return dataString.range(of: searchText, options: .caseInsensitive) != nil
-            })
+            filteredData = searchText.isEmpty ? data : data.filter { city in
+                return city.name.range(of: searchText, options: .caseInsensitive) != nil
+            }
             
             tableView.reloadData()
         }
@@ -123,8 +124,8 @@ extension CitiesTable: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CitiesCell.identifier, for: indexPath) as? CitiesCell else {
             fatalError("Chert")
         }
-        cell.configure(with: filteredData[indexPath.row])
-        if(filteredData[indexPath.row] == chosenCity) {
+        cell.configure(with: filteredData[indexPath.row].name)
+        if(filteredData[indexPath.row].name == chosenCity) {
             cell.showSelectIcon()
         }
         return cell
@@ -146,7 +147,7 @@ extension CitiesTable: UITableViewDelegate {
         }
         
         selectedCityIndexPath = indexPath
-        chosenCity = filteredData[indexPath.row]
+        chosenCity = filteredData[indexPath.row].name
         
         if let selectedCell = tableView.cellForRow(at: indexPath) as? CitiesCell {
             selectedCell.showSelectIcon()
