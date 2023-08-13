@@ -31,6 +31,7 @@
 		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
 		21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */; };
 		21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */; };
+		BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
@@ -75,6 +76,7 @@
 		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
+		BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSentViewController.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				211AAD442A7F998100D7469C /* CitiesTable.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
 				D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */,
+				BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */,
 				D521A0222A862C4700CC3A59 /* StatisticsView.swift */,
 			);
 			path = Views;
@@ -317,6 +320,7 @@
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
+				BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
