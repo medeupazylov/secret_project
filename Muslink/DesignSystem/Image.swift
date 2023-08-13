@@ -49,6 +49,7 @@ enum Image {
     case location
     case music
     case verified
+    case mapPin
 }
 
 extension Image {
@@ -140,6 +141,8 @@ extension Image {
             image = UIImage(named: "music")
         case .verified:
             image = UIImage(named: "verified")
+        case .mapPin:
+            image = UIImage(named: "map_pin")
         }
 
         return image ?? UIImage()
