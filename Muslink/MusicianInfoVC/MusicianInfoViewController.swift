@@ -33,13 +33,11 @@ final class MusicianInfoViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         label.text = "Об исполнителе"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = Color.neutral100.color
         label.backgroundColor = Color.primaryBgColor.color
         label.textAlignment = .left
-        
         return label
     }()
     
@@ -49,6 +47,7 @@ final class MusicianInfoViewController: UIViewController {
         pageControl.pageIndicatorTintColor = Color.neutral16.color
         pageControl.currentPageIndicatorTintColor = Color.neutral100.color
         pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.addTarget(self, action: #selector(pageControlAction), for: .valueChanged)
         return pageControl
     }()
     
@@ -77,7 +76,22 @@ final class MusicianInfoViewController: UIViewController {
         return label
     }
     
+    private var socialNetworksStack: SocialNetworksStackView = {
+        let stack = SocialNetworksStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    } ()
+    
     private lazy var musicianNameStack = MusicianNameStack()
+    
+    @objc private func pageControlAction(_ sender: UIPageControl?) {
+        guard let sender = sender else {return}
+        let index = sender.currentPage
+        
+        collectionView.isPagingEnabled = false
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        collectionView.isPagingEnabled = true
+    }
     
     //MARK: - Setup
     
@@ -86,6 +100,7 @@ final class MusicianInfoViewController: UIViewController {
         contentStackView.addArrangedSubview(collectionView)
         contentStackView.setCustomSpacing( 10, after: collectionView)
         contentStackView.addArrangedSubview(pageControl)
+        contentStackView.addArrangedSubview(socialNetworksStack)
         contentStackView.addArrangedSubview(descriptionLabel)
         
         view.addSubview(contentStackView)
@@ -103,7 +118,7 @@ final class MusicianInfoViewController: UIViewController {
                 constant: 16
             ),
             contentStackView.bottomAnchor.constraint(
-                lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor
+                equalTo: view.bottomAnchor, constant: -30
             ),
             contentStackView.trailingAnchor.constraint(
                 equalTo: view.trailingAnchor,
@@ -118,6 +133,9 @@ final class MusicianInfoViewController: UIViewController {
             
             pageControl.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
             
+            socialNetworksStack.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor),
+            socialNetworksStack.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor),
+            
             musicianNameStack.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
             musicianNameStack.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: -30)
         ])
@@ -130,11 +148,16 @@ extension MusicianInfoViewController: UICollectionViewDataSource, UICollectionVi
         return images.count
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? PhotoCarouselCell else {
             return UICollectionViewCell()
         }
-        
+    
+        print(indexPath)
         cell.imageView.image = UIImage(named: images[indexPath.item])
         return cell
     }
