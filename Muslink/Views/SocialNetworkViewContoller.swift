@@ -2,7 +2,7 @@
 //  SocialNetworkViewContoller.swift
 //  Muslink
 //
-//  Created by Медеу Пазылов on 05.08.2023.
+//  Created by on 05.08.2023.
 //
 
 import UIKit
@@ -238,6 +238,7 @@ extension SocialNetworkViewContoller: UITextFieldDelegate {
         guard textField.hasText else {
             return
         }
+        getSocialLink(textField)
         updateSocialNetworkViews(textField)
     }
     

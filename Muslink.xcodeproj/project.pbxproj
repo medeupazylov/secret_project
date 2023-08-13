@@ -26,6 +26,9 @@
 		211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8B2A8632EB00D7469C /* Artist.swift */; };
 		211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */; };
 		211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD952A87720300D7469C /* DefaultNetworkingService.swift */; };
+		21B1C71D2A879986009F6BCE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71C2A879986009F6BCE /* City.swift */; };
+		21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71E2A879CEC009F6BCE /* Genre.swift */; };
+		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
 		21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */; };
 		21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
@@ -67,6 +70,9 @@
 		211AAD8B2A8632EB00D7469C /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRegistrationViewModel.swift; sourceTree = "<group>"; };
 		211AAD952A87720300D7469C /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
+		21B1C71C2A879986009F6BCE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		21B1C71E2A879CEC009F6BCE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				211AAD8B2A8632EB00D7469C /* Artist.swift */,
+				21B1C71C2A879986009F6BCE /* City.swift */,
+				21B1C71E2A879CEC009F6BCE /* Genre.swift */,
+				21B1C7202A87B100009F6BCE /* Track.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */,
 				211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */,
 				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
@@ -345,7 +355,9 @@
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
+				21B1C71D2A879986009F6BCE /* City.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
+				21B1C7212A87B100009F6BCE /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
