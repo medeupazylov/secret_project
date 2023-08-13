@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -17,9 +18,11 @@ class ProfileViewController: UIViewController {
         addChildViewControllers()
     }
     
-    func addChildViewControllers() {
+    //MARK: - Setup Methods
+    private func addChildViewControllers() {
         addNewVC(vc: ProfileHeaderViewController())
         addNewVC(vc: PopularTracksViewController())
+        addNewVC(vc: MusicianInfoViewController())
         
     }
     
@@ -41,18 +44,18 @@ class ProfileViewController: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
-        item.tintColor = Color.neutral72.color
-        navigationItem.leftBarButtonItem = item
-        navigationController?.navigationBar.barTintColor = .clear
+        let item = UIBarButtonItem(image: Image.settings.image, style: .plain, target: nil, action: nil)
+        item.tintColor = Color.neutral100.color
+        navigationItem.rightBarButtonItem = item
+        navigationController?.navigationBar.barTintColor = Color.primaryBgColor.color
     }
 
-    func setupView() {
+    private func setupView() {
         view.addSubview(mainScroll)
         mainScroll.addSubview(stack)
     }
 
-    func setupLayout() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             mainScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -66,16 +69,18 @@ class ProfileViewController: UIViewController {
         ])
     }
     
+    //MARK: - UIElements
     private let mainScroll: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
-//        scroll.bounces = false
+        scroll.backgroundColor = Color.primaryBgColor.color
         return scroll
     } ()
     
     private let stack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
+        stack.spacing = 32.0
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     } ()

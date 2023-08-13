@@ -16,7 +16,6 @@ final class ProfileHeaderViewController: UIViewController {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(named: "pic")
-//        img.image = UIImage(named: "feedback_forever")
         img.clipsToBounds = true
         img.contentMode = .scaleAspectFill
         return img
@@ -37,7 +36,7 @@ final class ProfileHeaderViewController: UIViewController {
         let gradient = CAGradientLayer()
         gradient.type = .axial
         gradient.colors = [
-            Color.bgColor20.color.cgColor,
+            Color.primaryBgColor.color.cgColor,
             UIColor.clear.cgColor,
             UIColor.clear.cgColor,
         ]
@@ -53,6 +52,22 @@ final class ProfileHeaderViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let cityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Москва"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = Color.neutral100.color
+        return label
+    } ()
+    
+    private let locationLogo: UIImageView = {
+        let image = UIImageView(image: Image.mapPin.image)
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = Color.neutral100.color
+        return image
+    } ()
     
     private let playButton: UIButton = {
        let button = UIButton()
@@ -85,16 +100,19 @@ final class ProfileHeaderViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        var newFrame = CGRect(x: 0, y: 0, width: avatar.frame.width, height: avatar.frame.height)
-        print(newFrame)
-        gradientLayer.frame = newFrame
+        gradientLayer.frame = avatar.bounds
         avatar.layer.addSublayer(gradientLayer)
+        
+        gradientLayer2.frame = view.bounds
+        view.layer.addSublayer(gradientLayer2)
     }
     
     private func setupUI() {
         view.backgroundColor = Color.primaryBgColor.color
         view.addSubview(avatar)
         view.addSubview(fullName)
+        view.addSubview(locationLogo)
+        view.addSubview(cityLabel)
         view.addSubview(playButton)
         view.addSubview(statisticsView)
         view.addSubview(collectionView)
@@ -110,6 +128,14 @@ final class ProfileHeaderViewController: UIViewController {
             fullName.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: -52),
             fullName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
+            locationLogo.leadingAnchor.constraint(equalTo: fullName.leadingAnchor),
+            locationLogo.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 12),
+            locationLogo.heightAnchor.constraint(equalToConstant: 16),
+            locationLogo.widthAnchor.constraint(equalToConstant: 16),
+            
+            cityLabel.leadingAnchor.constraint(equalTo: locationLogo.trailingAnchor, constant: 8.0),
+            cityLabel.centerYAnchor.constraint(equalTo: locationLogo.centerYAnchor),
+            
             playButton.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: -76),
             playButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
@@ -120,7 +146,7 @@ final class ProfileHeaderViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: statisticsView.bottomAnchor, constant: 32),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.heightAnchor.constraint(equalToConstant: 120),
+            collectionView.heightAnchor.constraint(equalToConstant: 100),
             collectionView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
         ])
         

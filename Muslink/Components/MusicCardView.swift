@@ -110,7 +110,6 @@ class MusicCardView: UIView {
         self.addSubview(titleLabel)
         self.addSubview(subTitleLabel)
         self.addSubview(detailsButton)
-        self.addSubview(editButton)
         self.addSubview(trashButton)
     }
     
@@ -144,11 +143,6 @@ class MusicCardView: UIView {
             trashButton.widthAnchor.constraint(equalToConstant: 16.0),
             trashButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             trashButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16.0),
-            
-            editButton.heightAnchor.constraint(equalToConstant: 16.0),
-            editButton.widthAnchor.constraint(equalToConstant: 16.0),
-            editButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            editButton.rightAnchor.constraint(equalTo: trashButton.leftAnchor, constant: -16.0),
         ])
     }
     
