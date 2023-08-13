@@ -7,328 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FB3AE40A-F53D-4BFE-A691-226DF2114C3C"
+            uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Muslink/ChooseZhanr/ChooseZhanrViewController.swift"
+            filePath = "Muslink/Views/ChooseCityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "setupNavigationBar()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FB3AE40A-F53D-4BFE-A691-226DF2114C3C - 4aef3883f378e52c"
+                  uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148 - 211adae103baf516"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChooseZnanrViewController.nextButtonPressed() -&gt; ()"
+                  symbolName = "Muslink.ChooseCityView.viewDidLoad() -&gt; ()"
                   moduleName = "Muslink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChooseZhanr/ChooseZhanrViewController.swift"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChooseCityViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "36">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "376">
                </Location>
                <Location
-                  uuid = "FB3AE40A-F53D-4BFE-A691-226DF2114C3C - 4aef3883f378e503"
-                  shouldBeEnabled = "Yes"
+                  uuid = "DE7EB8E3-DD84-49FB-BB7B-8BB69B5CA148 - 211adae103baf516"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChooseZnanrViewController.nextButtonPressed() -&gt; ()"
+                  symbolName = "Muslink.ChooseCityView.viewDidLoad() -&gt; ()"
                   moduleName = "Muslink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChooseZhanr/ChooseZhanrViewController.swift"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChooseCityViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC9ADCF3-6F8E-49A2-B09F-F05E59E55623"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "openPhotosApp()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DC9ADCF3-6F8E-49A2-B09F-F05E59E55623 - 13f7d1612d07dde2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChoosePhotoViewController.openPhotosApp() -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "148">
-               </Location>
-               <Location
-                  uuid = "DC9ADCF3-6F8E-49A2-B09F-F05E59E55623 - f232693f519894e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.PHAuthorizationStatus) -&gt; () in Muslink.ChoosePhotoViewController.openPhotosApp() -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "164">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0A62C66E-7346-483D-AAA8-CE1DE57F80B6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/MusicianInfoVC/hello.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "contentStackView"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/MusicianInfoVC/hello.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "descriptionLabel"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB - 6a969500d15be9ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.MusicianInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Muslink.MusicianInfoViewController"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/MusicianInfoVC/hello.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "564">
-               </Location>
-               <Location
-                  uuid = "CAF07BA2-1B56-444E-9C9C-31696D8EDCAB - 91367076eed2182"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.MusicianInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Muslink.MusicianInfoViewController&gt;"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/MusicianInfoVC/hello.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "528">
-            uuid = "79713354-AB50-403A-81A8-FD01448FB6E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "imageViewTapped(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "79713354-AB50-403A-81A8-FD01448FB6E8 - 19b68d50cf0f4d60"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChoosePhotoViewController.imageViewTapped(__C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235"
-                  offsetFromSymbolStart = "552">
-               </Location>
-               <Location
-                  uuid = "79713354-AB50-403A-81A8-FD01448FB6E8 - 19b68d50cf0f4d60"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChoosePhotoViewController.imageViewTapped(__C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235"
-                  offsetFromSymbolStart = "568">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C09CDB86-4327-4D7E-858D-14536AF12411"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "imageViewTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CC9A98BB-F0D5-4EC5-B1CF-19BFF406DA2C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/Views/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "setupNavigationBar()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D5F85F37-7D9C-4EBF-AEEE-7C5968DD5A31"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/Views/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
-            landmarkName = "picker(_:didFinishPicking:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D5F85F37-7D9C-4EBF-AEEE-7C5968DD5A31 - 28b24047fed7af1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in closure #1 () -&gt; () in Muslink.ChoosePhotoViewController.picker(_: __C.PHPickerViewController, didFinishPicking: Swift.Array&lt;PhotosUI.PHPickerResult&gt;) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "326"
-                  endingLineNumber = "326"
-                  offsetFromSymbolStart = "200">
-               </Location>
-               <Location
-                  uuid = "D5F85F37-7D9C-4EBF-AEEE-7C5968DD5A31 - 28b24047fed7af1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in closure #1 () -&gt; () in Muslink.ChoosePhotoViewController.picker(_: __C.PHPickerViewController, didFinishPicking: Swift.Array&lt;PhotosUI.PHPickerResult&gt;) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "326"
-                  endingLineNumber = "326"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "09F1CEC3-9B7E-4C58-9DBD-10DF0619594E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Muslink/Views/ChoosePhotoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
-            landmarkName = "picker(_:didFinishPicking:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "09F1CEC3-9B7E-4C58-9DBD-10DF0619594E - 8725ad549182f7e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Muslink.ChoosePhotoViewController.picker(_: __C.PHPickerViewController, didFinishPicking: Swift.Array&lt;PhotosUI.PHPickerResult&gt;) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "323"
-                  endingLineNumber = "323"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  uuid = "09F1CEC3-9B7E-4C58-9DBD-10DF0619594E - 3dbc8fe55067aaf0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Muslink.ChoosePhotoViewController.picker(_: __C.PHPickerViewController, didFinishPicking: Swift.Array&lt;PhotosUI.PHPickerResult&gt;) -&gt; ()"
-                  moduleName = "Muslink"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/ChoosePhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "323"
-                  endingLineNumber = "323"
-                  offsetFromSymbolStart = "100">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "364">
                </Location>
             </Locations>
          </BreakpointContent>

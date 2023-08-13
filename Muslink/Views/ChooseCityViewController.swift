@@ -19,6 +19,7 @@ final class ChooseCityView: UIViewController {
     init(viewModel: ArtistRegistrationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +32,18 @@ final class ChooseCityView: UIViewController {
         setupUI()
         setupNavigationBar()
         continueButton.isEnabled = false
+        viewModel.getCities { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let cities):
+                self.page.data = cities
+            case .failure(_):
+                print("NetworkingError")
+            }
+        }
     }
     
     var chosenCityIndex: IndexPath?
@@ -97,7 +110,7 @@ final class ChooseCityView: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        guard let cityName = cityLabel.text else {
+        guard let cityName = choseLabel.text else {
             return
         }
         viewModel.userDidEnterCity(city: City(name: cityName))

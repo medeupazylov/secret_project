@@ -56,19 +56,7 @@ final class MusicianNameStack: UIStackView {
         distribution = .fill
         alignment = .center
         verifiedIcon.contentMode = .scaleAspectFit
-        setConstraints()
-        
     }
-    
-    private func setConstraints() {
-//        NSLayoutConstraint.activate([
-//            heightAnchor.constraint(equalToConstant: 52),
-//            self.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            self.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            musicianNameStack.heightAnchor.constraint(equalToConstant: 24)
-//        ])
-    }
-    
     
 }
 
