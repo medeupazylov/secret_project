@@ -42,6 +42,10 @@
 		BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
+		BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */; };
+		BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */; };
+		BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */; };
+		BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC30C2A8D62E700033BC6 /* Goal.swift */; };
 		BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
@@ -88,6 +92,10 @@
 		BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
+		BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
+		BF5AC30C2A8D62E700033BC6 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 				211AACE22A7D5EE900D7469C /* Resources */,
 				DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */,
 				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
+				BFCCFC652A8CEEE2002FDA72 /* GoalsVC */,
 			);
 			path = Muslink;
 			sourceTree = "<group>";
@@ -244,6 +253,17 @@
 			path = MusicianInfoVC;
 			sourceTree = "<group>";
 		};
+		BFCCFC652A8CEEE2002FDA72 /* GoalsVC */ = {
+			isa = PBXGroup;
+			children = (
+				BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */,
+				BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */,
+				BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */,
+				BF5AC30C2A8D62E700033BC6 /* Goal.swift */,
+			);
+			path = GoalsVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,10 +339,13 @@
 				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
+				BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */,
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
+				BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
+				BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */,
 				BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */,
 				BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
@@ -333,6 +356,7 @@
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
+				BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
