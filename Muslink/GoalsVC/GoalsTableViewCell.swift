@@ -9,6 +9,10 @@ import UIKit
 
 class GoalsTableViewCell: UITableViewCell {
     
+    var onToggleChecked: ((Int) -> ())?
+    
+    var index: Int?
+    
     lazy var checkButton: UIButton = {
         let button = UIButton()
         button.sizeThatFits(CGSize(width: 24, height: 24))
@@ -17,6 +21,7 @@ class GoalsTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addSubview(checkIcon)
         checkIcon.isHidden = true
+        button.addTarget(self, action: #selector(checkButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -41,13 +46,24 @@ class GoalsTableViewCell: UITableViewCell {
     private lazy var cellStack = HorizontalStackView(arrangedSubviews: [checkButton, titleLabel], spacing: 12.0)
     
 
-//    var goal: Goal {
-//        didSet {
-//            titleLabel.text = goal.title
-//            checkIcon.isHidden = goal.checked
-//        }
-//    }
-//
+    @objc private func checkButtonPressed() {
+        onToggleChecked?(self.index!)
+    }
+    
+    
+    var goal: Goal? {
+        didSet {
+            if goal != nil {
+                titleLabel.text = goal?.title
+                if goal!.checked {
+                    showSelection()
+                } else {
+                    hideSelection()
+                }
+            }
+        }
+    }
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -58,13 +74,16 @@ class GoalsTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
     private func setup() {
         backgroundColor = .clear
+        selectionStyle = .none
         contentView.addSubview(cellStack)
         setConstraints()
     }
-    
-    
     
     private func setConstraints() {
         NSLayoutConstraint.activate(
@@ -80,6 +99,14 @@ class GoalsTableViewCell: UITableViewCell {
         )
     }
     
+    func showSelection() {
+        checkButton.backgroundColor = Color.primaryMain.color
+        checkIcon.isHidden = false
+    }
     
+    func hideSelection() {
+        checkButton.backgroundColor = Color.neutral16.color
+        checkIcon.isHidden = true
+    }
 
 }

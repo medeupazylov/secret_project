@@ -9,7 +9,14 @@ import UIKit
 
 class GoalsViewController: UIViewController {
     
-    var cellIdentifier = "cellIdentifier"
+    private let continueButton: DefaultButton = {
+        let button = DefaultButton(buttonType: .primary)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(title: "Продолжить")
+        return button
+    }()
+    
+    var cellIdentifier = "goalCell"
     
     private var progressBar = DefaultProgressBar()
     
@@ -18,15 +25,17 @@ class GoalsViewController: UIViewController {
                                           fontSize: 18.0,
                                           fontWeight: .bold)
     
-    private var goals = ["Помощь с дистрибуцией",
-                         "Маркетинг и продвижение",
-                         "Организация концертов и туров",
-                         "Лицензирование и синхронизации",
-                         "Сбор роялти и учет",
-                         "Выход на международные рынки",
-                         "Юридическое сопровождение",
-                         "Запись и производство музыки",
+    private var goals = [Goal(title: "Помощь с дистрибуцией", checked: false),
+                         Goal(title: "Маркетинг и продвижение", checked: false),
+                         Goal(title: "Организация концертов и туров", checked: false),
+                         Goal(title: "Лицензирование и синхронизации", checked: false),
+                         Goal(title: "Сбор роялти и учет", checked: false),
+                         Goal(title: "Выход на международные рынки", checked: false),
+                         Goal(title: "Юридическое сопровождение", checked: false),
+                         Goal(title: "Запись и производство музыки", checked: false)
                         ]
+    
+    private var selectedGoalsTitles = [String]()
     
     private var tableView = ContentSizedTableView()
 
@@ -58,7 +67,9 @@ class GoalsViewController: UIViewController {
         view.addSubview(progressBar)
         view.addSubview(titleLabel)
         view.addSubview(tableView)
+        view.addSubview(continueButton)
         progressBar.progress = 0.5
+        continueButton.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
     }
     
     private func setupTableView() {
@@ -83,7 +94,26 @@ class GoalsViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            
+            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            continueButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ])
+    }
+    
+    func goalsChanged() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction private func continueButtonPressed(){
+        for goal in goals {
+            if goal.checked {
+                selectedGoalsTitles.append(goal.title)
+            }
+        }
+        print(selectedGoalsTitles)
     }
 }
 
@@ -95,9 +125,21 @@ extension GoalsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! GoalsTableViewCell
-        cell.titleLabel.text = goals[indexPath.row]
+        cell.goal = goals[indexPath.row]
+        cell.index = indexPath.row
+        cell.onToggleChecked = { [weak self] index in
+            guard let self = self else {return}
+            self.goals[index].checked = !goals[index].checked
+            self.tableView.reloadData()
+            print("AAAAAA")
+            print(selectedGoalsTitles)
+        }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goals[indexPath.row].checked = !goals[indexPath.row].checked
+        goalsChanged()
+    }
     
 }

@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Goal {
+struct Goal: Codable {
     var title: String
     var checked: Bool
+    
+    init(title: String, checked: Bool) {
+        self.title = title
+        self.checked = checked
+    }
 }

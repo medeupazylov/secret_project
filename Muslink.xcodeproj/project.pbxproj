@@ -192,6 +192,7 @@
 				21B1C71C2A879986009F6BCE /* City.swift */,
 				21B1C71E2A879CEC009F6BCE /* Genre.swift */,
 				21B1C7202A87B100009F6BCE /* Track.swift */,
+				BF5AC30C2A8D62E700033BC6 /* Goal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,7 +260,6 @@
 				BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */,
 				BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */,
 				BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */,
-				BF5AC30C2A8D62E700033BC6 /* Goal.swift */,
 			);
 			path = GoalsVC;
 			sourceTree = "<group>";
