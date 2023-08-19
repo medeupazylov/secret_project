@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
         let controller = ChooseCityView(viewModel: viewModel)
 //        let controller = MusicianInfoViewController()
+        let controller = RejectedViewController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }
