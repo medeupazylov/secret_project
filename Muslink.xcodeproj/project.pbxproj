@@ -32,7 +32,6 @@
 		21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */; };
 		BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */; };
 		BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */; };
-		BF0B418F2A89203300502AC7 /* CitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B418E2A89203300502AC7 /* CitiesTableView.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
@@ -49,6 +48,7 @@
 		BF5AC3132A90C78100033BC6 /* RejectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */; };
 		BF5AC3152A90CC1800033BC6 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3142A90CC1800033BC6 /* Reason.swift */; };
 		BF5AC3172A90CD8A00033BC6 /* ReasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */; };
+		BF5AC3192A90EAFA00033BC6 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3182A90EAFA00033BC6 /* CustomTextView.swift */; };
 		BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
 		D521A0372A890D3900CC3A59 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0362A890D3900CC3A59 /* SearchTableView.swift */; };
@@ -88,7 +88,6 @@
 		21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
 		BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSentViewController.swift; sourceTree = "<group>"; };
 		BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
-		BF0B418E2A89203300502AC7 /* CitiesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableView.swift; sourceTree = "<group>"; };
 		BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProgressBar.swift; sourceTree = "<group>"; };
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedViewController.swift; sourceTree = "<group>"; };
 		BF5AC3142A90CC1800033BC6 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsTableViewCell.swift; sourceTree = "<group>"; };
+		BF5AC3182A90EAFA00033BC6 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0362A890D3900CC3A59 /* SearchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
@@ -182,21 +182,21 @@
 		211AACE32A7D5F1100D7469C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
+				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
+				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
+				D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */,
 				DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
+				BF5AC3182A90EAFA00033BC6 /* CustomTextView.swift */,
 				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
 				BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */,
 				BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */,
-				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
 				21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */,
-				21B1C72D2A88D16E009F6BCE /* CustomTextView.swift */,
 				D521A03A2A890D4600CC3A59 /* LabelCardView.swift */,
-				D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */,
 				D521A0362A890D3900CC3A59 /* SearchTableView.swift */,
 				BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */,
 			);
@@ -219,7 +219,6 @@
 		211AAD8D2A8632F700D7469C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF0B418E2A89203300502AC7 /* CitiesTableView.swift */,
 				211AACD12A7D5EA000D7469C /* UsernameViewController.swift */,
 				211AAD452A7F998100D7469C /* ChooseCityViewController.swift */,
 				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
@@ -371,6 +370,7 @@
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
 				BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
+				BF5AC3192A90EAFA00033BC6 /* CustomTextView.swift in Sources */,
 				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
 				D521A03B2A890D4600CC3A59 /* LabelCardView.swift in Sources */,
@@ -380,10 +380,6 @@
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */,
 				D521A0392A890D4000CC3A59 /* DefaultOptionsChooser.swift in Sources */,
-				DEEE59472A87B0DD0027DA68 /* ProfileViewController.swift in Sources */,
-				21B1C72C2A88CDBB009F6BCE /* DescriptionViewController.swift in Sources */,
-				21B1C7332A88D7D1009F6BCE /* UIViewController + Extension.swift in Sources */,
-				21B1C72E2A88D16E009F6BCE /* CustomTextView.swift in Sources */,
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,
@@ -395,7 +391,6 @@
 				BF5AC3152A90CC1800033BC6 /* Reason.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				21B1C71D2A879986009F6BCE /* City.swift in Sources */,
-				BF0B418F2A89203300502AC7 /* CitiesTableView.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
 				21B1C7212A87B100009F6BCE /* Track.swift in Sources */,
 			);
