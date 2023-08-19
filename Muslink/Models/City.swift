@@ -16,3 +16,9 @@ struct City: Codable {
         self.name = name
     }
 }
+
+extension City: SearchItem {
+    var title: String {
+        return name
+    }
+}
