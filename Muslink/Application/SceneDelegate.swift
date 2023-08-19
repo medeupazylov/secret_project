@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let networkingService = DefaultNetworkingService()
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-        let controller = GoalsViewController()
 //        let controller = MusicianInfoViewController()
+        let controller = RejectedViewController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }
