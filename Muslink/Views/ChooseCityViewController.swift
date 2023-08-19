@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 final class ChooseCityView: UIViewController {
-    
     //MARK: - Properties
     
     private let viewModel: ArtistRegistrationViewModel
@@ -47,7 +46,7 @@ final class ChooseCityView: UIViewController {
     }
     
     var chosenCityIndex: IndexPath?
-    let page = CitiesTable()
+    let page = SearchTableView(title: "Город")
     
     private lazy var titleLabel = createLabel(text: "Откуда вы", fontSize: 18, color: Color.neutral100.color)
     private lazy var cityLabel = createLabel(text: "Город", fontSize: 14, color: Color.neutral32.color)
@@ -169,15 +168,16 @@ final class ChooseCityView: UIViewController {
     
     @objc private func radioButtonTapped() {
         page.delegate = self
-        page.updateChosenCity(index: chosenCityIndex ?? nil, city: choseLabel.text)
+        page.updateChosenItem(index: chosenCityIndex ?? nil, item: choseLabel.text)
         page.searchController.searchBar.text = nil
-        self.present(page, animated: true)
+        let tt = UINavigationController(rootViewController: page)
+        self.present(tt, animated: true)
     }
 }
 
-extension ChooseCityView: ChosenCityDelegate {
-    func chosenCity(index: IndexPath?, city: String?) {
-        updateChoseLabel(city: city!)
+extension ChooseCityView: ChosenItemDelegate {
+    func chosenItem(index: IndexPath?, item: String?) {
+        updateChoseLabel(city: item!)
         continueButton.isEnabled = true
         chosenCityIndex = index
     }
