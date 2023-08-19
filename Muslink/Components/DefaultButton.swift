@@ -9,7 +9,7 @@ import UIKit
 
 enum ButtonType {
     case primary
-    case secondary
+    case bordered
 }
 
 final class DefaultButton: UIControl {
@@ -20,19 +20,38 @@ final class DefaultButton: UIControl {
     
     override var isEnabled: Bool {
         didSet {
-            backgroundColor = isEnabled ? Color.accentMain.color : Color.warningHover.color
+            switch buttonType {
+            case .primary:
+                backgroundColor = isEnabled ? Color.accentMain.color : Color.warningHover.color
+            case .bordered:
+                layer.borderColor = isEnabled ? Color.primaryBorder.color.cgColor : Color.neutral16.color.cgColor
+                titleLabel.textColor = isEnabled ? Color.neutral72.color : Color.neutral32.color 
+            }
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            backgroundColor = isSelected ? Color.accentPressed.color : Color.accentMain.color
+            switch buttonType {
+            case .primary:
+                backgroundColor = isSelected ? Color.accentPressed.color : Color.accentMain.color
+            case .bordered:
+                backgroundColor = isSelected ? .clear : Color.primaryBgColor.color
+                layer.borderColor = isSelected ? Color.infoBorder.color.cgColor : Color.primaryBorder.color.cgColor
+            }
         }
     }
     
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? Color.accentPressed.color : Color.accentMain.color
+            switch buttonType {
+            case .primary:
+                backgroundColor = isHighlighted ? Color.accentPressed.color : Color.accentMain.color
+            case .bordered:
+                backgroundColor = isHighlighted ? Color.neutral16.color : .clear
+                layer.borderColor = isHighlighted ? Color.infoBorder.color.cgColor : Color.primaryBorder.color.cgColor
+            }
+            
         }
     }
     
@@ -69,22 +88,33 @@ final class DefaultButton: UIControl {
     }
 
     private func setupButton() {
-        self.backgroundColor = Color.accentMain.color
-        self.layer.cornerRadius = 12.0
-        let buttonHeight = (buttonType == .primary) ? 56.0 : 44.0
-        self.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowOffset = CGSize(width: 0, height: -20)
-        self.layer.shadowRadius = 15
+        
+        switch buttonType {
+        case .primary:
+            backgroundColor = Color.accentMain.color
+            layer.shadowColor = UIColor.black.cgColor
+            layer.shadowOpacity = 1.0
+            layer.shadowOffset = CGSize(width: 0, height: -20)
+            layer.shadowRadius = 15
+            titleLabel.textColor = Color.primaryBgColor.color
+        case .bordered:
+            backgroundColor = .clear
+            layer.borderColor = Color.primaryBorder.color.cgColor
+            layer.borderWidth = 1
+            titleLabel.textColor = Color.neutral72.color
+        }
+        
+        layer.cornerRadius = 12.0
+        let buttonHeight = 56.0
+        heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
 
     }
     
     // MARK: - UI Elements
+    
     private let titleLabel: UILabel = {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
-        title.textColor = Color.primaryBgColor.color
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     } ()
