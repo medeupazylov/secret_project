@@ -25,11 +25,18 @@
 		211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8B2A8632EB00D7469C /* Artist.swift */; };
 		211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */; };
 		211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AAD952A87720300D7469C /* DefaultNetworkingService.swift */; };
+		2175707C2A90889B00B11318 /* ApplicationNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */; };
+		2175707E2A90899C00B11318 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707D2A90899C00B11318 /* Application.swift */; };
+		217570802A908CEB00B11318 /* MyApplicationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */; };
 		21B1C71D2A879986009F6BCE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71C2A879986009F6BCE /* City.swift */; };
 		21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71E2A879CEC009F6BCE /* Genre.swift */; };
 		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
 		21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */; };
 		21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */; };
+		21B1C7432A8FAFF6009F6BCE /* MyApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7422A8FAFF6009F6BCE /* MyApplicationsViewController.swift */; };
+		21B1C7452A8FB0D3009F6BCE /* ApplicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */; };
+		21B1C7482A8FB270009F6BCE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */; };
+		21B1C74A2A8FB50B009F6BCE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */; };
 		BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */; };
 		BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */; };
 		BF0B418F2A89203300502AC7 /* CitiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B418E2A89203300502AC7 /* CitiesTableView.swift */; };
@@ -71,11 +78,18 @@
 		211AAD8B2A8632EB00D7469C /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		211AAD8F2A86365000D7469C /* ArtistRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRegistrationViewModel.swift; sourceTree = "<group>"; };
 		211AAD952A87720300D7469C /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
+		2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNetworkingService.swift; sourceTree = "<group>"; };
+		2175707D2A90899C00B11318 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplicationsViewModel.swift; sourceTree = "<group>"; };
 		21B1C71C2A879986009F6BCE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		21B1C71E2A879CEC009F6BCE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianInfoViewController.swift; sourceTree = "<group>"; };
+		21B1C7422A8FAFF6009F6BCE /* MyApplicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplicationsViewController.swift; sourceTree = "<group>"; };
+		21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTableViewCell.swift; sourceTree = "<group>"; };
+		21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSentViewController.swift; sourceTree = "<group>"; };
 		BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		BF0B418E2A89203300502AC7 /* CitiesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableView.swift; sourceTree = "<group>"; };
@@ -126,6 +140,7 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				21B1C7412A8FAFB7009F6BCE /* InfoTrackModule */,
 				211AAD942A8771E100D7469C /* Services */,
 				211AAD8A2A8632DE00D7469C /* Models */,
 				211AAD8D2A8632F700D7469C /* Views */,
@@ -134,6 +149,7 @@
 				211AACE12A7D5ED300D7469C /* Application */,
 				BF52FE382A7E0A9F0028B093 /* DesignSystem */,
 				211AACE22A7D5EE900D7469C /* Resources */,
+				21B1C7462A8FB25B009F6BCE /* Extensions */,
 				DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */,
 				BFB642F22A7FDCD900DE5A07 /* MusicianInfoVC */,
 			);
@@ -219,6 +235,27 @@
 				211AAD952A87720300D7469C /* DefaultNetworkingService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		21B1C7412A8FAFB7009F6BCE /* InfoTrackModule */ = {
+			isa = PBXGroup;
+			children = (
+				21B1C7422A8FAFF6009F6BCE /* MyApplicationsViewController.swift */,
+				21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */,
+				2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */,
+				21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */,
+				2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */,
+				2175707D2A90899C00B11318 /* Application.swift */,
+			);
+			path = InfoTrackModule;
+			sourceTree = "<group>";
+		};
+		21B1C7462A8FB25B009F6BCE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BF52FE382A7E0A9F0028B093 /* DesignSystem */ = {
@@ -314,12 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B1C74A2A8FB50B009F6BCE /* CustomLabel.swift in Sources */,
 				21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */,
 				211AAD412A7F995D00D7469C /* SocialNetworkViewContoller.swift in Sources */,
 				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
+				217570802A908CEB00B11318 /* MyApplicationsViewModel.swift in Sources */,
+				2175707E2A90899C00B11318 /* Application.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
@@ -336,6 +376,7 @@
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
+				21B1C7452A8FB0D3009F6BCE /* ApplicationTableViewCell.swift in Sources */,
 				21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */,
 				BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
@@ -350,9 +391,12 @@
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				21B1C71D2A879986009F6BCE /* City.swift in Sources */,
+				2175707C2A90889B00B11318 /* ApplicationNetworkingService.swift in Sources */,
 				BF0B418F2A89203300502AC7 /* CitiesTableView.swift in Sources */,
+				21B1C7432A8FAFF6009F6BCE /* MyApplicationsViewController.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
 				21B1C7212A87B100009F6BCE /* Track.swift in Sources */,
+				21B1C7482A8FB270009F6BCE /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
