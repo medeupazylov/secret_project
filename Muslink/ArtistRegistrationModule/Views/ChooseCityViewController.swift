@@ -13,6 +13,9 @@ final class ChooseCityView: UIViewController {
     
     private let viewModel: ArtistRegistrationViewModel
     
+    private var item: SearchItem?
+    
+    
     //MARK: - Lifecycle
     
     init(viewModel: ArtistRegistrationViewModel) {
@@ -109,10 +112,10 @@ final class ChooseCityView: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-        guard let cityName = choseLabel.text else {
+        guard let item = item as? City else {
             return
         }
-        viewModel.userDidEnterCity(city: City(name: cityName))
+        viewModel.userDidEnterCity(city: item )
         navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel), animated: false)
     }
     
@@ -176,8 +179,9 @@ final class ChooseCityView: UIViewController {
 }
 
 extension ChooseCityView: ChosenItemDelegate {
-    func chosenItem(index: IndexPath?, item: String?) {
-        updateChoseLabel(city: item!)
+    func chosenItem(index: IndexPath?, item: SearchItem?) {
+        self.item = item
+        updateChoseLabel(city: item!.title)
         continueButton.isEnabled = true
         chosenCityIndex = index
     }

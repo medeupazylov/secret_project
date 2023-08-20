@@ -19,7 +19,7 @@ protocol NetworkingService: AnyObject {
 final class DefaultNetworkingService: NetworkingService {
     
     private let baseURL: String = "http://130.193.48.155:8080/muslink"
-    private var token: String? = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiMTQyMTQ3Mjc5OCIsImV4cCI6MTY5MjUxNjcwMSwiaWF0IjoxNjkyNTA5NTAxLCJzY29wZSI6IkFSVElTVCJ9.jHJ-YipfY-4tVMvZGpTjMABPbSsJlSSPu-OIv0hwVeL4m9C7d6jcjkRDfHKSLam5nVvAwR1-tvjc_jPk2JOFjeVvJyPsS6TkV_8wako67_IcGtr8CKiILYp1X5JnaJIYmFTDzJCsp8UQ737JTi7BFT0V7QQTUlqtQ1U6plksB4OrfCn0xV_ZHbPVm4s-1uFTpSUjBUhU5_K2anzZFcHC1sixg2hvbLS_ynIjr0UQSZoTZCXPl2trbga7wP7CFHKUp7WY9JmUgCK9YqPst8TF7inxvjfUft-4oWtMN_TsSbi0F4GxfZgLaLWVn3_b8zhyMRrZP42rA8esHZOqMe_YVQ"
+    private var token: String? = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiMTQyMTQ3Mjc5OCIsImV4cCI6MTY5MjUyOTU3MiwiaWF0IjoxNjkyNTIyMzcyLCJzY29wZSI6IkFSVElTVCJ9.oItHhHwJmHk9u3se1xA9ipJ70IiBipcnDtsLzxDaJH734_UHVcia-oYlWn0gvVC7wEvhE5dfE9rOYNO5hk9vRvGOc0QnIG9xJRne_9L3cKJOsygqs0DcCG81PcsWx-h0qL2rldTpcL2ynkmaq3qcR3gD15x-8z83HDjyqAFg7xDrZQbbYkoeKpGfW7P7vJOxlp0pSQNLGEvfcVz4ilZ9VZmRQklBgZ4nG95LkG7rKbLvyT70JvgCqmlfyl2WcxZSqUsogMSduUw16QxyEh7z4-V8k7LBAIX9CxzzN49o13BUl6tpF9ICS2_ers0iFKfmYhgDinFekfKEOKGn45auqA"
     private var oauthToken: String = "y0_AgAAAABUufQeAApTxAAAAADqmKBJlGqSHXrMSC--QjuaIzB_OSZE17E"
     private var role: String = "ARTIST"
     
