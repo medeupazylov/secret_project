@@ -88,14 +88,13 @@ final class DefaultButton: UIControl {
     }
 
     private func setupButton() {
-        
         switch buttonType {
         case .primary:
             backgroundColor = Color.accentMain.color
             layer.shadowColor = UIColor.black.cgColor
-            layer.shadowOpacity = 1.0
-            layer.shadowOffset = CGSize(width: 0, height: -20)
-            layer.shadowRadius = 15
+            layer.shadowOpacity = 0.7
+            layer.shadowOffset = CGSize(width: 0, height: -10)
+            layer.shadowRadius = 10
             titleLabel.textColor = Color.primaryBgColor.color
         case .bordered:
             backgroundColor = .clear
