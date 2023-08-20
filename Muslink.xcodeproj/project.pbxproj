@@ -180,6 +180,7 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				217570812A90ABA100B11318 /* Muslink.entitlements */,
 				217570872A91EA4100B11318 /* ArtistRegistrationModule */,
 				2175708E2A91EEAA00B11318 /* ArtistApplicationRequestModule */,
 				2175708D2A91EE2F00B11318 /* LabelApplicationRequestsModule */,
@@ -208,7 +209,6 @@
 		211AACE22A7D5EE900D7469C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				217570812A90ABA100B11318 /* Muslink.entitlements */,
 				211AACD62A7D5EA200D7469C /* Assets.xcassets */,
 				211AACD82A7D5EA200D7469C /* LaunchScreen.storyboard */,
 				211AACDB2A7D5EA200D7469C /* Info.plist */,
