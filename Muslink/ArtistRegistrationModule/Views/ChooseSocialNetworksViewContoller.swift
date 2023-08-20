@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SocialNetworkViewContoller: UIViewController {
+final class ChooseSocialNetworksViewContoller: UIViewController {
     
     //MARK: - Properties
     
@@ -229,7 +229,7 @@ final class SocialNetworkViewContoller: UIViewController {
     
 }
 
-extension SocialNetworkViewContoller: UITextFieldDelegate {
+extension ChooseSocialNetworksViewContoller: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         updateSocialNetworkViews(textField)
     }

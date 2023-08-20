@@ -81,7 +81,7 @@ final class SearchTableView: UIViewController {
     }()
     
     private func setupTable() {
-        tableView.register(CitiesCell.self, forCellReuseIdentifier: CitiesCell.identifier)
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
     
     func updateChosenItem(index: IndexPath?, item: String?) {
@@ -91,7 +91,7 @@ final class SearchTableView: UIViewController {
                 index = IndexPath(row: dataIndex, section: 0)
             }
             
-            if let selectedCell = tableView.cellForRow(at: index) as? CitiesCell {
+            if let selectedCell = tableView.cellForRow(at: index) as? SearchTableViewCell {
                 selectedCell.showSelectIcon()
             }
         }
@@ -131,7 +131,7 @@ extension SearchTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedIndexPath = selectedItemIndexPath {
             tableView.deselectRow(at: selectedIndexPath, animated: true)
-            if let selectedCell = tableView.cellForRow(at: selectedIndexPath) as? CitiesCell {
+            if let selectedCell = tableView.cellForRow(at: selectedIndexPath) as? SearchTableViewCell {
                 selectedCell.hideSelectIcon()
             }
         }
@@ -139,7 +139,7 @@ extension SearchTableView: UITableViewDelegate {
         selectedItemIndexPath = indexPath
         chosenItem = filteredData[indexPath.row].title
         
-        if let selectedCell = tableView.cellForRow(at: indexPath) as? CitiesCell {
+        if let selectedCell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell {
             selectedCell.showSelectIcon()
         }
         
@@ -165,7 +165,7 @@ extension SearchTableView: UISearchResultsUpdating {
 
 extension SearchTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CitiesCell.identifier, for: indexPath) as? CitiesCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else {
             fatalError("Error: Could not dequeue custom cell")
         }
         

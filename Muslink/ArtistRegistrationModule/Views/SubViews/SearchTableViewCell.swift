@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-final class CitiesCell: UITableViewCell {
+final class SearchTableViewCell: UITableViewCell {
     
-    static let identifier = "CitiesCell"
+    static let identifier = String(describing: SearchTableViewCell.self)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

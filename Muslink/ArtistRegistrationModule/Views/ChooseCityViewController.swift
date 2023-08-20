@@ -113,7 +113,7 @@ final class ChooseCityView: UIViewController {
             return
         }
         viewModel.userDidEnterCity(city: City(name: cityName))
-        navigationController?.pushViewController(SocialNetworkViewContoller(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel), animated: false)
     }
     
     private func createLabel(text: String, fontSize: CGFloat, color: UIColor) -> UILabel {
