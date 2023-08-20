@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,8 @@
 		2175707C2A90889B00B11318 /* ApplicationNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */; };
 		2175707E2A90899C00B11318 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707D2A90899C00B11318 /* Application.swift */; };
 		217570802A908CEB00B11318 /* MyApplicationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */; };
+		217570832A91D38F00B11318 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570822A91D38F00B11318 /* AccessTokenResponse.swift */; };
+		217570852A91D62900B11318 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570842A91D62900B11318 /* AuthResponse.swift */; };
 		21B1C71D2A879986009F6BCE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71C2A879986009F6BCE /* City.swift */; };
 		21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71E2A879CEC009F6BCE /* Genre.swift */; };
 		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
@@ -55,9 +57,11 @@
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 		DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */; };
 		DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */; };
+		EBBB0884862DEF52D450CB32 /* Pods_Muslink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C372245F7FE1E16AF434C7 /* Pods_Muslink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E7D22B7F19CC8D81446AF5A /* Pods-Muslink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muslink.debug.xcconfig"; path = "Target Support Files/Pods-Muslink/Pods-Muslink.debug.xcconfig"; sourceTree = "<group>"; };
 		211AACCA2A7D5EA000D7469C /* Muslink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muslink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211AACCD2A7D5EA000D7469C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,9 @@
 		2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNetworkingService.swift; sourceTree = "<group>"; };
 		2175707D2A90899C00B11318 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplicationsViewModel.swift; sourceTree = "<group>"; };
+		217570812A90ABA100B11318 /* Muslink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Muslink.entitlements; sourceTree = "<group>"; };
+		217570822A91D38F00B11318 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		217570842A91D62900B11318 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		21B1C71C2A879986009F6BCE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		21B1C71E2A879CEC009F6BCE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -90,6 +97,7 @@
 		21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTableViewCell.swift; sourceTree = "<group>"; };
 		21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B2C372245F7FE1E16AF434C7 /* Pods_Muslink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muslink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSentViewController.swift; sourceTree = "<group>"; };
 		BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		BF0B418E2A89203300502AC7 /* CitiesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesTableView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTracksViewController.swift; sourceTree = "<group>"; };
 		DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
+		EFADC6587F985BFCB0406157 /* Pods-Muslink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muslink.release.xcconfig"; path = "Target Support Files/Pods-Muslink/Pods-Muslink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBB0884862DEF52D450CB32 /* Pods_Muslink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +136,8 @@
 			children = (
 				211AACCC2A7D5EA000D7469C /* Muslink */,
 				211AACCB2A7D5EA000D7469C /* Products */,
+				5A434845A9410AC125CDE98D /* Pods */,
+				40E114B597988A2420B13F8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +152,7 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				217570812A90ABA100B11318 /* Muslink.entitlements */,
 				21B1C7412A8FAFB7009F6BCE /* InfoTrackModule */,
 				211AAD942A8771E100D7469C /* Services */,
 				211AAD8A2A8632DE00D7469C /* Models */,
@@ -199,6 +212,8 @@
 				21B1C71C2A879986009F6BCE /* City.swift */,
 				21B1C71E2A879CEC009F6BCE /* Genre.swift */,
 				21B1C7202A87B100009F6BCE /* Track.swift */,
+				217570822A91D38F00B11318 /* AccessTokenResponse.swift */,
+				217570842A91D62900B11318 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +273,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		40E114B597988A2420B13F8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2C372245F7FE1E16AF434C7 /* Pods_Muslink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A434845A9410AC125CDE98D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E7D22B7F19CC8D81446AF5A /* Pods-Muslink.debug.xcconfig */,
+				EFADC6587F985BFCB0406157 /* Pods-Muslink.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BF52FE382A7E0A9F0028B093 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,9 +320,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 211AACDE2A7D5EA200D7469C /* Build configuration list for PBXNativeTarget "Muslink" */;
 			buildPhases = (
+				74E76837FD8EFB099795F22D /* [CP] Check Pods Manifest.lock */,
 				211AACC62A7D5EA000D7469C /* Sources */,
 				211AACC72A7D5EA000D7469C /* Frameworks */,
 				211AACC82A7D5EA000D7469C /* Resources */,
+				22BCBA38ECE6A20ECE2BAFDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +351,7 @@
 				};
 			};
 			buildConfigurationList = 211AACC52A7D5EA000D7469C /* Build configuration list for PBXProject "Muslink" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -345,6 +379,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22BCBA38ECE6A20ECE2BAFDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Muslink/Pods-Muslink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Muslink/Pods-Muslink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Muslink/Pods-Muslink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74E76837FD8EFB099795F22D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Muslink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		211AACC62A7D5EA000D7469C /* Sources */ = {
@@ -385,6 +461,7 @@
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,
 				DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */,
+				217570832A91D38F00B11318 /* AccessTokenResponse.swift in Sources */,
 				DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */,
 				BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
@@ -396,6 +473,7 @@
 				21B1C7432A8FAFF6009F6BCE /* MyApplicationsViewController.swift in Sources */,
 				DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */,
 				21B1C7212A87B100009F6BCE /* Track.swift in Sources */,
+				217570852A91D62900B11318 /* AuthResponse.swift in Sources */,
 				21B1C7482A8FB270009F6BCE /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,13 +608,15 @@
 		};
 		211AACDF2A7D5EA200D7469C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E7D22B7F19CC8D81446AF5A /* Pods-Muslink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Muslink/Muslink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7MJTTLBM2G;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Muslink/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Muslink;
@@ -563,13 +643,15 @@
 		};
 		211AACE02A7D5EA200D7469C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFADC6587F985BFCB0406157 /* Pods-Muslink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Muslink/Muslink.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7MJTTLBM2G;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Muslink/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Muslink;

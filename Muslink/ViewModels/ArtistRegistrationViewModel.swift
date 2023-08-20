@@ -23,6 +23,18 @@ final class ArtistRegistrationViewModel {
         self.networkingService = networkingService
     }
     
+    func registerUser(completion: @escaping (Result<AccessTokenResponse, Error>) -> Void) {
+        Task {
+            do {
+                let registeredUser = try await networkingService.registerUser()
+                completion(.success(registeredUser))
+            } catch {
+                print(error)
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func createProfile(completaion: @escaping (Result<Void, Error>) -> Void) {
         guard
               let name = name,

@@ -19,5 +19,22 @@
 			</array>
 		</dict>
 	</dict>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>yandexauth</string>
+        <string>yandexauth2</string>
+        <string>yandexauth4</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>YandexLoginSDK</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>yx358226ac5c784fc9b4e8f356b7bf3f57</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "77BFC7B0-375A-490D-A7D0-E21E84E7560C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C5AA79E-C80E-4E61-913F-88CF4CCBCF4B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Views/UsernameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC7117BB-7F50-4957-9FAD-8EF1C9022776"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Views/UsernameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "loginDidFinish(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC7117BB-7F50-4957-9FAD-8EF1C9022776 - 4bffd5c73a5f5dea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muslink.UsernameViewController.loginDidFinish(with: __C.YXLLoginResult) -&gt; ()"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/UsernameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "FC7117BB-7F50-4957-9FAD-8EF1C9022776 - 4bffd5c73a5f5dc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muslink.UsernameViewController.loginDidFinish(with: __C.YXLLoginResult) -&gt; ()"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Views/UsernameViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCAD9FAF-39C5-4CC6-ACAD-66FB604A62C5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Views/UsernameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "loginDidFinish(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CC0DCCB-11D1-4E5A-A4CB-A6C79C3F3D34"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Views/UsernameViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "loginDidFinish(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAE83AD1-C504-45DC-9C45-DABC7C35AE7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Services/DefaultNetworkingService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "registerUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21246F0D-12F2-43F4-A676-935F6DCBA46D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Services/DefaultNetworkingService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "registerUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "21246F0D-12F2-43F4-A676-935F6DCBA46D - cb5b012a6afec5f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "21246F0D-12F2-43F4-A676-935F6DCBA46D - 98138955b71e77f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F70DFD9A-ADC9-4E80-96C3-C2E5E8C78CC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Muslink/Services/DefaultNetworkingService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "registerUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F70DFD9A-ADC9-4E80-96C3-C2E5E8C78CC7 - 98138955b71e7665"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "988">
+               </Location>
+               <Location
+                  uuid = "F70DFD9A-ADC9-4E80-96C3-C2E5E8C78CC7 - b6cfebdb4fc698e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F70DFD9A-ADC9-4E80-96C3-C2E5E8C78CC7 - 3282ee139bbd1a53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "F70DFD9A-ADC9-4E80-96C3-C2E5E8C78CC7 - 79ca7d70f5eb4c48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Muslink.DefaultNetworkingService.registerUser() async throws -&gt; Muslink.AccessTokenResponse"
+                  moduleName = "Muslink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrorbek/Desktop/IOS/muslink-ios/Muslink/Services/DefaultNetworkingService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

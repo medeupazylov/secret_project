@@ -1,0 +1,6 @@
+framework module Pods_Muslink {
+  umbrella header "Pods-Muslink-umbrella.h"
+
+  export *
+  module * { export * }
+}
