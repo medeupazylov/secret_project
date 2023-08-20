@@ -114,7 +114,7 @@ final class SocialNetworkViewContoller: UIViewController {
         ])
     }
     
-    func setupMainStack() {
+    private func setupMainStack() {
         mainVStack.addArrangedSubview(yandexView)
         mainVStack.addArrangedSubview(vkontakteView)
         mainVStack.addArrangedSubview(spotifyView)
