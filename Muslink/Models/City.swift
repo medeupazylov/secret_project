@@ -11,7 +11,7 @@ struct City: Codable {
     let id: Int
     let name: String
     
-    init(id: Int = 0, name: String){
+    init(id: Int, name: String){
         self.id = id
         self.name = name
     }
@@ -20,5 +20,9 @@ struct City: Codable {
 extension City: SearchItem {
     var title: String {
         return name
+    }
+    
+    var itemId : Int {
+        return id
     }
 }

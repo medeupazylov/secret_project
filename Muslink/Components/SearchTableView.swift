@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 protocol ChosenItemDelegate {
-    func chosenItem(index: IndexPath?, item: String?)
+    func chosenItem(index: IndexPath?, item: SearchItem?)
 }
 
 protocol SearchItem {
     var title: String { get }
+    var id: Int { get }
 }
 
 final class SearchTableView: UIViewController {
@@ -28,8 +29,6 @@ final class SearchTableView: UIViewController {
             tableView.reloadData()
         }
     }
-    
-    let data2 = ["Almaty","Astana","Shymkent","Taraz","Turkestan"]
     
     //MARK: - LifeCycle
     
@@ -58,7 +57,7 @@ final class SearchTableView: UIViewController {
     
     private var tableView = UITableView()
     
-    var chosenItem: String?
+    var chosenItem: SearchItem?
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -98,7 +97,7 @@ final class SearchTableView: UIViewController {
     }
     
     private func checkChoose(item: String) -> Bool {
-        return chosenItem == item
+        return chosenItem?.title == item
     }
     
     private func setupUI() {
@@ -137,7 +136,7 @@ extension SearchTableView: UITableViewDelegate {
         }
         
         selectedItemIndexPath = indexPath
-        chosenItem = filteredData[indexPath.row].title
+        chosenItem = filteredData[indexPath.row]
         
         if let selectedCell = tableView.cellForRow(at: indexPath) as? SearchTableViewCell {
             selectedCell.showSelectIcon()
@@ -169,7 +168,7 @@ extension SearchTableView: UITableViewDataSource {
             fatalError("Error: Could not dequeue custom cell")
         }
         
-        if let item = data2[indexPath.row] as? String {
+        if let item = filteredData[indexPath.row].title as? String {
             cell.configure(with: item)
             if checkChoose(item: item) {
                 cell.showSelectIcon()
@@ -180,6 +179,6 @@ extension SearchTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data2.count
+        return filteredData.count
     }
 }
