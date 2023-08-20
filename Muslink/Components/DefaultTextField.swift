@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum DefaultTextFieldType {
+    case regular
+    case special
+}
+
 final class DefaultTextField: UIView {
     
     // MARK: - Properties
@@ -21,9 +26,12 @@ final class DefaultTextField: UIView {
         return textField.text ?? ""
     }
     
+    var type: DefaultTextFieldType = .regular
+    
     //MARK: - Lifecycle
     
-    init(placeHolder: String, delegate: UITextFieldDelegate){
+    init(placeHolder: String, delegate: UITextFieldDelegate, type: DefaultTextFieldType = .regular) {
+        self.type = type
         super.init(frame: .zero)
         textField.delegate = delegate
         textField.attributedPlaceholder = NSAttributedString(
@@ -54,7 +62,7 @@ final class DefaultTextField: UIView {
     
     private func setupLayout(){
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 44),
+            self.heightAnchor.constraint(equalToConstant: (type == .regular) ? 44 : 56),
             textField.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
             textField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
             textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
