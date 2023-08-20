@@ -107,13 +107,12 @@ class GoalsViewController: UIViewController {
         }
     }
     
-    @IBAction private func continueButtonPressed(){
+    @objc private func continueButtonPressed(){
         for goal in goals {
             if goal.checked {
                 selectedGoalsTitles.append(goal.title)
             }
         }
-        print(selectedGoalsTitles)
     }
 }
 
@@ -131,8 +130,6 @@ extension GoalsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let self = self else {return}
             self.goals[index].checked = !goals[index].checked
             self.tableView.reloadData()
-            print("AAAAAA")
-            print(selectedGoalsTitles)
         }
         return cell
     }

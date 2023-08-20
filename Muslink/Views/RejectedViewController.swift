@@ -7,21 +7,9 @@
 
 import UIKit
 
-class RejectedViewController: UIViewController {
+class RejectedViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Properties
-    
-    private let titleLabel = DefaultLabel(text: "Причина отказа",
-                                  textColor: Color.neutral100.color,
-                                  fontSize: 20.0,
-                                  fontWeight: .bold)
-    
-    private let sendButton: DefaultButton = {
-        let button = DefaultButton(buttonType: .primary)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(title: "Отправить")
-        return button
-    }()
 
     private let commentLabel = DefaultLabel(text: "Комментарии лейбла",
                                             textColor: Color.neutral100.color,
@@ -29,6 +17,10 @@ class RejectedViewController: UIViewController {
                                             fontWeight: .bold)
     
     let tableView = ContentSizedTableView()
+    
+    private let closeButton = CloseButton()
+    
+    private var selectedReasonsTitles = [String]()
     
     private lazy var textView: CustomTextView = {
         let textView = CustomTextView(delegate: self)
@@ -49,8 +41,6 @@ class RejectedViewController: UIViewController {
             return label
         }()
 
-
-    
     var cellId = "reasonsCell"
     
     private var reasons = [Reason(title: "Плохое качество записи", checked: false),
@@ -60,6 +50,30 @@ class RejectedViewController: UIViewController {
                            Reason(title: "Качество исполнения", checked: false)
                         ]
     
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.frame = view.frame
+        scrollView.isScrollEnabled = true
+        scrollView.addSubview(tableView)
+        scrollView.addSubview(commentLabel)
+        scrollView.addSubview(textView)
+        scrollView.addSubview(letterCountLabel)
+        scrollView.addSubview(sendButton)
+        scrollView.isUserInteractionEnabled = true
+        scrollView.alwaysBounceVertical = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.keyboardDismissMode = .interactive
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
+        return scrollView
+    }()
+    
+    private let sendButton: DefaultButton = {
+        let button = DefaultButton(buttonType: .primary)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(title: "Отправить")
+        return button
+    }()
     
     //MARK: - App Lifecycle
     
@@ -67,20 +81,36 @@ class RejectedViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
+        setupObservers()
     }
     
     
     //MARK: - Functions
     
+    func reasonsChanged() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func setupNavigationBar() {
+        let title = UILabel()
+        title.text = "Причина отказа"
+        title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        title.textColor = Color.neutral100.color
+        navigationItem.titleView = title
+        let item = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .done, target: self, action: #selector(dismissController))
+        item.tintColor = Color.neutral16.color
+        navigationItem.rightBarButtonItem = item
+    }
+    
     func setupView() {
-        view.backgroundColor = Color.elevatedBgColor.color
-        view.addSubview(titleLabel)
-        view.addSubview(tableView)
-        view.addSubview(commentLabel)
-        view.addSubview(textView)
-        view.addSubview(letterCountLabel)
-        view.addSubview(sendButton)
         setupTableView()
+        setupNavigationBar()
+        view.backgroundColor = Color.elevatedBgColor.color
+        view.addSubview(scrollView)
+        scrollView.delegate = self
+        sendButton.addTarget(self, action: #selector(sendButtonPressed), for: .touchUpInside)
     }
     
     private func setupTableView() {
@@ -95,10 +125,8 @@ class RejectedViewController: UIViewController {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
+            tableView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 24),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
@@ -119,7 +147,24 @@ class RejectedViewController: UIViewController {
             sendButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             sendButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            
         ])
+    }
+    
+    
+    @objc private func dismissController() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc private func sendButtonPressed() {
+        for reason in reasons {
+            if reason.checked {
+                selectedReasonsTitles.append(reason.title)
+            }
+        }
     }
 }
 
@@ -140,31 +185,67 @@ extension RejectedViewController: UITableViewDelegate, UITableViewDataSource {
             guard let self = self else {return}
             self.reasons[index].checked = !reasons[index].checked
             self.tableView.reloadData()
-            print("AAAAAA")
-            print(reasons)
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        reasons[indexPath.row].checked = !reasons[indexPath.row].checked
+        reasonsChanged()
+    }
 }
+
+
+//MARK: - TextView Configuration
 
 extension RejectedViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-            if textView.text == "Подскажите исполнителю как стать лучше" {
-                textView.text = nil
-            }
-            textView.textColor = Color.neutral80.color
+        if textView.text == "Подскажите исполнителю как стать лучше" {
+            textView.text = nil
+        }
+        textView.textColor = Color.neutral80.color
+    }
+        
+    func textViewDidChange(_ textView: UITextView) {
+        letterCountLabel.text = "\(textView.text.count)/500"
+    }
+        
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Подскажите исполнителю как стать лучше"
+            textView.textColor = Color.neutral32.color
+        }
+    }
+    
+    
+    //MARK: - Keyboard Handling
+        
+    private func setupObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+        
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+            return
         }
         
-        func textViewDidChange(_ textView: UITextView) {
-            letterCountLabel.text = "\(textView.text.count)/500"
-        }
+        let keyboardHeight = keyboardFrame.height
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         
-        func textViewDidEndEditing(_ textView: UITextView) {
-            if textView.text.isEmpty {
-                textView.text = "Подскажите исполнителю как стать лучше"
-                textView.textColor = Color.neutral32.color
-            }
-        }
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textView.endEditing(true)
+        
+    }
 
 }
