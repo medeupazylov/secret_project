@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import YandexLoginSDK
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
 
@@ -18,12 +18,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let networkingService = DefaultNetworkingService()
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-        let controller = RejectedViewController()
-//        let controller = GoalsViewController()
-//        let controller = MusicianInfoViewController()
+        let controller = UsernameViewController(viewModel: viewModel)
+        
+//        YXLSdk.shared.authorize()
+//        let network = ApplicationNetworkingServiceImpl()
+//        let viewModel = MyApplicationsViewModel(networkingService: network)
+//        let controller = MyApplicationsViewController(viewModel: viewModel)
+//        YXLSdk.shared.authorize(withUid: 0, login: nil, phone: nil, firstName: nil, lastName: nil, customValues: nil, parentController: controller)
+//        YXLSdk.shared.add(observer: self)
+
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
+    {
+       URLContexts.forEach({ context in
+          if YXLSdk.shared.isUrlRelated(toSdk: context.url) {
+                YXLSdk.shared.handleOpen(context.url, sourceApplication: nil)
+          }
+       })
+    }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

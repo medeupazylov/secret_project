@@ -8,11 +8,15 @@
 import Foundation
 
 struct Track: Codable {
-    let id: Int
-    let link: String
-    
-    init(id: Int = 0, link: String){
-        self.id = id
-        self.link = link
+    struct TrackInfo: Codable {
+        let id: Int
+        let link: String
     }
+    
+    let track: TrackInfo
+    let name: String
+    let language: String
+    let genres: [Genre]
+    let subGenres: [SubGenre]
+    let moods: [Mood]
 }

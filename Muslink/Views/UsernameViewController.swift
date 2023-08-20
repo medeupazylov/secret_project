@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import YandexLoginSDK
+
+var token: String = ""
 
 final class UsernameViewController: UIViewController {
     
@@ -27,7 +30,17 @@ final class UsernameViewController: UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
        view.backgroundColor = Color.primaryBgColor.color
-       setupNavigationBar()
+        YXLSdk.shared.add(observer: self)
+        YXLSdk.shared.authorize()
+        viewModel.registerUser { result in
+            switch result {
+            case .success(_):
+                print("success")
+            case .failure(_):
+                print("Error")
+            }
+        }
+        setupNavigationBar()
        setup()
     }
 
@@ -198,5 +211,13 @@ extension UsernameViewController: UITextFieldDelegate {
     }
 }
 
-
-
+extension UsernameViewController: YXLObserver {
+    func loginDidFinish(with result: YXLLoginResult) {
+        token = result.token
+        print(token)
+    }
+    
+    func loginDidFinishWithError(_ error: Error) {
+        
+    }
+}
