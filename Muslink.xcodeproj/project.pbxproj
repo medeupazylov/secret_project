@@ -42,8 +42,18 @@
 		BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */; };
 		BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE392A7E0ABF0028B093 /* Color.swift */; };
 		BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52FE3B2A7E0DF80028B093 /* Image.swift */; };
+		BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */; };
+		BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */; };
+		BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */; };
+		BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC30C2A8D62E700033BC6 /* Goal.swift */; };
+		BF5AC3132A90C78100033BC6 /* RejectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */; };
+		BF5AC3152A90CC1800033BC6 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3142A90CC1800033BC6 /* Reason.swift */; };
+		BF5AC3172A90CD8A00033BC6 /* ReasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */; };
 		BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0222A862C4700CC3A59 /* StatisticsView.swift */; };
+		D521A0372A890D3900CC3A59 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0362A890D3900CC3A59 /* SearchTableView.swift */; };
+		D521A0392A890D4000CC3A59 /* DefaultOptionsChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */; };
+		D521A03B2A890D4600CC3A59 /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A03A2A890D4600CC3A59 /* LabelCardView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
 		DEDF6BFF2A8FC27C0065CC04 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */; };
 		DEDF6C042A8FC5FB0065CC04 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6C022A8FC5FB0065CC04 /* AudioPlayerViewController.swift */; };
@@ -91,8 +101,18 @@
 		BF4B76AB2A87A308007D5DD7 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		BF52FE392A7E0ABF0028B093 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BF52FE3B2A7E0DF80028B093 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
+		BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
+		BF5AC30C2A8D62E700033BC6 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedViewController.swift; sourceTree = "<group>"; };
+		BF5AC3142A90CC1800033BC6 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
+		BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsTableViewCell.swift; sourceTree = "<group>"; };
 		BFB642F52A7FDD2F00DE5A07 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		D521A0222A862C4700CC3A59 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		D521A0362A890D3900CC3A59 /* SearchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
+		D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultOptionsChooser.swift; sourceTree = "<group>"; };
+		D521A03A2A890D4600CC3A59 /* LabelCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
 		DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Muslink/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		DEDF6C022A8FC5FB0065CC04 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
@@ -177,10 +197,17 @@
 				DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
 				211AAD362A7F995D00D7469C /* ButtonsCollectionViewCell.swift */,
+				BF5AC3062A8D0A6300033BC6 /* GoalsTableViewCell.swift */,
+				BF5AC3162A90CD8A00033BC6 /* ReasonsTableViewCell.swift */,
 				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 				211AAD4C2A7FC31900D7469C /* AddImageView.swift */,
 				BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */,
 				21B1C7262A87DA75009F6BCE /* HorizontalStackView.swift */,
+				21B1C72D2A88D16E009F6BCE /* CustomTextView.swift */,
+				D521A03A2A890D4600CC3A59 /* LabelCardView.swift */,
+				D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */,
+				D521A0362A890D3900CC3A59 /* SearchTableView.swift */,
+				BF5AC30A2A8D60FA00033BC6 /* ContentSizedTableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,6 +219,8 @@
 				21B1C71C2A879986009F6BCE /* City.swift */,
 				21B1C71E2A879CEC009F6BCE /* Genre.swift */,
 				21B1C7202A87B100009F6BCE /* Track.swift */,
+				BF5AC30C2A8D62E700033BC6 /* Goal.swift */,
+				BF5AC3142A90CC1800033BC6 /* Reason.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,11 +234,13 @@
 				211AAD3A2A7F995D00D7469C /* SocialNetworkViewContoller.swift */,
 				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
+				BF5AC3042A8CF0E100033BC6 /* GoalsViewController.swift */,
 				211AAD462A7F998100D7469C /* SocialNetworksView.swift */,
 				211AAD472A7F998100D7469C /* CitiesCell.swift */,
 				D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */,
 				BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */,
 				D521A0222A862C4700CC3A59 /* StatisticsView.swift */,
+				BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,13 +359,18 @@
 				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
+				BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */,
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
 				DEDF6C052A8FC5FB0065CC04 /* TrackLoadViewController.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
+				BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
+				BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */,
 				BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */,
 				BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */,
+				BF5AC3132A90C78100033BC6 /* RejectedViewController.swift in Sources */,
+				BF5AC3172A90CD8A00033BC6 /* ReasonsTableViewCell.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
@@ -344,14 +380,21 @@
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
+				BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
 				211AAD962A87720300D7469C /* DefaultNetworkingService.swift in Sources */,
 				211AAD492A7F998100D7469C /* ChooseCityViewController.swift in Sources */,
-				DEDF6BFF2A8FC27C0065CC04 /* ProfileViewController.swift in Sources */,
+				D521A03B2A890D4600CC3A59 /* LabelCardView.swift in Sources */,
 				21B1C7292A87E0C4009F6BCE /* MusicianInfoViewController.swift in Sources */,
 				BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */,
+				D521A0372A890D3900CC3A59 /* SearchTableView.swift in Sources */,
 				BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */,
 				211AAD882A84ED4F00D7469C /* CustomFlowLayout.swift in Sources */,
+				D521A0392A890D4000CC3A59 /* DefaultOptionsChooser.swift in Sources */,
+				DEEE59472A87B0DD0027DA68 /* ProfileViewController.swift in Sources */,
+				21B1C72C2A88CDBB009F6BCE /* DescriptionViewController.swift in Sources */,
+				21B1C7332A88D7D1009F6BCE /* UIViewController + Extension.swift in Sources */,
+				21B1C72E2A88D16E009F6BCE /* CustomTextView.swift in Sources */,
 				BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */,
 				211AAD3D2A7F995D00D7469C /* ButtonsCollectionViewCell.swift in Sources */,
 				D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */,
@@ -360,6 +403,7 @@
 				BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
+				BF5AC3152A90CC1800033BC6 /* Reason.swift in Sources */,
 				BF52FE3C2A7E0DF80028B093 /* Image.swift in Sources */,
 				21B1C71D2A879986009F6BCE /* City.swift in Sources */,
 				BF0B418F2A89203300502AC7 /* CitiesTableView.swift in Sources */,
