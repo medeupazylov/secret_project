@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "alert.pdf",
+      "filename" : "Primary-CTA.pdf",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "preserves-vector-representation" : true,
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

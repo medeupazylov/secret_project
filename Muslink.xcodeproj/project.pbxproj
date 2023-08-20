@@ -56,6 +56,9 @@
 		D521A0392A890D4000CC3A59 /* DefaultOptionsChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */; };
 		D521A03B2A890D4600CC3A59 /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521A03A2A890D4600CC3A59 /* LabelCardView.swift */; };
 		D523C5E22A7FC349004ADB75 /* ProfileHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */; };
+		DEDF6BFF2A8FC27C0065CC04 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */; };
+		DEDF6C042A8FC5FB0065CC04 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6C022A8FC5FB0065CC04 /* AudioPlayerViewController.swift */; };
+		DEDF6C052A8FC5FB0065CC04 /* TrackLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6C032A8FC5FB0065CC04 /* TrackLoadViewController.swift */; };
 		DEFCE87B2A7E1BA300FA6051 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */; };
 		DEFCE8882A7FBA6F00FA6051 /* PopularTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */; };
 		DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */; };
@@ -113,6 +116,9 @@
 		D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultOptionsChooser.swift; sourceTree = "<group>"; };
 		D521A03A2A890D4600CC3A59 /* LabelCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		D523C5E12A7FC349004ADB75 /* ProfileHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewController.swift; sourceTree = "<group>"; };
+		DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Muslink/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		DEDF6C022A8FC5FB0065CC04 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		DEDF6C032A8FC5FB0065CC04 /* TrackLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackLoadViewController.swift; sourceTree = "<group>"; };
 		DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTracksViewController.swift; sourceTree = "<group>"; };
 		DEFCE88A2A7FBB3600FA6051 /* MusicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCardView.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 		211AACCC2A7D5EA000D7469C /* Muslink */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF6C022A8FC5FB0065CC04 /* AudioPlayerViewController.swift */,
+				DEDF6C032A8FC5FB0065CC04 /* TrackLoadViewController.swift */,
+				DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */,
 				211AAD942A8771E100D7469C /* Services */,
 				211AAD8A2A8632DE00D7469C /* Models */,
 				211AAD8D2A8632F700D7469C /* Views */,
@@ -354,6 +363,7 @@
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
 				BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */,
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
+				DEDF6C052A8FC5FB0065CC04 /* TrackLoadViewController.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */,
@@ -366,6 +376,7 @@
 				211AAD4B2A7F998100D7469C /* CitiesCell.swift in Sources */,
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
+				DEDF6C042A8FC5FB0065CC04 /* AudioPlayerViewController.swift in Sources */,
 				BF4B76A82A875A10007D5DD7 /* PhotoCarouselCell.swift in Sources */,
 				BFB642F82A7FDD4C00DE5A07 /* (null) in Sources */,
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
