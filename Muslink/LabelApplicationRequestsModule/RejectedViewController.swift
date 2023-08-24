@@ -10,6 +10,19 @@ import UIKit
 class RejectedViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Properties
+    
+    var cellId = "reasonsCell"
+    
+    private var reasons = [Reason(title: "Плохое качество записи", checked: false),
+                           Reason(title: "Нереалистичные цели", checked: false),
+                           Reason(title: "Не соответствие тематике лейбла", checked: false),
+                           Reason(title: "Самопрезентация", checked: false),
+                           Reason(title: "Качество исполнения", checked: false)
+                        ]
+    
+    private var selectedReasonsTitles = [String]()
+
+    //MARK: - UI Elements
 
     private let commentLabel = DefaultLabel(text: "Комментарии лейбла",
                                             textColor: Color.neutral100.color,
@@ -17,10 +30,6 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
                                             fontWeight: .bold)
     
     let tableView = ContentSizedTableView()
-    
-    private let closeButton = CloseButton()
-    
-    private var selectedReasonsTitles = [String]()
     
     private lazy var textView: CustomTextView = {
         let textView = CustomTextView(delegate: self)
@@ -40,15 +49,6 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
             label.text = "0/500"
             return label
         }()
-
-    var cellId = "reasonsCell"
-    
-    private var reasons = [Reason(title: "Плохое качество записи", checked: false),
-                           Reason(title: "Нереалистичные цели", checked: false),
-                           Reason(title: "Не соответствие тематике лейбла", checked: false),
-                           Reason(title: "Самопрезентация", checked: false),
-                           Reason(title: "Качество исполнения", checked: false)
-                        ]
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -83,7 +83,6 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
         setupConstraints()
         setupObservers()
     }
-    
     
     //MARK: - Functions
     
@@ -153,7 +152,6 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
             
         ])
     }
-    
     
     @objc private func dismissController() {
         self.dismiss(animated: true)

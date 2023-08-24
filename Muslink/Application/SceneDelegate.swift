@@ -18,8 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let networkingService = DefaultNetworkingService()
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-//        let controller = UsernameViewController(viewModel: viewModel)
-        let controller = AcceptedViewController()
+        let controller = UsernameViewController(viewModel: viewModel)
 //        YXLSdk.shared.authorize()
 //        let network = ApplicationNetworkingServiceImpl()
 //        let viewModel = MyApplicationsViewModel(networkingService: network)

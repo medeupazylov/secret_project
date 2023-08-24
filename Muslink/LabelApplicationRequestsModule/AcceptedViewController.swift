@@ -9,7 +9,7 @@ import UIKit
 
 class AcceptedViewController: UIViewController, UIScrollViewDelegate {
     
-    //MARK: - Properties
+    //MARK: - UI Elements
 
     private let commentLabel = DefaultLabel(text: "Комментарии лейбла",
                                             textColor: Color.neutral100.color,
