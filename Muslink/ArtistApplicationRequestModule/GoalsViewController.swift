@@ -128,7 +128,7 @@ extension GoalsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.index = indexPath.row
         cell.onToggleChecked = { [weak self] index in
             guard let self = self else {return}
-            self.goals[index].checked = !goals[index].checked
+            self.goals[index].checked = !self.goals[index].checked
             self.tableView.reloadData()
         }
         return cell
