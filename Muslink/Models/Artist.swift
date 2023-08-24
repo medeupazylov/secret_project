@@ -28,11 +28,11 @@ struct Artist: Codable {
     let city: City
     let socialNetworks: [SocialNetwork]
     let genres: [Genre]
-    let photos: [Photo]
+    let photos: [File]
     let tracks: [Track]?
     let biography: String?
     
-    init(name: String, nickname: String, city: City, socialNetworks: [SocialNetwork], genres: [Genre], photos: [Photo], tracks: [Track]? = nil, biography: String? = nil) {
+    init(name: String, nickname: String, city: City, socialNetworks: [SocialNetwork], genres: [Genre], photos: [File], tracks: [Track]? = nil, biography: String? = nil) {
         self.name = name
         self.nickname = nickname
         self.city = city

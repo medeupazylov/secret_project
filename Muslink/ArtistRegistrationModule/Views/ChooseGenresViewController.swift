@@ -11,17 +11,18 @@ import UIKit
 final class ChooseGenresViewController: UIViewController {
     
     //MARK: - Properties
-    
-    private let viewModel: ArtistRegistrationViewModel
-    
     private var genres: [Genre] = []
     
     private var selectedGenres: [Genre] = []
     
+    private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
+    
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -107,8 +108,7 @@ final class ChooseGenresViewController: UIViewController {
         view.addSubview(continueButton)
         
         NSLayoutConstraint.activate([
-            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -151,7 +151,7 @@ final class ChooseGenresViewController: UIViewController {
     @objc
     private func nextButtonPressed() {
         viewModel.userDidEnterGenres(genres: selectedGenres)
-        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel, window: window), animated: false)
     }
     
     @objc
@@ -192,7 +192,7 @@ extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionView
             let isSelected = selectedCell.select()
             let text = selectedCell.getType()
             if isSelected {
-                selectedGenres.append(Genre(name: text))
+                selectedGenres.append(Genre(id: indexPath.row, name: text))
             } else {
                 if let index = selectedGenres.firstIndex(where: {
                     $0.name == text

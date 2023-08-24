@@ -10,15 +10,17 @@ import UIKit
 final class ChooseSocialNetworksViewContoller: UIViewController {
     
     //MARK: - Properties
+
+    private var networks: [SocialNetwork] = []
     
     private let viewModel: ArtistRegistrationViewModel
-    private var networks: [SocialNetwork] = []
-    private var scrollViewBottomConstraint: NSLayoutConstraint!
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -70,7 +72,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     @objc
     private func nextButtonPressed() {
         viewModel.userDidEnterSocialNetworks(socialNetworks: networks)
-        navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel, window: window), animated: false)
     }
     
     func setupNavigationBar() {
@@ -97,8 +99,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -114,7 +115,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
             
             continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
+            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12.0),
             
             mainScrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             mainScrollView.rightAnchor.constraint(equalTo: view.rightAnchor),

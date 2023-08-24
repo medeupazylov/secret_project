@@ -105,6 +105,7 @@ final class SearchTableView: UIViewController {
         view.addSubview(tableView)
         
         tableView.separatorStyle = .none
+        tableView.bounces = false
         tableView.backgroundColor = Color.elevatedBgColor.color
         tableView.tableHeaderView = searchController.searchBar
         tableView.tableHeaderView?.backgroundColor = Color.elevatedBgColor.color

@@ -11,8 +11,17 @@ struct Genre: Codable {
     let id: Int
     let name: String
     
-    init(id: Int = 0, name: String){
+    init(id: Int, name: String){
         self.id = id
         self.name = name
+    }
+}
+
+extension Genre: SearchItem {
+    var title: String {
+        return self.name
+    }
+    var itemId: Int {
+        return self.id
     }
 }

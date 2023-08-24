@@ -16,19 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-//        let networkingService = DefaultNetworkingService()
-//        let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-//        let controller = UsernameViewController(viewModel: viewModel)
-//        let controller = ChooseSocialNetworksViewContoller(viewModel: viewModel)
-        let controller = ProfileViewController()
-        
-//        YXLSdk.shared.authorize()
-//        let network = ApplicationNetworkingServiceImpl()
-//        let viewModel = MyApplicationsViewModel(networkingService: network)
-//        let controller = MyApplicationsViewController(viewModel: viewModel)
-//        YXLSdk.shared.authorize(withUid: 0, login: nil, phone: nil, firstName: nil, lastName: nil, customValues: nil, parentController: controller)
-//        YXLSdk.shared.add(observer: self)
+        let networkingService = DefaultNetworkingService()
+        let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
+        let controller = UsernameViewController(viewModel: viewModel, window: window!)
 
+        let tabBar = MainTabBarController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }
