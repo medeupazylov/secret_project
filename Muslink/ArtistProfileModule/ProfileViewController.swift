@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     
     init(profile: ProfileModel) {
         self.profile = profile
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -31,9 +31,9 @@ class ProfileViewController: UIViewController {
     
     //MARK: - Setup Methods
     private func addChildViewControllers() {
-        addNewVC(vc: ProfileHeaderViewController())
+        addNewVC(vc: ProfileHeaderViewController(name: profile.name, city: profile.city.title, genres: profile.genres, image: profile.images.first!))
         addNewVC(vc: PopularTracksViewController())
-        addNewVC(vc: MusicianInfoViewController())
+                 addNewVC(vc: MusicianInfoViewController(images: profile.images, name: profile.name, city: profile.city.title))
         
     }
     

@@ -85,7 +85,7 @@ final class DefaultTextField: UIView {
     private let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-
+        textField.autocorrectionType = .no
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.keyboardType = .default
         textField.textAlignment = .left

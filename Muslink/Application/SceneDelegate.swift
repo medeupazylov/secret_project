@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
         let controller = UsernameViewController(viewModel: viewModel, window: window!)
 
-        let tabBar = MainTabBarController()
+//        let tabBar = MainTabBarController()
         window?.rootViewController = UINavigationController(rootViewController: controller)
         window?.makeKeyAndVisible()
     }

@@ -222,8 +222,9 @@ final class ChoosePhotoViewController: UIViewController {
         let seconds = 4.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
             self.loadingVC.dismiss(animated: true)
-            let tabBar = MainTabBarController()
-            tabBar.profile = ProfileModel(name: viewModel.name!, city: viewModel.city!, genres: viewModel.genres!, images: images)
+            let profile = ProfileModel(name: viewModel.name!, city: viewModel.city!, genres: viewModel.genres!, images: images)
+            let tabBar = MainTabBarController(profile: profile)
+
             window.rootViewController = tabBar
         }
         
