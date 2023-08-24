@@ -14,8 +14,9 @@ final class ChoosePhotoViewController: UIViewController {
     //MARK: - Properties
 
     private let viewModel: ArtistRegistrationViewModel
+    private let loadingVC = LoadingViewController()
     private var photoIndex = 0
-    private var photos: [Photo] = []
+    private var photos: [File] = []
     
     //MARK: - Lifecycle
     
@@ -150,7 +151,7 @@ final class ChoosePhotoViewController: UIViewController {
     func setupLayout() {
         NSLayoutConstraint.activate([
             progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -211,9 +212,21 @@ final class ChoosePhotoViewController: UIViewController {
     // MARK: - Button Action
     
     @objc func buttonTapped() {
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalTransitionStyle = .crossDissolve
+        present(loadingVC, animated: true, completion: nil)
+        
         viewModel.userDidEnterPhotos(photos: photos)
-        viewModel.createProfile { result in
-            print(result)
+        viewModel.createProfile { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            switch result {
+            case .success(_):
+                self.loadingVC.dismiss(animated: true)
+            case .failure(_):
+                self.loadingVC.dismiss(animated: true)
+            }
         }
     }
     
@@ -325,6 +338,16 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                 return
             }
             self.loadImage(from: results[0]) { image in
+                
+                self.viewModel.uploadPhoto(data: image?.jpegData(compressionQuality: 1.0)) { result in
+                    switch result {
+                    case .success(let file):
+                        self.photos.append(file)
+                    case .failure(_):
+                        print("Photo error")
+                    }
+                }
+                
                 if let image = image {
                     DispatchQueue.main.async {
                         self.updateImageView(with: image, at: self.photoIndex)

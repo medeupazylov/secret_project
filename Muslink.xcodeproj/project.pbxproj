@@ -31,6 +31,9 @@
 		217570832A91D38F00B11318 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570822A91D38F00B11318 /* AccessTokenResponse.swift */; };
 		217570852A91D62900B11318 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570842A91D62900B11318 /* AuthResponse.swift */; };
 		217570902A91EFA000B11318 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF6BFE2A8FC27C0065CC04 /* ProfileViewController.swift */; };
+		217570922A952C5300B11318 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570912A952C5300B11318 /* File.swift */; };
+		217570942A9685DD00B11318 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570932A9685DD00B11318 /* LoadingViewController.swift */; };
+		217570962A973AD000B11318 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570952A973AD000B11318 /* MainTabBarController.swift */; };
 		21B1C71D2A879986009F6BCE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71C2A879986009F6BCE /* City.swift */; };
 		21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71E2A879CEC009F6BCE /* Genre.swift */; };
 		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
@@ -107,6 +110,9 @@
 		217570812A90ABA100B11318 /* Muslink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Muslink.entitlements; sourceTree = "<group>"; };
 		217570822A91D38F00B11318 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		217570842A91D62900B11318 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		217570912A952C5300B11318 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		217570932A9685DD00B11318 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		217570952A973AD000B11318 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		21B1C71C2A879986009F6BCE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		21B1C71E2A879CEC009F6BCE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 			children = (
 				211AACCD2A7D5EA000D7469C /* AppDelegate.swift */,
 				211AACCF2A7D5EA000D7469C /* SceneDelegate.swift */,
+				217570952A973AD000B11318 /* MainTabBarController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 				217570842A91D62900B11318 /* AuthResponse.swift */,
 				BF5AC30C2A8D62E700033BC6 /* Goal.swift */,
 				BF5AC3142A90CC1800033BC6 /* Reason.swift */,
+				217570912A952C5300B11318 /* File.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 				211AAD3A2A7F995D00D7469C /* ChooseSocialNetworksViewContoller.swift */,
 				211AAD392A7F995D00D7469C /* ChooseGenresViewController.swift */,
 				211AAD3C2A7F995D00D7469C /* ChoosePhotoViewController.swift */,
+				217570932A9685DD00B11318 /* LoadingViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +549,7 @@
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
 				BF5AC30D2A8D62E700033BC6 /* Goal.swift in Sources */,
+				217570962A973AD000B11318 /* MainTabBarController.swift in Sources */,
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
 				217570802A908CEB00B11318 /* MyApplicationsViewModel.swift in Sources */,
 				2175707E2A90899C00B11318 /* Application.swift in Sources */,
@@ -551,6 +561,7 @@
 				BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */,
 				DEDF6C0A2A9240120065CC04 /* DescriptionViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
+				217570922A952C5300B11318 /* File.swift in Sources */,
 				BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */,
 				BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */,
 				BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */,
@@ -586,6 +597,7 @@
 				217570832A91D38F00B11318 /* AccessTokenResponse.swift in Sources */,
 				BF5AC31B2A91D21F00033BC6 /* CloseButton.swift in Sources */,
 				DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */,
+				217570942A9685DD00B11318 /* LoadingViewController.swift in Sources */,
 				BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
