@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let networkingService = DefaultNetworkingService()
-        let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-        let controller = UsernameViewController(viewModel: viewModel)
+//        let networkingService = DefaultNetworkingService()
+//        let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
+        let controller = TrackLoadViewController()
         
 //        YXLSdk.shared.authorize()
 //        let network = ApplicationNetworkingServiceImpl()

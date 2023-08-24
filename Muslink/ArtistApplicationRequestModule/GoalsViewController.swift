@@ -52,7 +52,7 @@ class GoalsViewController: UIViewController {
         title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         title.textColor = Color.neutral100.color
         navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: nil, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
         item.tintColor = Color.neutral72.color
         navigationItem.leftBarButtonItem = item
         
@@ -69,7 +69,7 @@ class GoalsViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(continueButton)
         progressBar.progress = 0.5
-        continueButton.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
+        continueButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     private func setupTableView() {
@@ -83,7 +83,7 @@ class GoalsViewController: UIViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             progressBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             progressBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
@@ -95,7 +95,7 @@ class GoalsViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
             continueButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ])
@@ -107,12 +107,14 @@ class GoalsViewController: UIViewController {
         }
     }
     
-    @objc private func continueButtonPressed(){
-        for goal in goals {
-            if goal.checked {
-                selectedGoalsTitles.append(goal.title)
-            }
-        }
+    @objc
+    private func nextButtonPressed() {
+        navigationController?.pushViewController(ChooseLabelViewController(), animated: false)
+    }
+    
+    @objc
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
     }
 }
 
@@ -128,7 +130,7 @@ extension GoalsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.index = indexPath.row
         cell.onToggleChecked = { [weak self] index in
             guard let self = self else {return}
-            self.goals[index].checked = !goals[index].checked
+            self.goals[index].checked = !self.goals[index].checked
             self.tableView.reloadData()
         }
         return cell

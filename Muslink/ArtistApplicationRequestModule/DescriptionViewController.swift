@@ -26,7 +26,7 @@ final class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         
         setupObservers()
-        hideKeyboardWhenTappedAround()
+//        hideKeyboardWhenTappedAround()
         setupLayout()
         setupNavigationBar()
     }
@@ -46,7 +46,7 @@ final class DescriptionViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Выберите жанры, которые лучшe всего описывают вашу музыку"
+        label.text = "Расскажите о треке"
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = Color.neutral100.color
         label.backgroundColor = Color.primaryBgColor.color
@@ -58,7 +58,7 @@ final class DescriptionViewController: UIViewController {
     
     private let progressView: DefaultProgressBar = {
         let progressView = DefaultProgressBar()
-        progressView.updateProgress(withScreenOrder: 3)
+        progressView.updateProgress(withScreenOrder: 1)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -99,13 +99,9 @@ final class DescriptionViewController: UIViewController {
 
     private func setupLayout() {
         view.backgroundColor = Color.primaryBgColor.color
-//        view.addSubview(titleLabel)
         view.addSubview(progressView)
-//        view.addSubview(descriptionTextView)
-//        view.addSubview(letterCountLabel)
-        view.addSubview(continueButton)
-        
         view.addSubview(scrollView)
+        view.addSubview(continueButton)
 
         // Add UI elements to the scrollView
         scrollView.addSubview(titleLabel)
@@ -121,7 +117,7 @@ final class DescriptionViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -143,7 +139,7 @@ final class DescriptionViewController: UIViewController {
         NSLayoutConstraint.activate([
             continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -12.0),
+            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
         ])
         
         NSLayoutConstraint.activate([
@@ -201,7 +197,8 @@ final class DescriptionViewController: UIViewController {
     
     @objc
     private func nextButtonPressed() {
-
+        print("heerreer")
+        navigationController?.pushViewController(GoalsViewController(), animated: false)
     }
     
     @objc

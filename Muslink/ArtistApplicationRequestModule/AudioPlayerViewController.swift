@@ -62,12 +62,13 @@ class AudioPlayerViewController: UIViewController {
         setHPositionToPoiner(constant: 0)
         audioIsPlaying = false
         isCropingAudio = false
-        cropTimeInterval = (0,20)
-        changeCropViewInterval()
         intervalDragPanGesture.isEnabled = false
+        currenTimeLabel.text = "\(formatTimeInterval(cropTimeInterval.0))"
     }
     
     func updateView() {
+        cropTimeInterval = (0,20)
+        changeCropViewInterval()
         setupDefaultConfigurations()
         switch currentState {
         case .empty:
