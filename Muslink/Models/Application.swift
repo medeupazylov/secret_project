@@ -29,6 +29,7 @@ enum Status: String, Codable {
 }
 
 struct Application: Codable {
+    let id: Int
     let track: Track
     let pitch: String
     let purposes: [Purpose]
@@ -36,4 +37,14 @@ struct Application: Codable {
     let sendDate: String
     let comment: String
     let rejectReasons: [String]
+    
+//    enum CodingKeys: String, CodingKey {
+//        case track
+//        case pitch
+//        case purposes
+//        case status
+//        case sendDate
+//        case comment
+//        case rejectReasons
+//    }
 }

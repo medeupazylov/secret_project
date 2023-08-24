@@ -11,10 +11,10 @@ import Foundation
 final class MyApplicationsViewModel {
     
     //MARK: - Properties
-    private let networkingService: ApplicationNetworkingService
+    private let networkingService: NetworkingService
     private var applications: [Application] = []
     
-    init(networkingService: ApplicationNetworkingService) {
+    init(networkingService: NetworkingService) {
         self.networkingService = networkingService
     }
     

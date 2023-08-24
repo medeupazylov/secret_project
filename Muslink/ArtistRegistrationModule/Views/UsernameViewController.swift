@@ -13,11 +13,13 @@ final class UsernameViewController: UIViewController {
     //MARK: - Properties
     
     private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -132,7 +134,7 @@ final class UsernameViewController: UIViewController {
     private func nextButtonPressed() {
         viewModel.userDidEnterName(name: nameTextField.text)
         viewModel.userDidEnterNickname(nickname: nickTextField.text)
-        navigationController?.pushViewController(ChooseCityView(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseCityView(viewModel: viewModel, window: window), animated: false)
     }
     
     func setupConstraints() {

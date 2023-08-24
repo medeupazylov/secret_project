@@ -8,6 +8,17 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    private let profile: ProfileModel 
+    
+    init(profile: ProfileModel) {
+        self.profile = profile
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {

@@ -7,16 +7,19 @@
 
 import Foundation
 
+struct TrackFile: Codable {
+    let id: Int
+    let link: String
+}
+
 struct Track: Codable {
-    struct TrackInfo: Codable {
-        let id: Int
-        let link: String
-    }
     
-    let track: TrackInfo
+    let track: TrackFile
     let name: String
     let language: String
     let genres: [Genre]
     let subGenres: [SubGenre]
     let moods: [Mood]
+    let startCrop: Int
+    let endCrop: Int
 }

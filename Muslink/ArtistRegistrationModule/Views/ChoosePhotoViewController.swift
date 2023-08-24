@@ -17,11 +17,14 @@ final class ChoosePhotoViewController: UIViewController {
     private let loadingVC = LoadingViewController()
     private var photoIndex = 0
     private var photos: [File] = []
+    private var images: [UIImage] = []
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -216,18 +219,31 @@ final class ChoosePhotoViewController: UIViewController {
         loadingVC.modalTransitionStyle = .crossDissolve
         present(loadingVC, animated: true, completion: nil)
         
-        viewModel.userDidEnterPhotos(photos: photos)
-        viewModel.createProfile { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            switch result {
-            case .success(_):
-                self.loadingVC.dismiss(animated: true)
-            case .failure(_):
-                self.loadingVC.dismiss(animated: true)
-            }
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+            self.loadingVC.dismiss(animated: true)
+            let tabBar = MainTabBarController()
+            tabBar.profile = ProfileModel(name: viewModel.name!, city: viewModel.city!, genres: viewModel.genres!, images: images)
+            window.rootViewController = tabBar
         }
+        
+        viewModel.userDidEnterPhotos(photos: photos)
+//        viewModel.createProfile { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//            switch result {
+//            case .success(_):
+//                self.loadingVC.dismiss(animated: true)
+//
+//                let tabBar = MainTabBarController()
+//                window.rootViewController = tabBar
+//            case .failure(_):
+//                self.loadingVC.dismiss(animated: true)
+//                let tabBar = MainTabBarController()
+//                window.rootViewController = tabBar
+//            }
+//        }
     }
     
     @objc
@@ -338,7 +354,7 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                 return
             }
             self.loadImage(from: results[0]) { image in
-                
+                self.images.append(image!)
                 self.viewModel.uploadPhoto(data: image?.jpegData(compressionQuality: 1.0)) { result in
                     switch result {
                     case .success(let file):
