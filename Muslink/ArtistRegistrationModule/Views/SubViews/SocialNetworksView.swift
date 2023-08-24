@@ -152,9 +152,5 @@ final class SocialNetworksView: UIStackView {
         stackView.axis = .horizontal
         return stackView
     }()
-    
-    
-    
-    
 }
 

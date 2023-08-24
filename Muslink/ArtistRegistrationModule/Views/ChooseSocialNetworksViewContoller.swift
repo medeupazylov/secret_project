@@ -72,8 +72,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -89,7 +88,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
             
             continueButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             continueButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0),
-            continueButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -16.0),
+            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12.0),
             
             mainScrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             mainScrollView.rightAnchor.constraint(equalTo: view.rightAnchor),

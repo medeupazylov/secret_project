@@ -16,7 +16,7 @@ final class ArtistRegistrationViewModel {
     var city: City?
     var socialNetworks: [SocialNetwork]?
     var genres: [Genre]?
-    var photos: [Photo]?
+    var photos: [File]?
     
     private let networkingService: NetworkingService
     init(networkingService: NetworkingService) {
@@ -90,6 +90,27 @@ final class ArtistRegistrationViewModel {
         }
     }
     
+    func uploadPhoto(data: Data?, completion: @escaping (Result<File, Error>) -> Void) {
+        guard let data = data else {
+            print("Wrong PHOTO")
+            return
+        }
+        
+        Task {
+            do {
+                let file = try await networkingService.uploadPhotoFile(data: data)
+                completion(.success(file))
+            } catch {
+                print(error)
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func setToken(token: String) {
+        networkingService.oauthToken = token
+    }
+    
     func userDidEnterName(name: String) {
         self.name = name
     }
@@ -110,7 +131,8 @@ final class ArtistRegistrationViewModel {
         self.genres = genres
     }
     
-    func userDidEnterPhotos(photos: [Photo]) {
+    func userDidEnterPhotos(photos: [File]) {
         self.photos = photos
+        print(photos)
     }
 }

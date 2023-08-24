@@ -107,8 +107,7 @@ final class ChooseGenresViewController: UIViewController {
         view.addSubview(continueButton)
         
         NSLayoutConstraint.activate([
-            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -192,7 +191,7 @@ extension ChooseGenresViewController: UICollectionViewDelegate, UICollectionView
             let isSelected = selectedCell.select()
             let text = selectedCell.getType()
             if isSelected {
-                selectedGenres.append(Genre(name: text))
+                selectedGenres.append(Genre(id: indexPath.row, name: text))
             } else {
                 if let index = selectedGenres.firstIndex(where: {
                     $0.name == text

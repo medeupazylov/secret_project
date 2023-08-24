@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let networkingService = DefaultNetworkingService()
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-        let controller = UsernameViewController(viewModel: viewModel)
+        let controller = ChoosePhotoViewController(viewModel: viewModel)
         
 //        YXLSdk.shared.authorize()
 //        let network = ApplicationNetworkingServiceImpl()
@@ -27,7 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        YXLSdk.shared.authorize(withUid: 0, login: nil, phone: nil, firstName: nil, lastName: nil, customValues: nil, parentController: controller)
 //        YXLSdk.shared.add(observer: self)
 
-        window?.rootViewController = UINavigationController(rootViewController: controller)
+        let tabBar = MainTabBarController()
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
     
