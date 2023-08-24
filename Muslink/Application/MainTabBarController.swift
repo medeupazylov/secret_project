@@ -9,7 +9,17 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
-    var profile: ProfileModel?
+    private let profile: ProfileModel
+    
+    init(profile: ProfileModel) {
+        self.profile = profile
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +43,7 @@ final class MainTabBarController: UITabBarController {
     
     private func setViews() {
     
-        let profileViewController = ProfileViewController(profile: profile!)
+        let profileViewController = ProfileViewController(profile: profile)
         let profileViewControllerNav = UINavigationController(rootViewController: profileViewController)
         profileViewController.tabBarItem.image = UIImage(systemName: "person")
         

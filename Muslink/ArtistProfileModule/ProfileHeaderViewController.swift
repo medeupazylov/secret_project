@@ -12,10 +12,10 @@ final class ProfileHeaderViewController: UIViewController {
     
     private let name: String
     private let city: String
-    private let genres: [String]
+    private let genres: [Genre]
     private let image: UIImage
     
-    init(name: String = "Angelo Rodriguez", city: String = "Москва", genres: [String] = [], image: UIImage = UIImage(named: "pic")!) {
+    init(name: String = "Angelo Rodriguez", city: String = "Москва", genres: [Genre] = [], image: UIImage = UIImage(named: "pic")!) {
         self.name = name
         self.city = city
         self.genres = genres
@@ -180,7 +180,7 @@ extension ProfileHeaderViewController: UICollectionViewDelegate, UICollectionVie
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonsCollectionViewCell.identifier, for: indexPath)  as? ButtonsCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.title = genres[indexPath.row]
+        cell.title = genres[indexPath.row].title
         
         return cell
     }
@@ -188,7 +188,7 @@ extension ProfileHeaderViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(
-            width: (genres[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ) + 25,
+            width: (genres[indexPath.item].title.size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ) + 25,
             height: 40)
         
     }

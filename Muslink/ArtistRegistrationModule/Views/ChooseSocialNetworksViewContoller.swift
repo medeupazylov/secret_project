@@ -14,6 +14,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     private var networks: [SocialNetwork] = []
     
     private let viewModel: ArtistRegistrationViewModel
+    private var scrollViewBottomConstraint: NSLayoutConstraint!
     private let window: UIWindow
     
     //MARK: - Lifecycle
