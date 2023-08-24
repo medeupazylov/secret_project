@@ -1,13 +1,13 @@
 //
-//  RejectionViewController.swift
+//  AcceptedViewController.swift
 //  Muslink
 //
-//  Created by Aisha Nurgaliyeva on 19.08.2023.
+//  Created by Aisha Nurgaliyeva on 20.08.2023.
 //
 
 import UIKit
 
-class RejectedViewController: UIViewController, UIScrollViewDelegate {
+class AcceptedViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Properties
 
@@ -16,17 +16,21 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
                                             fontSize: 16.0,
                                             fontWeight: .bold)
     
-    let tableView = ContentSizedTableView()
-    
-    private let closeButton = CloseButton()
-    
-    private var selectedReasonsTitles = [String]()
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Мы отправим ваши контактные данные исполнителю, и он свяжется с вами"
+        label.textColor = Color.neutral72.color
+        label.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private lazy var textView: CustomTextView = {
         let textView = CustomTextView(delegate: self)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.layer.cornerRadius = 12.0
-        textView.text = "Подскажите исполнителю как стать лучше"
+        textView.text = "Скажите исполнителю, что он молодец :)"
         textView.setTextColor(color: Color.neutral32.color)
         return textView
     }()
@@ -39,32 +43,17 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
             label.textAlignment = .right
             label.text = "0/500"
             return label
-        }()
+    }()
 
-    var cellId = "reasonsCell"
-    
-    private var reasons = [Reason(title: "Плохое качество записи", checked: false),
-                           Reason(title: "Нереалистичные цели", checked: false),
-                           Reason(title: "Не соответствие тематике лейбла", checked: false),
-                           Reason(title: "Самопрезентация", checked: false),
-                           Reason(title: "Качество исполнения", checked: false)
-                        ]
-    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
         scrollView.frame = view.frame
-        scrollView.isScrollEnabled = true
-        scrollView.addSubview(tableView)
+        scrollView.addSubview(descriptionLabel)
         scrollView.addSubview(commentLabel)
         scrollView.addSubview(textView)
         scrollView.addSubview(letterCountLabel)
         scrollView.addSubview(sendButton)
-        scrollView.isUserInteractionEnabled = true
-        scrollView.alwaysBounceVertical = true
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.keyboardDismissMode = .interactive
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
         return scrollView
     }()
     
@@ -87,25 +76,20 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Functions
     
-    func reasonsChanged() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
     func setupNavigationBar() {
-        let title = UILabel()
-        title.text = "Причина отказа"
-        title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        title.textColor = Color.neutral100.color
-        navigationItem.titleView = title
-        let item = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .done, target: self, action: #selector(dismissController))
-        item.tintColor = Color.neutral16.color
-        navigationItem.rightBarButtonItem = item
-    }
+            let title = UILabel()
+            title.text = "Это мэтч!"
+            title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+            title.textColor = Color.neutral100.color
+            navigationItem.titleView = title
+            let item = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"),
+                                       style: .done, target: self, action: #selector(dismissController))
+            item.tintColor = Color.neutral16.color
+            navigationItem.rightBarButtonItem = item
+        }
+    
     
     func setupView() {
-        setupTableView()
         setupNavigationBar()
         view.backgroundColor = Color.elevatedBgColor.color
         view.addSubview(scrollView)
@@ -113,24 +97,14 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
         sendButton.addTarget(self, action: #selector(sendButtonPressed), for: .touchUpInside)
     }
     
-    private func setupTableView() {
-        tableView.separatorColor = .clear
-        tableView.backgroundColor = .clear
-        tableView.register(ReasonsTableViewCell.self, forCellReuseIdentifier: cellId)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = false
-    }
-    
     func setupConstraints() {
         NSLayoutConstraint.activate([
+
+            descriptionLabel.topAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            tableView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 24),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            
-            commentLabel.topAnchor.constraint(lessThanOrEqualTo: tableView.bottomAnchor, constant: 24),
+            commentLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
             commentLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             commentLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
@@ -154,54 +128,21 @@ class RejectedViewController: UIViewController, UIScrollViewDelegate {
         ])
     }
     
-    
     @objc private func dismissController() {
         self.dismiss(animated: true)
     }
     
     @objc private func sendButtonPressed() {
-        for reason in reasons {
-            if reason.checked {
-                selectedReasonsTitles.append(reason.title)
-            }
-        }
+        
     }
 }
-
-
-//MARK: - TableView Configuration
-
-extension RejectedViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        reasons.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ReasonsTableViewCell
-        cell.reason = reasons[indexPath.row]
-        cell.index = indexPath.row
-        cell.onToggleChecked = { [weak self] index in
-            guard let self = self else {return}
-            self.reasons[index].checked = !self.reasons[index].checked
-            self.tableView.reloadData()
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        reasons[indexPath.row].checked = !reasons[indexPath.row].checked
-        reasonsChanged()
-    }
-}
-
 
 //MARK: - TextView Configuration
 
-extension RejectedViewController: UITextViewDelegate {
+extension AcceptedViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Подскажите исполнителю как стать лучше" {
+        if textView.text == "Скажите исполнителю, что он молодец :)" {
             textView.text = nil
         }
         textView.textColor = Color.neutral80.color
@@ -213,7 +154,7 @@ extension RejectedViewController: UITextViewDelegate {
         
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Подскажите исполнителю как стать лучше"
+            textView.text = "Скажите исполнителю, что он молодец :)"
             textView.textColor = Color.neutral32.color
         }
     }
@@ -249,3 +190,15 @@ extension RejectedViewController: UITextViewDelegate {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
