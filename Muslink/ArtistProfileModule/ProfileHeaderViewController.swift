@@ -10,12 +10,28 @@ import UIKit
 
 final class ProfileHeaderViewController: UIViewController {
     
-    private var context: [String] = ["classical music", "film music", "instrumental", "neo / modern classical", "solo piano"]
+    private let name: String
+    private let city: String
+    private let genres: [String]
+    private let image: UIImage
     
-    private let avatar: UIImageView = {
+    init(name: String = "Angelo Rodriguez", city: String = "Москва", genres: [String] = [], image: UIImage = UIImage(named: "pic")!) {
+        self.name = name
+        self.city = city
+        self.genres = genres
+        self.image = image
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    private lazy var avatar: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage(named: "pic")
+        img.image = image
         img.clipsToBounds = true
         img.contentMode = .scaleAspectFill
         return img
@@ -44,19 +60,19 @@ final class ProfileHeaderViewController: UIViewController {
         return gradient
     } ()
     
-    private let fullName: UILabel = {
+    private lazy var fullName: UILabel = {
         let label = UILabel()
-        label.text = "Angelo Rodrigez"
+        label.text = name
         label.textColor = Color.neutral100.color
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let cityLabel: UILabel = {
+    private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Москва"
+        label.text = city
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = Color.neutral100.color
         return label
@@ -157,14 +173,14 @@ final class ProfileHeaderViewController: UIViewController {
 
 extension ProfileHeaderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return context.count
+        return genres.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonsCollectionViewCell.identifier, for: indexPath)  as? ButtonsCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.title = context[indexPath.row]
+        cell.title = genres[indexPath.row]
         
         return cell
     }
@@ -172,7 +188,7 @@ extension ProfileHeaderViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(
-            width: (context[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ) + 25,
+            width: (genres[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width ) + 25,
             height: 40)
         
     }

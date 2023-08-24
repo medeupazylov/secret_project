@@ -4,7 +4,22 @@ final class MusicianInfoViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var images: [String] = ["musician", "musician2", "musician3"]
+    private let images: [UIImage]
+    private let name: String
+    private let city: String
+    
+    init(images: [UIImage] = [], name: String = "Angelo Rodriguez", city: String = "Москва") {
+        self.images = images
+        self.name = name
+        self.city = city
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     private let cellIdentifier = "PhotoCarouselCell"
     
     //MARK: - Lifecycle
@@ -82,7 +97,7 @@ final class MusicianInfoViewController: UIViewController {
         return stack
     } ()
     
-    private lazy var musicianNameStack = MusicianNameStack()
+    private lazy var musicianNameStack = MusicianNameStack(name: name, city: city)
     
     @objc private func pageControlAction(_ sender: UIPageControl?) {
         guard let sender = sender else {return}
@@ -158,7 +173,7 @@ extension MusicianInfoViewController: UICollectionViewDataSource, UICollectionVi
         }
     
         print(indexPath)
-        cell.imageView.image = UIImage(named: images[indexPath.item])
+        cell.imageView.image = images[indexPath.item]
         return cell
     }
     

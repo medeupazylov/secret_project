@@ -9,18 +9,23 @@ import UIKit
 
 final class MusicianNameStack: UIStackView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let name: String
+    private let city: String
+    
+    init(name: String, city: String) {
+        self.name = name
+        self.city = city
+        super.init(frame: .zero)
         setup()
     }
     
     required init(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
     
+    
     private lazy var musicIcon = UIImageView(image: Image.music.image)
-    private lazy var tracksLabel = DefaultLabel(text: "34 трека",
+    private lazy var tracksLabel = DefaultLabel(text: "4 трека",
                                                 textColor: Color.neutral100.color,
                                                 fontSize: 13,
                                                 fontWeight: .light)
@@ -28,7 +33,7 @@ final class MusicianNameStack: UIStackView {
                                                                           tracksLabel], spacing: 4.0)
     
     private lazy var locationIcon = UIImageView(image: Image.location.image)
-    private lazy var locationLabel = DefaultLabel(text: "Москва",
+    private lazy var locationLabel = DefaultLabel(text: city,
                                                   textColor: Color.neutral100.color,
                                                   fontSize: 13,
                                                   fontWeight: .light)
@@ -40,7 +45,7 @@ final class MusicianNameStack: UIStackView {
     private lazy var verifiedIcon = UIImageView(image: Image.verified.image)
     
     
-    private lazy var musicianNameLabel = DefaultLabel(text: "Angelo Rodrigez",
+    private lazy var musicianNameLabel = DefaultLabel(text: name,
                                                       textColor: Color.neutral100.color,
                                                       fontSize: 20,
                                                       fontWeight: .heavy)

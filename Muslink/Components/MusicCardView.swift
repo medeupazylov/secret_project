@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum MusicCardState {
     case played
@@ -20,6 +21,8 @@ class MusicCardView: UIView {
     private let musicName: String
     private let artistName: String
     private let musicPicture: String
+    
+    var audioPlayer: AVAudioPlayer?
     
     var disableAllClosure: (() -> Void)?
     var musicCardState: MusicCardState = .disabled {
@@ -47,8 +50,19 @@ class MusicCardView: UIView {
 
 //MARK: - Internal methods
     
+    func setupAudioPlayer(_ url: URL) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.delegate = self
+        } catch {
+            print("Error initializing AVAudioPlayer: \(error)")
+        }
+    }
+    
     func disableCard() {
         musicCardState = .disabled
+        audioPlayer?.pause()
+        
     }
     
 //MARK: - Private methods
@@ -74,6 +88,7 @@ class MusicCardView: UIView {
             numberLabel.isHidden = false
             editButton.isHidden = false
             trashButton.isHidden = false
+            audioPlayer?.stop()
         case .played:
             stateButton.setImage(Image.pause.image, for: .normal)
             stateButton.isHidden = false
@@ -82,9 +97,11 @@ class MusicCardView: UIView {
             numberLabel.isHidden = true
             editButton.isHidden = true
             trashButton.isHidden = true
+            audioPlayer?.play()
         case .paused:
             stateButton.setImage(Image.playFill.image, for: .normal)
             self.backgroundColor = UIColor(red: 34/255, green: 39/255, blue: 56/255, alpha: 1.0)
+            audioPlayer?.stop()
         }
     }
     
@@ -224,5 +241,9 @@ class MusicCardView: UIView {
         label.text = "Angelo Rodrigez"
         return label
     }()
+    
+}
+
+extension MusicCardView: AVAudioPlayerDelegate {
     
 }

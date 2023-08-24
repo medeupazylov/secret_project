@@ -37,7 +37,31 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
         setupLayout()
         setupNavigationBar()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        print("here")
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFrame.height
+            print("here")
+            UIView.animate(withDuration: 1.0, delay: 0.0) {
+                self.scrollViewBottomConstraint.isActive = false
+                self.scrollViewBottomConstraint = self.mainScrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -keyboardHeight)
+                self.scrollViewBottomConstraint.isActive = true
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide() {
+        UIView.animate(withDuration: 1.0, delay: 0.0) {
+            self.scrollViewBottomConstraint.isActive = false
+            self.scrollViewBottomConstraint = self.mainScrollView.bottomAnchor.constraint(equalTo: self.continueButton.topAnchor, constant: 10)
+            self.scrollViewBottomConstraint.isActive = true
+        }
     }
     
     @objc
@@ -96,8 +120,6 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
             mainScrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             mainScrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
             mainScrollView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 36),
-            mainScrollView.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: 10),
-            
             mainVStack.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
             mainVStack.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor, constant: -35),
             
@@ -114,6 +136,9 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
             youtubeView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0),
             youtubeView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0)
         ])
+        
+        scrollViewBottomConstraint = mainScrollView.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: 10)
+        scrollViewBottomConstraint.isActive = true
     }
     
     private func setupMainStack() {
@@ -186,7 +211,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
         let logoImage = Image.vkontakte.image
         let socialNetworksView = SocialNetworksView(iconIMG: Image.vkontakte.image,
                                                     placeholder: "Вконтакте",
-                                                    helperText: "",
+                                                    helperText: "vk.com/username",
                                                     delegate: self)
         socialNetworksView.translatesAutoresizingMaskIntoConstraints = false
         return socialNetworksView
@@ -196,7 +221,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     private lazy var spotifyView: SocialNetworksView = {
         let socialNetworksView = SocialNetworksView(iconIMG: Image.spotify.image,
                                                     placeholder: "Spotify",
-                                                    helperText: "",
+                                                    helperText: "open.spotify.com/artist/0000",
                                                     delegate: self)
         socialNetworksView.translatesAutoresizingMaskIntoConstraints = false
         return socialNetworksView
@@ -205,7 +230,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     private lazy var youtubeView: SocialNetworksView = {
         let socialNetworksView = SocialNetworksView(iconIMG: Image.youtube.image,
                                                     placeholder: "Youtube",
-                                                    helperText: "",
+                                                    helperText: "www.youtube.com/@username",
                                                     delegate: self)
         socialNetworksView.translatesAutoresizingMaskIntoConstraints = false
         return socialNetworksView
@@ -214,7 +239,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     private lazy var instagramView: SocialNetworksView = {
         let socialNetworksView = SocialNetworksView(iconIMG: Image.instagram.image,
                                                     placeholder: "Instagram",
-                                                    helperText: "",
+                                                    helperText: "www.instagram.com/username/",
                                                     delegate: self)
         socialNetworksView.translatesAutoresizingMaskIntoConstraints = false
         return socialNetworksView
@@ -241,6 +266,10 @@ extension ChooseSocialNetworksViewContoller: UITextFieldDelegate {
             return
         }
         getSocialLink(textField)
+        updateSocialNetworkViews(textField)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         updateSocialNetworkViews(textField)
     }
     
@@ -315,6 +344,12 @@ extension ChooseSocialNetworksViewContoller: UITextFieldDelegate {
         default:
             return
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // Dismiss the keyboard.
+        updateSocialNetworkViews(textField)
+        return true // Return true to indicate that the text field should process the return key.
     }
 
 }
