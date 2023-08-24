@@ -10,14 +10,17 @@ import UIKit
 final class ChooseSocialNetworksViewContoller: UIViewController {
     
     //MARK: - Properties
+
+    private var networks: [SocialNetwork] = []
     
     private let viewModel: ArtistRegistrationViewModel
-    private var networks: [SocialNetwork] = []
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,7 +48,7 @@ final class ChooseSocialNetworksViewContoller: UIViewController {
     @objc
     private func nextButtonPressed() {
         viewModel.userDidEnterSocialNetworks(socialNetworks: networks)
-        navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseGenresViewController(viewModel: viewModel, window: window), animated: false)
     }
     
     func setupNavigationBar() {

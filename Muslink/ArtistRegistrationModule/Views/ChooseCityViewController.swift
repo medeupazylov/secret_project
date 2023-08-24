@@ -11,17 +11,16 @@ import UIKit
 final class ChooseCityView: UIViewController {
     //MARK: - Properties
     
-    private let viewModel: ArtistRegistrationViewModel
-    
     private var item: SearchItem?
-    
+    private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -133,7 +132,7 @@ final class ChooseCityView: UIViewController {
             return
         }
         viewModel.userDidEnterCity(city: item )
-        navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel, window: window), animated: false)
     }
     
     private func createLabel(text: String, fontSize: CGFloat, color: UIColor) -> UILabel {

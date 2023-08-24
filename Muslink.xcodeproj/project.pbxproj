@@ -34,6 +34,7 @@
 		217570922A952C5300B11318 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570912A952C5300B11318 /* File.swift */; };
 		217570942A9685DD00B11318 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570932A9685DD00B11318 /* LoadingViewController.swift */; };
 		217570962A973AD000B11318 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570952A973AD000B11318 /* MainTabBarController.swift */; };
+		217570982A97C97C00B11318 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217570972A97C97C00B11318 /* ProfileModel.swift */; };
 		21B1C71D2A879986009F6BCE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71C2A879986009F6BCE /* City.swift */; };
 		21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C71E2A879CEC009F6BCE /* Genre.swift */; };
 		21B1C7212A87B100009F6BCE /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7202A87B100009F6BCE /* Track.swift */; };
@@ -113,6 +114,7 @@
 		217570912A952C5300B11318 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		217570932A9685DD00B11318 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		217570952A973AD000B11318 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		217570972A97C97C00B11318 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		21B1C71C2A879986009F6BCE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		21B1C71E2A879CEC009F6BCE /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		21B1C7202A87B100009F6BCE /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		211AAD8A2A8632DE00D7469C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2175707D2A90899C00B11318 /* Application.swift */,
 				211AAD8B2A8632EB00D7469C /* Artist.swift */,
 				21B1C71C2A879986009F6BCE /* City.swift */,
 				21B1C71E2A879CEC009F6BCE /* Genre.swift */,
@@ -278,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				211AAD952A87720300D7469C /* DefaultNetworkingService.swift */,
+				2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,6 +326,7 @@
 				DEFCE8872A7FBA6F00FA6051 /* PopularTracksViewController.swift */,
 				21B1C7282A87E0C4009F6BCE /* MusicianInfoViewController.swift */,
 				BFB642F22A7FDCD900DE5A07 /* Subviews */,
+				217570972A97C97C00B11318 /* ProfileModel.swift */,
 			);
 			path = ArtistProfileModule;
 			sourceTree = "<group>";
@@ -373,8 +378,6 @@
 				21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */,
 				2175707F2A908CEB00B11318 /* MyApplicationsViewModel.swift */,
 				21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */,
-				2175707B2A90889B00B11318 /* ApplicationNetworkingService.swift */,
-				2175707D2A90899C00B11318 /* Application.swift */,
 			);
 			path = ApplicationsModule;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				217570902A91EFA000B11318 /* ProfileViewController.swift in Sources */,
 				211AAD432A7F995D00D7469C /* ChoosePhotoViewController.swift in Sources */,
 				BF5AC3072A8D0A6300033BC6 /* GoalsTableViewCell.swift in Sources */,
+				217570982A97C97C00B11318 /* ProfileModel.swift in Sources */,
 				DEDF6C0A2A9240120065CC04 /* DescriptionViewController.swift in Sources */,
 				BF52FE3A2A7E0ABF0028B093 /* Color.swift in Sources */,
 				217570922A952C5300B11318 /* File.swift in Sources */,

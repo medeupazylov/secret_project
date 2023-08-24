@@ -11,17 +11,18 @@ import UIKit
 final class ChooseGenresViewController: UIViewController {
     
     //MARK: - Properties
-    
-    private let viewModel: ArtistRegistrationViewModel
-    
     private var genres: [Genre] = []
     
     private var selectedGenres: [Genre] = []
     
+    private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
+    
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -150,7 +151,7 @@ final class ChooseGenresViewController: UIViewController {
     @objc
     private func nextButtonPressed() {
         viewModel.userDidEnterGenres(genres: selectedGenres)
-        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChoosePhotoViewController(viewModel: viewModel, window: window), animated: false)
     }
     
     @objc

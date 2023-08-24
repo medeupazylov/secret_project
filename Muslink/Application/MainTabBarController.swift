@@ -9,6 +9,8 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
+    var profile: ProfileModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Color.primaryBgColor.color
@@ -30,8 +32,8 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setViews() {
-        
-        let profileViewController = ProfileViewController()
+    
+        let profileViewController = ProfileViewController(profile: profile!)
         let profileViewControllerNav = UINavigationController(rootViewController: profileViewController)
         profileViewController.tabBarItem.image = UIImage(systemName: "person")
         
@@ -40,12 +42,16 @@ final class MainTabBarController: UITabBarController {
         applicationRequestViewController.tabBarItem.image = UIImage(named: "copy-plus")
         
         
-        let myApllicationsViewModel = MyApplicationsViewModel(networkingService: ApplicationNetworkingServiceImpl())
-        let myApllicationsViewController = MyApplicationsViewController(viewModel: myApllicationsViewModel)
-        let myApllicationsViewControllerNav = UINavigationController(rootViewController: myApllicationsViewController)
-        myApllicationsViewController.tabBarItem.image = UIImage(named: "file-audio")
+        let myApplicationsViewModel = MyApplicationsViewModel(networkingService: DefaultNetworkingService())
+        let myApplicationsViewController = MyApplicationsViewController(viewModel: myApplicationsViewModel)
+        let myApplicationsViewControllerNav = UINavigationController(rootViewController: myApplicationsViewController)
+        myApplicationsViewController.tabBarItem.image = UIImage(named: "file-audio")
         
-        setViewControllers([profileViewControllerNav, applicationRequestViewControllerNav, myApllicationsViewController], animated: true)
+        let chooseLabelViewController = ChooseLabelViewController()
+        let chooseLabelViewControllerNav = UINavigationController(rootViewController: chooseLabelViewController)
+        chooseLabelViewController.tabBarItem.image = UIImage(named: "activity")
+        
+        setViewControllers([profileViewControllerNav, applicationRequestViewControllerNav, chooseLabelViewControllerNav, myApplicationsViewControllerNav], animated: true)
     }
     
 }

@@ -17,16 +17,22 @@ protocol NetworkingService: AnyObject {
     func updateProfile(profile: Artist) async throws
     func getProfile(id: Int) async throws -> Artist
     func uploadPhotoFile(data: Data) async throws -> File
+    
+    func getApplications() async throws -> [Application]
+    func getApplication() async throws -> Application
+    func createApplication(application: Application) async throws
+    func updateApplication(application: Application) async throws
 }
 
 final class DefaultNetworkingService: NetworkingService {
     
     private let baseURL: String = "http://130.193.48.155:8080/muslink"
-    private var token: String? = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiMTQyMTQ3Mjc5OCIsImV4cCI6MTY5MjczNTU4NSwiaWF0IjoxNjkyNzI4Mzg1LCJzY29wZSI6IkFSVElTVCJ9.Kzjb4H2DbLR2uwanFX89lDZ0njfyAFtVmjrJLJInCeKSCh7mzjPmvlmXIJxQsctOqsc4TK8QyLnJHOjSsc95i1taAKuiM6a7dngRy6UgKA5L_rB_OxTb-aJQWOtuBo-PCHRlwsPu594QN14WMW8XVj1xYTjy4bQwBQ0knFJ85Cu272gHK7i83J8T6s-CUIpbqQKfd2UDY2CzScfebAhJ1G6JQRpFABkTTZMY0aqGDpjlYMdfRhIqMd8smhBriQe4764rgCa1L9HQPMfXINpIygWf8h2tOhqg803mS6AWiY9OtJWEC9tuBMyN9kmOXjIB6rBNgtN1Z9Q8sAVAHsirrg"
+    private var token: String? = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiMTQyMTQ3Mjc5OCIsImV4cCI6MTY5Mjg4ODQyOSwiaWF0IjoxNjkyODgxMjI5LCJzY29wZSI6IkFSVElTVCJ9.qbiUId1Ne0U7vRUWeVGUMkoAI1CuFyvKvT0AqU63mbpF5l8WC8e2ojoRA1r2eCkf_62WPOskSSEH6VGSTjftOx6_dYncM1dgF5XdaG7_r1MFyjnSjz9XjdSHDIGswNCILtWgE0cafDdhT3samhYvfXF4SQUkFRN-bLX6f4yjBD0jc4BPsxkLDlQhlXyJbwBIbysze8_7wxPjKLzkhLCCHSaY-Ny9Uk0GWmDDXyepdYa7NCCmpKJsVgnerqEyH9q9wDwXqVZ5a6dIMpT6UdVY8y3K8x7ZV87yRUxvmYkO9Rf9w1PU8dc1xvJNzA4Ut-l7bHb21EeB5MJMe53ez4ZjMg"
     
     
     var oauthToken: String = ""
     private var role: String = "ARTIST"
+    private var id = 0
     
     enum NetworkingError: Error {
         case invalidURL
@@ -225,5 +231,92 @@ final class DefaultNetworkingService: NetworkingService {
         
         return file
     }
+    
+    func getApplications() async throws -> [Application] {
+        guard
+            let url = URL(string: "\(baseURL)/artist/applications"),
+            let token = token
+        else {
+            throw NetworkingError.invalidURL
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        print(response)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw NetworkingError.invalidServerResponse
+        }
+        
+        let applications = try JSONDecoder().decode(
+            [Application].self,
+            from: data
+        )
+        
+        return applications
+    }
+    
+    func getApplication() async throws -> Application {
+            guard let url = URL(string: "\(baseURL)/application/\(self.id)") else {
+                throw NetworkingError.invalidURL
+            }
+            
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "GET"
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                throw NetworkingError.invalidServerResponse
+            }
+            
+            let application = try JSONDecoder().decode(
+                Application.self,
+                from: data
+            )
+            
+            return application
+        }
+        
+        func createApplication(application: Application) async throws {
+            guard let url = URL(string: "\(baseURL)/application") else {
+                throw NetworkingError.invalidURL
+            }
+            
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            urlRequest.httpBody = try JSONEncoder().encode(application)
+            
+            let (_, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                throw NetworkingError.invalidServerResponse
+            }
+        }
+        
+        func updateApplication(application: Application) async throws {
+            guard let url = URL(string: "\(baseURL)/applications/\(self.id)") else {
+                throw NetworkingError.invalidURL
+            }
+            
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "PUT"
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            urlRequest.httpBody = try JSONEncoder().encode(application)
+            
+            let (_, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                throw NetworkingError.invalidServerResponse
+            }
+        }
 }
 
