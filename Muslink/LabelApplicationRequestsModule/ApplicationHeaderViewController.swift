@@ -15,12 +15,12 @@ class ApplicationHeaderViewController: UIViewController {
     var locationName: String
     var artistImageName: String
     
-    private var genres: [Genre] = [Genre(name: "английский"),
-                                   Genre(name: "электроника"),
-                                   Genre(name: "эмбиент"),
-                                   Genre(name: "ланж"),
-                                   Genre(name: "мечтательное"),
-                                   Genre(name: "спокойное")]
+    private var genres: [Genre] = [Genre(id: 0, name: "английский"),
+                                   Genre(id: 0, name: "электроника"),
+                                   Genre(id: 0, name: "эмбиент"),
+                                   Genre(id: 0, name: "ланж"),
+                                   Genre(id: 0, name: "мечтательное"),
+                                   Genre(id: 0, name: "спокойное")]
        
     //MARK: - UI Elements
     

@@ -41,6 +41,20 @@ class ApplicationFooterInfoViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(buttonStack)
         setupConstraints()
+        buttonStack.acceptButton.addTarget(self, action: #selector(acceptPressed), for: .touchUpInside)
+        buttonStack.rejectButton.addTarget(self, action: #selector(rejectPressed), for: .touchUpInside)
+    }
+    
+    @objc
+    func acceptPressed() {
+        present(AcceptedViewController(), animated: true)
+//        view?.navigationController?.pushViewController(AcceptedViewController(), animated: true)
+    }
+    
+    @objc
+    func rejectPressed() {
+        present(RejectedViewController(), animated: true)
+//        view?.navigationController?.pushViewController(RejectedViewController(), animated: true)
     }
 
     //MARK: - Setup Functions

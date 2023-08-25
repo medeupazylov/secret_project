@@ -12,34 +12,37 @@ final class ApplicationTableViewCell: UITableViewCell {
     //MARK: - Properties
     
     static let identifier = String(describing: ApplicationTableViewCell.self)
-    private var status: Status? {
-        didSet {
-            switch status {
-            case .sent:
-                statusLabel.backgroundColor = Color.neutral16.color
-                statusLabel.textColor = Color.neutral100.color
-                statusLabel.text = status?.rawValue
-            case .viewed:
-                statusLabel.backgroundColor = Color.primaryFocus.color
-                statusLabel.textColor = Color.primaryHover.color
-                statusLabel.text = status?.rawValue
-            case .approved:
-                statusLabel.backgroundColor = Color.successBgColor.color
-                statusLabel.textColor = Color.successMain.color
-                statusLabel.text = status?.rawValue
-            case .declined:
-                statusLabel.backgroundColor = Color.dangerBgColor.color
-                statusLabel.textColor = Color.dangerMain.color
-                statusLabel.text = status?.rawValue
-            case .ignored:
-                statusLabel.backgroundColor = Color.infoBorder.color
-                statusLabel.textColor = Color.infoMain.color
-                statusLabel.text = status?.rawValue
-            case .none:
-                break
-            }
-        }
-    }
+    weak var view: UIViewController?
+    private var status: String?
+    private var images: [UIImage?] = [UIImage(named: "hey_brother"), UIImage(named: "avatar"), UIImage(named: "musician"), UIImage(named: "musician2"), UIImage(named: "musician3")]
+//    {
+//        didSet {
+//            switch status {
+//            case .sent:
+//                statusLabel.backgroundColor = Color.neutral16.color
+//                statusLabel.textColor = Color.neutral100.color
+//                statusLabel.text = status?.rawValue
+//            case .viewed:
+//                statusLabel.backgroundColor = Color.primaryFocus.color
+//                statusLabel.textColor = Color.primaryHover.color
+//                statusLabel.text = status?.rawValue
+//            case .approved:
+//                statusLabel.backgroundColor = Color.successBgColor.color
+//                statusLabel.textColor = Color.successMain.color
+//                statusLabel.text = status?.rawValue
+//            case .declined:
+//                statusLabel.backgroundColor = Color.dangerBgColor.color
+//                statusLabel.textColor = Color.dangerMain.color
+//                statusLabel.text = status?.rawValue
+//            case .ignored:
+//                statusLabel.backgroundColor = Color.infoBorder.color
+//                statusLabel.textColor = Color.infoMain.color
+//                statusLabel.text = status?.rawValue
+//            case .none:
+//                break
+//            }
+//        }
+//    }
     
     private let mainView: UIView = {
         let view = UIView()
@@ -80,7 +83,7 @@ final class ApplicationTableViewCell: UITableViewCell {
         label.layer.cornerRadius = 8
         label.textAlignment = .center
         label.clipsToBounds = true
-        label.text = "sent"
+        label.text = "Подробнее"
         label.backgroundColor = Color.neutral16.color
         label.textColor = Color.neutral100.color
         label.setContentHuggingPriority(.defaultHigh, for:.horizontal)
@@ -111,7 +114,7 @@ final class ApplicationTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = Color.neutral72.color
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Лейбл"
+        label.text = "Артист"
         return label
     }()
     
@@ -177,10 +180,26 @@ final class ApplicationTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var buttonStack = ButtonsStack()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = Color.primaryBgColor.color
         setupLayout()
+        buttonStack.acceptButton.addTarget(view, action: #selector(acceptPressed), for: .touchUpInside)
+        buttonStack.rejectButton.addTarget(view, action: #selector(rejectPressed), for: .touchUpInside)
+    }
+    
+    @objc
+    func acceptPressed() {
+        view?.present(AcceptedViewController(), animated: true)
+//        view?.navigationController?.pushViewController(AcceptedViewController(), animated: true)
+    }
+    
+    @objc
+    func rejectPressed() {
+        view?.present(RejectedViewController(), animated: true)
+//        view?.navigationController?.pushViewController(RejectedViewController(), animated: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -206,6 +225,7 @@ final class ApplicationTableViewCell: UITableViewCell {
         contentStackView.addArrangedSubview(middleHorizontalStackView)
         contentStackView.addArrangedSubview(trackLabel)
         contentStackView.addArrangedSubview(bottomHorizontalStackView)
+        contentStackView.addArrangedSubview(buttonStack)
         
         // Add vertical stack view to cell's content view
         
@@ -235,12 +255,9 @@ final class ApplicationTableViewCell: UITableViewCell {
     }
     
     func configure(with application: Application) {
-        status = application.status
         dateLabel.text = application.sendDate
-        
-//        dateLabel.text = data.title
         leiblNameLabel.text = application.pitch
-        songImageView.image = UIImage(named: "hey_brother")
+        songImageView.image = images[Int.random(in: 0...4)]
         trackNameLabel.text = application.track.name
     }
 }

@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let networkingService = DefaultNetworkingService()
         let viewModel = ArtistRegistrationViewModel(networkingService: networkingService)
-        let controller = UsernameViewController(viewModel: viewModel, window: window!)
+        let controller = ApplicationRequestsViewController(viewModel: MyApplicationsViewModel(networkingService: DefaultNetworkingService()))
+//        let controller =  UsernameViewController(viewModel: viewModel, window: window!)
 
 //        let tabBar = MainTabBarController()
         window?.rootViewController = UINavigationController(rootViewController: controller)

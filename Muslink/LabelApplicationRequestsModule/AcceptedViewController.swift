@@ -133,7 +133,7 @@ class AcceptedViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc private func sendButtonPressed() {
-        
+        self.dismiss(animated: true)
     }
 }
 

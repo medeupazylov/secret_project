@@ -44,6 +44,7 @@
 		21B1C7452A8FB0D3009F6BCE /* ApplicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */; };
 		21B1C7482A8FB270009F6BCE /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */; };
 		21B1C74A2A8FB50B009F6BCE /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */; };
+		21ECCBEC2A98685B003EEB7B /* ApplicationRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ECCBEB2A98685B003EEB7B /* ApplicationRequestsViewController.swift */; };
 		BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */; };
 		BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */; };
 		BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */; };
@@ -132,6 +133,7 @@
 		21B1C7442A8FB0D3009F6BCE /* ApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTableViewCell.swift; sourceTree = "<group>"; };
 		21B1C7472A8FB270009F6BCE /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		21B1C7492A8FB50B009F6BCE /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		21ECCBEB2A98685B003EEB7B /* ApplicationRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRequestsViewController.swift; sourceTree = "<group>"; };
 		B2C372245F7FE1E16AF434C7 /* Pods_Muslink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muslink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0B41842A88D81100502AC7 /* TrackSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSentViewController.swift; sourceTree = "<group>"; };
 		BF0B418C2A89202800502AC7 /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */,
 				BF1E23872A920DD400A45234 /* AcceptedViewController.swift */,
 				BF1E238F2A923C5700A45234 /* Subviews */,
+				21ECCBEB2A98685B003EEB7B /* ApplicationRequestsViewController.swift */,
 			);
 			path = LabelApplicationRequestsModule;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				BF1E239C2A96219300A45234 /* DefaultSeparator.swift in Sources */,
 				BF1E239E2A96293A00A45234 /* PlayerStackView.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* SearchTableViewCell.swift in Sources */,
+				21ECCBEC2A98685B003EEB7B /* ApplicationRequestsViewController.swift in Sources */,
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
 				DEDF6C042A8FC5FB0065CC04 /* AudioPlayerViewController.swift in Sources */,

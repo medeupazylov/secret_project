@@ -9,6 +9,8 @@ import UIKit
 
 class LabelApplicationViewController: UIViewController {
     
+    var isNew: Bool = true
+    
     var artistName: String
     var locationName: String
     var trackName: String
@@ -16,10 +18,10 @@ class LabelApplicationViewController: UIViewController {
    
     //MARK: - Lifecycle
     
-    init(artistName: String = "",
-         locationName: String = "",
-         trackName: String = "",
-         artistPhotoName: String = "") {
+    init(artistName: String = "Alex Popov",
+         locationName: String = "Москва",
+         trackName: String = "Electro Pulse",
+         artistPhotoName: String = "musician") {
         self.artistName = artistName
         self.locationName = locationName
         self.trackName = trackName
@@ -40,6 +42,25 @@ class LabelApplicationViewController: UIViewController {
         addChildViewControllers()
     }
     
+    func setupNavigationBar() {
+        let title = UILabel()
+        title.text = ""
+        title.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        title.textColor = Color.neutral100.color
+        navigationItem.titleView = title
+        let item = UIBarButtonItem(image: UIImage(named: "chevron_left"), style: .done, target: self, action: #selector(moveBack))
+        item.tintColor = Color.neutral72.color
+        navigationItem.leftBarButtonItem = item
+        let item1 = UIBarButtonItem(image: Image.close.image, style: .plain, target: self, action: #selector(moveBack))
+        item1.tintColor = Color.neutral72.color
+        navigationItem.rightBarButtonItem = item1
+        navigationController?.navigationBar.barTintColor = Color.primaryBgColor.color
+    }
+    @objc
+    private func moveBack() {
+        navigationController?.popViewController(animated: false)
+    }
+    
     //MARK: - Setup Methods
     private func addChildViewControllers() {
         addNewVC(vc: ApplicationHeaderViewController(artistName: artistName, locationName: locationName, artistImageName: artistImageName))
@@ -58,13 +79,6 @@ class LabelApplicationViewController: UIViewController {
             vc.view.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
         vc.didMove(toParent: self)
-    }
-    
-    private func setupNavigationBar() {
-        let item = UIBarButtonItem(image: Image.close.image, style: .plain, target: self, action: #selector(dismissVC))
-        item.tintColor = Color.neutral72.color
-        navigationItem.rightBarButtonItem = item
-        navigationController?.navigationBar.barTintColor = Color.primaryBgColor.color
     }
 
     private func setupView() {
@@ -106,6 +120,4 @@ class LabelApplicationViewController: UIViewController {
     @objc func dismissVC() {
         self.dismiss(animated: true)
     }
-  
-
 }

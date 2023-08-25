@@ -37,14 +37,4 @@ struct Application: Codable {
     let sendDate: String
     let comment: String
     let rejectReasons: [String]
-    
-//    enum CodingKeys: String, CodingKey {
-//        case track
-//        case pitch
-//        case purposes
-//        case status
-//        case sendDate
-//        case comment
-//        case rejectReasons
-//    }
 }
