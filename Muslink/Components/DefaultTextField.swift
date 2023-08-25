@@ -10,6 +10,7 @@ import UIKit
 enum DefaultTextFieldType {
     case regular
     case special
+    case specialDisabled
 }
 
 final class DefaultTextField: UIView {
@@ -36,10 +37,13 @@ final class DefaultTextField: UIView {
         textField.delegate = delegate
         textField.attributedPlaceholder = NSAttributedString(
             string: placeHolder,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+            attributes: [NSAttributedString.Key.foregroundColor: Color.neutral80.color]
         )
         
         setupTextField()
+        if type == .specialDisabled {
+            textField.isEnabled = false
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -70,17 +74,22 @@ final class DefaultTextField: UIView {
         ])
     }
     
+    //MARK: - Internal methods
+
+    func setText(text: String) {
+        textField.text = text
+    }
+    
     //MARK: - UIElements
     
     private let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-
+        textField.autocorrectionType = .no
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.keyboardType = .default
         textField.textAlignment = .left
         textField.textColor = Color.neutral100.color
-        
         return textField
     }()
 }

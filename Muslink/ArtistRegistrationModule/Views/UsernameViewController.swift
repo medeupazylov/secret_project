@@ -2,24 +2,24 @@
 //  ViewController.swift
 //  ABC
 //
-//  Created by Аброрбек on 04.08.2023.
+//  Created by Aisha on 04.08.2023.
 //
 
 import UIKit
 import YandexLoginSDK
-
-var token: String = ""
 
 final class UsernameViewController: UIViewController {
     
     //MARK: - Properties
     
     private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -37,7 +37,7 @@ final class UsernameViewController: UIViewController {
             case .success(_):
                 print("success")
             case .failure(_):
-                print("Error")
+                print("Error registering user")
             }
         }
         setupNavigationBar()
@@ -48,10 +48,18 @@ final class UsernameViewController: UIViewController {
 
     private var progressBar = DefaultProgressBar()
     
-    private lazy var titleLabel = DefaultLabel(text: "Как вас зовут",
-                                               textColor: Color.neutral100.color,
-                                               fontSize: 18.0,
-                                               fontWeight: .bold)
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.text = "Как вас зовут"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = Color.neutral100.color
+        label.backgroundColor = Color.primaryBgColor.color
+        label.textAlignment = .left
+        
+        return label
+    }()
     
 
     private var nameLabel = DefaultLabel(text: "Имя",
@@ -126,7 +134,7 @@ final class UsernameViewController: UIViewController {
     private func nextButtonPressed() {
         viewModel.userDidEnterName(name: nameTextField.text)
         viewModel.userDidEnterNickname(nickname: nickTextField.text)
-        navigationController?.pushViewController(ChooseCityView(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseCityView(viewModel: viewModel, window: window), animated: false)
     }
     
     func setupConstraints() {
@@ -161,7 +169,7 @@ final class UsernameViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            continueButton.bottomAnchor.constraint(equalTo: mainStack.bottomAnchor, constant: 12),
+            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
             continueButton.centerXAnchor.constraint(equalTo: mainStack.centerXAnchor)
         ])
     }
@@ -213,11 +221,11 @@ extension UsernameViewController: UITextFieldDelegate {
 
 extension UsernameViewController: YXLObserver {
     func loginDidFinish(with result: YXLLoginResult) {
-        token = result.token
-        print(token)
+        viewModel.setToken(token: result.token)
+        print(result.token)
     }
-    
+
     func loginDidFinishWithError(_ error: Error) {
-        
+
     }
 }

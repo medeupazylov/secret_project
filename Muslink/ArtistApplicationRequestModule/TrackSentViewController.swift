@@ -63,17 +63,16 @@ class TrackSentViewController: UIViewController {
     
     private lazy var textStack = VerticalStackView(arrangedSubviews: [titleLabel, subtitleLabel])
     
-    private lazy var contentStackView = VerticalStackView(arrangedSubviews: [imageView, textStack, buttonsStack], spacing: 24.0)
+    private lazy var contentStackView = VerticalStackView(arrangedSubviews: [UIView(),imageView, textStack, buttonsStack,UIView()], spacing: 24.0)
 
     private func setupView() {
-        view.backgroundColor = Color.elevatedBgColor.color
+        view.backgroundColor = UIColor(white: 0, alpha: 0.7) // 50% transparent black
         textStack.clipsToBounds = true
         titleLabel.clipsToBounds = true
         subtitleLabel.clipsToBounds = true
-        contentStackView.addArrangedSubview(textStack)
-        contentStackView.addArrangedSubview(buttonsStack)
-        contentStackView.setCustomSpacing(32, after: textStack)
         view.addSubview(contentStackView)
+        contentStackView.backgroundColor = Color.elevatedBgColor.color
+        contentStackView.layer.cornerRadius = 12.0
     }
     
     
@@ -109,6 +108,11 @@ class TrackSentViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 96.0),
             imageView.heightAnchor.constraint(equalToConstant: 96.0)
+        ])
+        
+        NSLayoutConstraint.activate([
+            buttonsStack.leadingAnchor.constraint(equalTo: contentStackView.leadingAnchor, constant: 16),
+            buttonsStack.trailingAnchor.constraint(equalTo: contentStackView.trailingAnchor, constant: -16),
         ])
         
     }

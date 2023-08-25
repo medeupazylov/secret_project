@@ -6,8 +6,38 @@
 //
 
 import UIKit
+import AVFoundation
+
+extension PopularTracksViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let audioURL = urls.first else { return }
+        let musicCard = mainStack.subviews[loadedTracks] as! MusicCardView
+        musicCard.setupAudioPlayer(audioURL)
+        loadedTracks+=1;
+        audioList.append(audioURL)
+    }
+}
 
 class PopularTracksViewController: UIViewController {
+    
+    private var audioList: [URL] = []
+    var audioPlayer: AVAudioPlayer?
+    
+    private var loadedTracks = 0 {
+        didSet {
+            self.mainStack.subviews[self.loadedTracks-1].layer.opacity = 0.0
+            UIView.animate(withDuration: 0.5) {
+                self.mainStack.subviews[self.loadedTracks-1].layer.opacity = 1.0
+                self.mainStack.subviews[self.loadedTracks-1].isHidden.toggle()
+            }
+            if loadedTracks == 4 {
+                UIView.animate(withDuration: 0.5) {
+                    self.loadButtonContainer.isHidden.toggle()
+                    self.loadButtonContainer.layer.opacity = 0.0
+                }
+            }
+        }
+    }
     
 //MARK: - Lifecycle
     
@@ -42,8 +72,8 @@ class PopularTracksViewController: UIViewController {
         mainStack.addArrangedSubview(musicCardTwo)
         mainStack.addArrangedSubview(musicCardThree)
         mainStack.addArrangedSubview(musicCardFour)
-        
-        
+        mainStack.addArrangedSubview(loadButtonContainer)
+
     }
     
     private func setupActions() {
@@ -51,6 +81,8 @@ class PopularTracksViewController: UIViewController {
         musicCardTwo.disableAllClosure = { self.disableMusicCards(self.musicCardTwo, self.musicCardTwo.musicCardState) }
         musicCardThree.disableAllClosure = { self.disableMusicCards(self.musicCardThree, self.musicCardThree.musicCardState) }
         musicCardFour.disableAllClosure = { self.disableMusicCards(self.musicCardFour, self.musicCardFour.musicCardState) }
+        
+        loadButtonContainer.addTarget(self, action: #selector(loadAudioFromDevice), for: .touchUpInside)
     }
     
     private func setupLayout() {
@@ -86,6 +118,18 @@ class PopularTracksViewController: UIViewController {
         musicCardThree.disableCard()
         musicCardFour.disableCard()
         previousCard.musicCardState = previousState
+    }
+    
+    @objc func loadAudioFromDevice() {
+        var documentPicker: UIDocumentPickerViewController
+        if #available(iOS 14.0, *) {
+            let supportedTypes: [UTType] = [UTType.audio]
+            documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: supportedTypes)
+        } else {
+            documentPicker = UIDocumentPickerViewController(documentTypes: ["public.audio"], in: UIDocumentPickerMode.import)
+        }
+        documentPicker.delegate = self
+        self.present(documentPicker, animated: true, completion: nil)
     }
     
 //MARK: - UI Elements
@@ -131,27 +175,38 @@ class PopularTracksViewController: UIViewController {
         return stack
     } ()
     
+    private let loadButtonContainer: DefaultButton = {
+        let button = DefaultButton(buttonType: .bordered)
+        button.setTitle(title: "Загрузить с устройства")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    } ()
+    
     private let musicCardOne: MusicCardView = {
         let card = MusicCardView(index: 1, musicName: "Permission to Dance", artistName: "Angelo Rodriguez", musicPicture: "permission_to_dance")
         card.translatesAutoresizingMaskIntoConstraints = false
+        card.isHidden = true
         return card
     } ()
     
     private let musicCardTwo: MusicCardView = {
         let card = MusicCardView(index: 2, musicName: "Life short", artistName: "Angelo Rodriguez", musicPicture: "life_short")
         card.translatesAutoresizingMaskIntoConstraints = false
+        card.isHidden = true
         return card
     } ()
     
     private let musicCardThree: MusicCardView = {
         let card = MusicCardView(index: 3, musicName: "Hey, brother", artistName: "Angelo Rodriguez", musicPicture: "hey_brother")
         card.translatesAutoresizingMaskIntoConstraints = false
+        card.isHidden = true
         return card
     } ()
     
     private let musicCardFour: MusicCardView = {
         let card = MusicCardView(index: 4, musicName: "Feedback forever", artistName: "Angelo Rodriguez", musicPicture: "feedback_forever")
         card.translatesAutoresizingMaskIntoConstraints = false
+        card.isHidden = true
         return card
     } ()
     

@@ -36,8 +36,15 @@ final class SocialNetworksView: UIStackView {
             ])
             removeButton.isHidden = false
             container.layer.borderColor = Color.infoBorder.color.cgColor
-            UIView.animate(withDuration: 0.3) {
-                self.notFoundLabel.isHidden = false
+            if (textField.text?.lowercased() == "qwerty") {
+                UIView.animate(withDuration: 0.3, delay: 1.0) {
+                    self.notFoundLabel.isHidden = false
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                    UIView.animate(withDuration: 0.3, delay: 0) {
+                        self.notFoundLabel.isHidden = true
+                    }
+                })
             }
             
         } else {
@@ -46,9 +53,6 @@ final class SocialNetworksView: UIStackView {
             ])
             removeButton.isHidden = true
             container.layer.borderColor = Color.neutral16.color.cgColor
-            UIView.animate(withDuration: 0.3) {
-                self.notFoundLabel.isHidden = true
-            }
         }
     }
     
@@ -124,6 +128,8 @@ final class SocialNetworksView: UIStackView {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.textColor = Color.neutral72.color
         text.tintColor = Color.neutral72.color
+        text.autocorrectionType = .no
+        text.autocapitalizationType = .none
         text.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
         return text
     } ()
@@ -152,9 +158,5 @@ final class SocialNetworksView: UIStackView {
         stackView.axis = .horizontal
         return stackView
     }()
-    
-    
-    
-    
 }
 

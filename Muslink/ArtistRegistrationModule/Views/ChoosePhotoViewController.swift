@@ -14,13 +14,17 @@ final class ChoosePhotoViewController: UIViewController {
     //MARK: - Properties
 
     private let viewModel: ArtistRegistrationViewModel
+    private let loadingVC = LoadingViewController()
     private var photoIndex = 0
-    private var photos: [Photo] = []
+    private var photos: [File] = []
+    private var images: [UIImage] = []
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -150,7 +154,7 @@ final class ChoosePhotoViewController: UIViewController {
     func setupLayout() {
         NSLayoutConstraint.activate([
             progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -211,10 +215,36 @@ final class ChoosePhotoViewController: UIViewController {
     // MARK: - Button Action
     
     @objc func buttonTapped() {
-        viewModel.userDidEnterPhotos(photos: photos)
-        viewModel.createProfile { result in
-            print(result)
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalTransitionStyle = .crossDissolve
+        present(loadingVC, animated: true, completion: nil)
+        
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+            self.loadingVC.dismiss(animated: true)
+            let profile = ProfileModel(name: viewModel.name!, city: viewModel.city!, genres: viewModel.genres!, images: images)
+            let tabBar = MainTabBarController(profile: profile)
+
+            window.rootViewController = tabBar
         }
+        
+        viewModel.userDidEnterPhotos(photos: photos)
+//        viewModel.createProfile { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//            switch result {
+//            case .success(_):
+//                self.loadingVC.dismiss(animated: true)
+//
+//                let tabBar = MainTabBarController()
+//                window.rootViewController = tabBar
+//            case .failure(_):
+//                self.loadingVC.dismiss(animated: true)
+//                let tabBar = MainTabBarController()
+//                window.rootViewController = tabBar
+//            }
+//        }
     }
     
     @objc
@@ -325,6 +355,16 @@ extension ChoosePhotoViewController: PHPickerViewControllerDelegate {
                 return
             }
             self.loadImage(from: results[0]) { image in
+                self.images.append(image!)
+                self.viewModel.uploadPhoto(data: image?.jpegData(compressionQuality: 1.0)) { result in
+                    switch result {
+                    case .success(let file):
+                        self.photos.append(file)
+                    case .failure(_):
+                        print("Photo error")
+                    }
+                }
+                
                 if let image = image {
                     DispatchQueue.main.async {
                         self.updateImageView(with: image, at: self.photoIndex)

@@ -8,6 +8,17 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    private let profile: ProfileModel 
+    
+    init(profile: ProfileModel) {
+        self.profile = profile
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,9 +31,9 @@ class ProfileViewController: UIViewController {
     
     //MARK: - Setup Methods
     private func addChildViewControllers() {
-        addNewVC(vc: ProfileHeaderViewController())
+        addNewVC(vc: ProfileHeaderViewController(name: profile.name, city: profile.city.title, genres: profile.genres, image: profile.images.first!))
         addNewVC(vc: PopularTracksViewController())
-        addNewVC(vc: MusicianInfoViewController())
+                 addNewVC(vc: MusicianInfoViewController(images: profile.images, name: profile.name, city: profile.city.title))
         
     }
     

@@ -11,29 +11,24 @@ import UIKit
 final class ChooseCityView: UIViewController {
     //MARK: - Properties
     
-    private let viewModel: ArtistRegistrationViewModel
-    
     private var item: SearchItem?
-    
+    private let viewModel: ArtistRegistrationViewModel
+    private let window: UIWindow
     
     //MARK: - Lifecycle
     
-    init(viewModel: ArtistRegistrationViewModel) {
+    init(viewModel: ArtistRegistrationViewModel, window: UIWindow) {
         self.viewModel = viewModel
+        self.window = window
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = Color.primaryBgColor.color
-        setupUI()
-        setupNavigationBar()
-        continueButton.isEnabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.getCities { [weak self] result in
             guard let self = self else {
                 return
@@ -44,14 +39,35 @@ final class ChooseCityView: UIViewController {
                 self.page.data = cities
             case .failure(_):
                 print("NetworkingError")
+                self.page.data = [City(id: 12, name: "ads")]
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = Color.primaryBgColor.color
+        setupUI()
+        setupNavigationBar()
+        continueButton.isEnabled = false
     }
     
     var chosenCityIndex: IndexPath?
     let page = SearchTableView(title: "Город")
     
-    private lazy var titleLabel = createLabel(text: "Откуда вы", fontSize: 18, color: Color.neutral100.color)
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.text = "Откуда вы"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = Color.neutral100.color
+        label.backgroundColor = Color.primaryBgColor.color
+        label.textAlignment = .left
+        
+        return label
+    }()
+    
     private lazy var cityLabel = createLabel(text: "Город", fontSize: 14, color: Color.neutral32.color)
     private lazy var choseLabel = createLabel(text: "Выберите город", fontSize: 16, color: Color.neutral80.color)
     private let continueButton = DefaultButton(buttonType: .primary)
@@ -116,7 +132,7 @@ final class ChooseCityView: UIViewController {
             return
         }
         viewModel.userDidEnterCity(city: item )
-        navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel), animated: false)
+        navigationController?.pushViewController(ChooseSocialNetworksViewContoller(viewModel: viewModel, window: window), animated: false)
     }
     
     private func createLabel(text: String, fontSize: CGFloat, color: UIColor) -> UILabel {
@@ -149,8 +165,7 @@ final class ChooseCityView: UIViewController {
         progressView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -163,7 +178,8 @@ final class ChooseCityView: UIViewController {
             cityButton.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 8),
             cityButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             cityButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            continueButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            
+            continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
             continueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             continueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])

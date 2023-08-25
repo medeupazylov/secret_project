@@ -181,7 +181,7 @@ extension RejectedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.index = indexPath.row
         cell.onToggleChecked = { [weak self] index in
             guard let self = self else {return}
-            self.reasons[index].checked = !reasons[index].checked
+            self.reasons[index].checked = !self.reasons[index].checked
             self.tableView.reloadData()
         }
         return cell
