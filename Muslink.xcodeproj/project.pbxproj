@@ -50,6 +50,14 @@
 		BF1C52EF2A7F6147008B642D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */; };
 		BF1C52F12A7F6B6B008B642D /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */; };
 		BF1E23882A920DD400A45234 /* AcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E23872A920DD400A45234 /* AcceptedViewController.swift */; };
+		BF1E238B2A92210A00A45234 /* ApplicationFooterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E238A2A92210A00A45234 /* ApplicationFooterInfoViewController.swift */; };
+		BF1E23912A923C6A00A45234 /* ButtonsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E23902A923C6A00A45234 /* ButtonsStack.swift */; };
+		BF1E23962A96073900A45234 /* TrackDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E23952A96073900A45234 /* TrackDescriptionViewController.swift */; };
+		BF1E23982A960B4B00A45234 /* ApplicationHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E23972A960B4B00A45234 /* ApplicationHeaderViewController.swift */; };
+		BF1E239A2A9620A000A45234 /* HeaderSocialNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E23992A9620A000A45234 /* HeaderSocialNetworks.swift */; };
+		BF1E239C2A96219300A45234 /* DefaultSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E239B2A96219300A45234 /* DefaultSeparator.swift */; };
+		BF1E239E2A96293A00A45234 /* PlayerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E239D2A96293A00A45234 /* PlayerStackView.swift */; };
+		BF1E23A02A9747BB00A45234 /* LabelApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1E239F2A9747BB00A45234 /* LabelApplicationViewController.swift */; };
 		BF4B769E2A84CED4007D5DD7 /* SocialNetworkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */; };
 		BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */; };
 		BF4B76A82A875A10007D5DD7 /* PhotoCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */; };
@@ -131,6 +139,14 @@
 		BF1C52EE2A7F6147008B642D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 		BF1E23872A920DD400A45234 /* AcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedViewController.swift; sourceTree = "<group>"; };
+		BF1E238A2A92210A00A45234 /* ApplicationFooterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFooterInfoViewController.swift; sourceTree = "<group>"; };
+		BF1E23902A923C6A00A45234 /* ButtonsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStack.swift; sourceTree = "<group>"; };
+		BF1E23952A96073900A45234 /* TrackDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDescriptionViewController.swift; sourceTree = "<group>"; };
+		BF1E23972A960B4B00A45234 /* ApplicationHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationHeaderViewController.swift; sourceTree = "<group>"; };
+		BF1E23992A9620A000A45234 /* HeaderSocialNetworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSocialNetworks.swift; sourceTree = "<group>"; };
+		BF1E239B2A96219300A45234 /* DefaultSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSeparator.swift; sourceTree = "<group>"; };
+		BF1E239D2A96293A00A45234 /* PlayerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStackView.swift; sourceTree = "<group>"; };
+		BF1E239F2A9747BB00A45234 /* LabelApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelApplicationViewController.swift; sourceTree = "<group>"; };
 		BF4B769D2A84CED4007D5DD7 /* SocialNetworkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkButton.swift; sourceTree = "<group>"; };
 		BF4B76A32A86A84A007D5DD7 /* MusicianNameStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianNameStack.swift; sourceTree = "<group>"; };
 		BF4B76A72A875A10007D5DD7 /* PhotoCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarouselCell.swift; sourceTree = "<group>"; };
@@ -241,6 +257,7 @@
 				DEFCE87A2A7E1BA300FA6051 /* DefaultButton.swift */,
 				BF1C52F02A7F6B6B008B642D /* DefaultLabel.swift */,
 				BF1C52E62A7E4D17008B642D /* DefaultProgressBar.swift */,
+				BF1E239B2A96219300A45234 /* DefaultSeparator.swift */,
 				211AAD262A7E12CD00D7469C /* DefaultTextField.swift */,
 				D521A0382A890D4000CC3A59 /* DefaultOptionsChooser.swift */,
 				211AAD872A84ED4F00D7469C /* CustomFlowLayout.swift */,
@@ -342,8 +359,13 @@
 		2175708D2A91EE2F00B11318 /* LabelApplicationRequestsModule */ = {
 			isa = PBXGroup;
 			children = (
+				BF1E239F2A9747BB00A45234 /* LabelApplicationViewController.swift */,
+				BF1E23972A960B4B00A45234 /* ApplicationHeaderViewController.swift */,
+				BF1E23952A96073900A45234 /* TrackDescriptionViewController.swift */,
+				BF1E238A2A92210A00A45234 /* ApplicationFooterInfoViewController.swift */,
 				BF5AC3122A90C78100033BC6 /* RejectedViewController.swift */,
 				BF1E23872A920DD400A45234 /* AcceptedViewController.swift */,
+				BF1E238F2A923C5700A45234 /* Subviews */,
 			);
 			path = LabelApplicationRequestsModule;
 			sourceTree = "<group>";
@@ -406,6 +428,16 @@
 				EFADC6587F985BFCB0406157 /* Pods-Muslink.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF1E238F2A923C5700A45234 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				BF1E23992A9620A000A45234 /* HeaderSocialNetworks.swift */,
+				BF1E239D2A96293A00A45234 /* PlayerStackView.swift */,
+				BF1E23902A923C6A00A45234 /* ButtonsStack.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		BF52FE382A7E0A9F0028B093 /* DesignSystem */ = {
@@ -548,6 +580,7 @@
 				BF1E23882A920DD400A45234 /* AcceptedViewController.swift in Sources */,
 				21B1C71F2A879CEC009F6BCE /* Genre.swift in Sources */,
 				211AAD412A7F995D00D7469C /* ChooseSocialNetworksViewContoller.swift in Sources */,
+				BF1E23982A960B4B00A45234 /* ApplicationHeaderViewController.swift in Sources */,
 				21B1C7272A87DA75009F6BCE /* HorizontalStackView.swift in Sources */,
 				211AACD22A7D5EA000D7469C /* UsernameViewController.swift in Sources */,
 				211AAD902A86365000D7469C /* ArtistRegistrationViewModel.swift in Sources */,
@@ -556,6 +589,7 @@
 				D521A0232A862C4700CC3A59 /* StatisticsView.swift in Sources */,
 				217570802A908CEB00B11318 /* MyApplicationsViewModel.swift in Sources */,
 				2175707E2A90899C00B11318 /* Application.swift in Sources */,
+				BF1E23912A923C6A00A45234 /* ButtonsStack.swift in Sources */,
 				DEDF6C0C2A9240B00065CC04 /* UIViewController + Extension.swift in Sources */,
 				DEDF6C052A8FC5FB0065CC04 /* TrackLoadViewController.swift in Sources */,
 				211AAD4A2A7F998100D7469C /* SocialNetworksView.swift in Sources */,
@@ -568,9 +602,12 @@
 				217570922A952C5300B11318 /* File.swift in Sources */,
 				BF5AC3052A8CF0E100033BC6 /* GoalsViewController.swift in Sources */,
 				BF0B418D2A89202800502AC7 /* SocialNetworksStackView.swift in Sources */,
+				BF1E23962A96073900A45234 /* TrackDescriptionViewController.swift in Sources */,
 				BF0B41852A88D81100502AC7 /* TrackSentViewController.swift in Sources */,
 				BF5AC3132A90C78100033BC6 /* RejectedViewController.swift in Sources */,
 				BF5AC3172A90CD8A00033BC6 /* ReasonsTableViewCell.swift in Sources */,
+				BF1E239C2A96219300A45234 /* DefaultSeparator.swift in Sources */,
+				BF1E239E2A96293A00A45234 /* PlayerStackView.swift in Sources */,
 				211AAD4B2A7F998100D7469C /* SearchTableViewCell.swift in Sources */,
 				211AAD8C2A8632EB00D7469C /* Artist.swift in Sources */,
 				211AACCE2A7D5EA000D7469C /* AppDelegate.swift in Sources */,
@@ -580,6 +617,7 @@
 				211AAD272A7E12CD00D7469C /* DefaultTextField.swift in Sources */,
 				211AAD4D2A7FC31900D7469C /* AddImageView.swift in Sources */,
 				211AAD402A7F995D00D7469C /* ChooseGenresViewController.swift in Sources */,
+				BF1E239A2A9620A000A45234 /* HeaderSocialNetworks.swift in Sources */,
 				DE989A882A96573700AA971E /* LabelsCell.swift in Sources */,
 				BF5AC30B2A8D60FA00033BC6 /* ContentSizedTableView.swift in Sources */,
 				211AACD02A7D5EA000D7469C /* SceneDelegate.swift in Sources */,
@@ -601,8 +639,10 @@
 				217570832A91D38F00B11318 /* AccessTokenResponse.swift in Sources */,
 				BF5AC31B2A91D21F00033BC6 /* CloseButton.swift in Sources */,
 				DEFCE88B2A7FBB3600FA6051 /* MusicCardView.swift in Sources */,
+				BF1E238B2A92210A00A45234 /* ApplicationFooterInfoViewController.swift in Sources */,
 				217570942A9685DD00B11318 /* LoadingViewController.swift in Sources */,
 				BF4B76A42A86A84A007D5DD7 /* MusicianNameStack.swift in Sources */,
+				BF1E23A02A9747BB00A45234 /* LabelApplicationViewController.swift in Sources */,
 				BF1C52E72A7E4D17008B642D /* DefaultProgressBar.swift in Sources */,
 				BF4B76AC2A87A308007D5DD7 /* PhotoView.swift in Sources */,
 				BF5AC3152A90CC1800033BC6 /* Reason.swift in Sources */,
